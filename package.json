@@ -1,0 +1,15 @@
+{
+  "name": "quantify",
+  "version": "0.1.0",
+  "description": "Quantum Circuit Simulator",
+  "keywords": [
+    "quantum",
+    "simulator"
+  ],
+  "author": "Philip Weaver",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "mathjs": "^6.0.3"
+  }
+}

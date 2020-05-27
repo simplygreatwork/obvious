@@ -1,0 +1,17 @@
+
+const circuit = require('../src/circuit.js')
+
+circuit('circuit', 1)
+.x(0)
+.rz(0, [], { params: { phi: "pi/4" }})
+.t(0)
+.t(0)
+.t(0)
+.t(0)
+.t(0)
+.t(0)
+.t(0)
+.t(0)
+.t(0)
+.t(0)
+.run('trace', 'changed')
