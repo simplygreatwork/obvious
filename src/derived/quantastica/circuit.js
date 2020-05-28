@@ -18,14 +18,19 @@ module.exports = class Circuit {
 		this.emitter = require('./emitter')()
 	}
 	
-	addGate(name, wires, options) {
+	addGate(name, targets, controls, options) {
 		
 		if (! library[name]) {
 			console.error('Unknown gate "' + name + '".');
 		} else {
+			targets = (targets === null) ? [] : targets
+			targets = Array.isArray(targets) ? targets : [targets]
+			controls = (controls === null) ? [] : controls
+			controls = Array.isArray(controls) ? controls : [controls]
 			this.gates.push({
 				name: name,
-				wires: wires,
+				targets: targets,
+				controls: controls,
 				options: options || {}
 			})
 		}
@@ -37,8 +42,9 @@ module.exports = class Circuit {
 		this.emit('circuit-will-run', this)
 		this.gates.forEach(function(gate, index) {
 			this.emit('gate-will-run', gate, index, this.gates.length)
+			let wires = gate.controls.concat(gate.targets)
 			let matrix = transform.resolve(this, library[gate.name], gate.options)
-			transform.apply(this, matrix, gate.wires)
+			transform.apply(this, matrix, wires)
 			this.capture()
 			this.emit('gate-did-run', gate, index, this.gates.length)
 		}.bind(this))
@@ -68,13 +74,10 @@ module.exports = class Circuit {
 		let magnitude = math.pow(math.abs(amplitude), 2)
 		let probability = (magnitude * 100).toFixed(4).padStart(9, ' ')
 		return {
+			id: index,
 			index: index,
 			bits: bits,
-			amplitude: format.complex(amplitude, {
-				fixedWidth: true,
-				scale: 8,
-				iotaChar: 'i'
-			}),
+			amplitude: format.complex(amplitude, { fixedWidth: true, scale: 8, iotaChar: 'i' }),
 			magnitude: magnitude,
 			probability: probability,
 			phase: (Math.atan2(amplitude.im, amplitude.re) * 360 / (Math.PI * 2)).toFixed(2).padStart(6, ' ')

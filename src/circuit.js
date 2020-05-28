@@ -16,8 +16,8 @@ class Circuit {
 		this.listen()
 	}
 	
-	addGate(name, wires, options) {
-		this.circuit.addGate(name, wires, options)		
+	addGate(name, targets, controls, options) {
+		this.circuit.addGate(name, targets, controls, options)		
 	}
 	
 	run() {
@@ -35,9 +35,15 @@ class Circuit {
 		Object.assign(this.circuit.options, this.options)
 	}
 	
-	print(compact) {
+	print() {
 		
-		this.circuit.print(compact)		
+		this.circuit.print()		
+		return this
+	}
+	
+	each(fn) {
+		
+		this.circuit.each(fn)		
 		return this
 	}
 	

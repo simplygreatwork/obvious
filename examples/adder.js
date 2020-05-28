@@ -44,7 +44,7 @@ function circuit(name, size) {
 			.majority(a(0), b(1), a(1))
 			.majority(a(1), b(2), a(2))
 			.majority(a(2), b(3), a(3))
-			.cx(cout(0), a(3))
+			.cx(a(3), cout(0))
 			.unmajority(a(2), b(3), a(3))
 			.unmajority(a(1), b(2), a(2))
 			.unmajority(a(0), b(1), a(1))
@@ -52,15 +52,15 @@ function circuit(name, size) {
 		},
 		majority: function(a, b, c) {
 			return this
-			.cx(c, b)
-			.cx(c, a)
-			.ccx(a, b, c)
+			.cx(b, c)
+			.cx(a, c)
+			.ccx(c, [a, b])
 		},
 		unmajority: function(a, b, c) {
 			return this
-			.ccx(a, b, c)
-			.cx(c, a)
-			.cx(a, b)
+			.ccx(c, [a, b])
+			.cx(a, c)
+			.cx(b, a)
 		}
 	})
 	return circuit
