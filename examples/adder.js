@@ -1,4 +1,6 @@
 
+const utility = require('../src/utility')
+
 let result = {}
 
 circuit('adder-input', 10)
@@ -6,11 +8,9 @@ circuit('adder-input', 10)
 .set_value(b, 12)
 .run('trace')
 .each(function(each) {
-	result.a = parseInt(each.bits.substring(5, 9).split('').join(''), 2)
-	result.b = parseInt(each.bits.substring(1, 5).split('').join(''), 2)
-	console.log()
-	console.log(`${result.a} + ${result.b} = ?`)
-	console.log()
+	result.a = utility.bits_to_number(utility.number_to_bits(each.index, this.size).splice(5, 4))
+	result.b = utility.bits_to_number(utility.number_to_bits(each.index, this.size).splice(1, 4))
+	console.log(`\n${result.a} + ${result.b} = ?\n`)
 })
 
 circuit('adder-output', 10)
@@ -19,19 +19,21 @@ circuit('adder-output', 10)
 .add(a, b, cin, cout)
 .run('trace')
 .each(function(each) {
-	result.c = parseInt(each.bits.substring(1, 5).split('').join(''), 2)
-	console.log()
-	console.log(`${result.a} + ${result.b} = ${result.c}`)
-	console.log()
+	result.c = utility.bits_to_number(utility.number_to_bits(each.index, this.size).splice(1, 4))
+	console.log(`\n${result.a} + ${result.b} = ${result.c}\n`)
 })
 
 function circuit(name, size) {
 	
-	let circuit = require('../src/circuit.js')(name, size)
+	let circuit = require('../src/circuit.js')(name, size, {
+		engine: 'optimized',
+		order: ['targets', 'controls']
+	})
+	
 	Object.assign(circuit, {
 		set_value: function(variable, value) {
-			value.toString(2).split('').reverse().forEach(function(bit, index) {
-				if (bit == '1') circuit.x(variable(index))
+			utility.number_to_bits(value).reverse().forEach(function(bit, index) {
+				if (bit) circuit.x(variable(index))
 			})
 			return this
 		},

@@ -1,6 +1,4 @@
 
-const circuit = require('../src/circuit.js')
-
 circuit('cswap-before', 3)
 .x(0)
 .x(2)
@@ -11,3 +9,11 @@ circuit('cswap-after', 3)
 .x(2)
 .cswap([1, 2], 0)
 .run('trace')
+
+function circuit(name, size) {
+	
+	return require('../src/circuit.js')(name, size, {
+		engine: 'optimized',
+		order: ['targets', 'controls']
+	})
+}

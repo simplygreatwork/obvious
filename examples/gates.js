@@ -1,15 +1,7 @@
 
-circuit('phase', 1)
-.x(0)
-.t(0)
-.t(0)
-.t(0)
-.t(0)
-.t(0)
-.t(0)
-.t(0)
-.t(0)
-.run('trace', 'changed')
+circuit('circuit', 1).library(function(gates) {
+	console.log('library: ' + JSON.stringify(Object.keys(gates), null, 2))
+})
 
 function circuit(name, size) {
 	

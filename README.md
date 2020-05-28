@@ -15,3 +15,9 @@
 - either circuit.addGate(targets, controls)
 - or circuit.addGate(controls, targets)
 - e.g. circuit.options({ controls_first : true})
+
+- allow: no-trace, no-changes
+
+- https://github.com/unconed/mathbox
+- 
+adder get value index, length

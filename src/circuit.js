@@ -10,29 +10,33 @@ class Circuit {
 	constructor(name, size, options) {
 		
 		this.name = name
+		this.size = size
 		this.options = options || {}
 		this.circuit = new (require('./derived/quantastica/circuit'))(size, options)
 		this.chain = new chain(this)
 		this.listen()
 	}
 	
-	addGate(name, targets, controls, options) {
-		this.circuit.addGate(name, targets, controls, options)		
-	}
-	
-	run() {
+	library(fn) {
 		
-		this.flags(...arguments)
-		this.circuit.run(...arguments)
+		this.circuit.library(fn)
 		return this
 	}
 	
-	flags() {
+	addGate(name, targets, controls, options) {
+		
+		this.circuit.addGate(name, targets, controls, options)
+		return this
+	}
+	
+	run() {
 		
 		Array.from(arguments).forEach(function(each, index) {
 			this.options[each] = true
 		}.bind(this))
 		Object.assign(this.circuit.options, this.options)
+		this.circuit.run()
+		return this
 	}
 	
 	print() {
@@ -43,7 +47,9 @@ class Circuit {
 	
 	each(fn) {
 		
-		this.circuit.each(fn)		
+		this.circuit.each(function() {
+			fn.apply(this, arguments)
+		})
 		return this
 	}
 	

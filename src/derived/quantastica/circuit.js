@@ -4,6 +4,7 @@ const chalk = require('chalk')
 const library = require('./gates')
 const transform = require('./transform')
 const format = require('./format')
+const utility = require('../../utility')
 
 module.exports = class Circuit {
 	
@@ -15,7 +16,12 @@ module.exports = class Circuit {
 		this.reverseBitOrder = false
 		this.amplitudes = {'0': math.complex(1, 0)}
 		this.stateBits = 0
-		this.emitter = require('./emitter')()
+		this.emitter = require('../../emitter')()
+	}
+	
+	library(fn) {
+		
+		fn(library)
 	}
 	
 	addGate(name, targets, controls, options) {
@@ -23,10 +29,8 @@ module.exports = class Circuit {
 		if (! library[name]) {
 			console.error('Unknown gate "' + name + '".');
 		} else {
-			targets = (targets === null) ? [] : targets
-			targets = Array.isArray(targets) ? targets : [targets]
-			controls = (controls === null) ? [] : controls
-			controls = Array.isArray(controls) ? controls : [controls]
+			targets = utility.arrayify(targets)
+			controls = utility.arrayify(controls)
 			this.gates.push({
 				name: name,
 				targets: targets,
@@ -70,7 +74,6 @@ module.exports = class Circuit {
 		while (bits.length < this.size) {
 			bits = '0' + bits
 		}
-		if (false) bits = bits.split('0').join(' ')		// fix adder example
 		let magnitude = math.pow(math.abs(amplitude), 2)
 		let probability = (magnitude * 100).toFixed(4).padStart(9, ' ')
 		return {
@@ -105,7 +108,7 @@ module.exports = class Circuit {
 		
 		for (var index = 0, length = math.pow(2, this.size); index < length; index++) {
 			if (this.state[index]) {
-				fn(this.state[index], index)
+				fn.apply(this, [this.state[index], index])
 			}
 		}
 	}
@@ -116,7 +119,7 @@ module.exports = class Circuit {
 			if (this['changed?'](index)) {
 				let now = this.state ? this.state[index] || this.formulate(math.complex(0, 0), index) : this.calculate(math.complex(0, 0), index)
 				let then = this.last ? this.last[index] || this.formulate(math.complex(0, 0), index) : this.calculate(math.complex(0, 0), index)
-				fn(now, then, index)
+				fn.apply(this, [now, then, index])
 			}
 		}
 	}

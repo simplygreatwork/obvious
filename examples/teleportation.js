@@ -29,7 +29,11 @@ circuit('set state \'b\' on source qubit 4 then teleport to destination qubit 1'
 
 function circuit(name, size, options) {
 	
-	let circuit = require('../src/circuit.js')(name, size)
+	let circuit = require('../src/circuit.js')(name, size, {
+		engine: 'optimized',
+		order: ['targets', 'controls']
+	})
+	
 	Object.assign(circuit, {
 		
 		state_a: function(from) {
