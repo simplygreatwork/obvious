@@ -50,12 +50,12 @@ function circuit(name, size, options) {
 			return this
 			.h(from)
 			.h(to)
-			.cx(to, transport)
-			.cx(from, transport)
-			.h(from)
 			.cx(transport, to)
+			.cx(transport, from)
+			.h(from)
+			.cx(to, transport)
 			.h(to)
-			.cx(from, to)
+			.cx(to, from)
 		},
 		
 		measure: function(from, to) {
