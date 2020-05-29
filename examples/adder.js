@@ -31,16 +31,21 @@ function circuit(name, size) {
 	})
 	
 	Object.assign(circuit, {
+		
 		set_value: function(variable, value) {
+			
 			utility.number_to_bits(value).reverse().forEach(function(bit, index) {
 				if (bit) circuit.x(variable(index))
 			})
 			return this
 		},
+		
 		get_value: function(variable, value) {
 			return this
 		},
+		
 		add: function(a, b, cin, cout) {
+			
 			return this
 			.majority(cin(0), b(0), a(0))
 			.majority(a(0), b(1), a(1))
@@ -52,13 +57,17 @@ function circuit(name, size) {
 			.unmajority(a(0), b(1), a(1))
 			.unmajority(cin(0), b(0), a(0))
 		},
+		
 		majority: function(a, b, c) {
+			
 			return this
 			.cx(b, c)
 			.cx(a, c)
 			.ccx(c, [a, b])
 		},
+		
 		unmajority: function(a, b, c) {
+			
 			return this
 			.ccx(c, [a, b])
 			.cx(a, c)

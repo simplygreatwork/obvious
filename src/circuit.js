@@ -57,19 +57,19 @@ class Circuit {
 		
 		this.circuit.on('circuit-will-run', function(circuit) {
 			console.log('-----------------------------------------------------------------------------------')
-			console.log(chalk.blue.bold(`\nRunning circuit "${this.name}"\n`));
+			console.log(chalk.green.bold(`\nRunning circuit "${this.name}"\n`));
 			if (this.options.trace) {
 				this.circuit.capture()
-				console.log()
-				console.log(chalk.green.bold(`  Initial state`));
+				console.log(chalk.blue.bold(`  Initial state`));
 				console.log()
 				this.print()
 			}
 		}.bind(this))
 		this.circuit.on('circuit-did-run', function(circuit) {
-			console.log(chalk.green.bold(`\n  Finished "${this.name}"`));
+			console.log(chalk.blue.bold(`\n  Finished "${this.name}"`));
 			console.log()
 			this.print()
+			console.log()
 		}.bind(this))
 		this.circuit.on('gate-will-run', function(gate, index, length) {
 			if (this.options.trace) {
@@ -77,7 +77,7 @@ class Circuit {
 				if (gate.controls.length > 0) string = string + ` with controls ${gate.controls}`
 				if (this.options.changed) string = string + ` has changes:`
 				console.log(``)
-				console.log(chalk.green.bold(string));
+				console.log(chalk.blue.bold(string));
 				console.log(``)
 			}
 		}.bind(this))
