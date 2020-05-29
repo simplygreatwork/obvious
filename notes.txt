@@ -23,3 +23,5 @@
 
 - circuit.read(5, 4)
 - circuit.write(5, 4, value)
+
+- no abbreviation  h -> hadamard

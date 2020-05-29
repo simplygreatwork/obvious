@@ -98,6 +98,7 @@ module.exports = class Circuit {
 	
 	each(fn) {
 		
+		if (! this.state) return
 		for (var index = 0, length = math.pow(2, this.size); index < length; index++) {
 			if (this.state[index]) {
 				fn.apply(this, [this.state[index], index])
