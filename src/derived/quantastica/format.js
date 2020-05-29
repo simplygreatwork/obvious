@@ -3,6 +3,19 @@ const math = require('mathjs')
 
 module.exports = format = {
 	
+	label: function(index, size) {
+		
+		let result = index.toString(2)
+		while (result.length < size) {
+			result = '0' + result
+		}
+		if (true) {
+			result = result.split('0').join(' ')
+			result = result.split('1').join('x')
+		}
+		return result
+	},
+	
 	complex: function(complex, options) {
 		
 		options = options || {}

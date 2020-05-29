@@ -70,19 +70,11 @@ module.exports = class Circuit {
 	
 	formulate(amplitude, index) {
 		
-		let bits = index.toString(2)
-		while (bits.length < this.size) {
-			bits = '0' + bits
-		}
-		let magnitude = math.pow(math.abs(amplitude), 2)
-		let probability = (magnitude * 100).toFixed(4).padStart(9, ' ')
 		return {
-			id: index,
 			index: index,
-			bits: bits,
+			label: format.label(index, this.size),
 			amplitude: format.complex(amplitude, { fixedWidth: true, scale: 8, iotaChar: 'i' }),
-			magnitude: magnitude,
-			probability: probability,
+			probability: (math.pow(math.abs(amplitude), 2) * 100).toFixed(4).padStart(9, ' '),
 			phase: (Math.atan2(amplitude.im, amplitude.re) * 360 / (Math.PI * 2)).toFixed(2).padStart(6, ' ')
 		}
 	}
@@ -92,13 +84,13 @@ module.exports = class Circuit {
 		if (changes) {
 			this.changes(function(now, then, index) {
 				let message = []
-				message.push(`    |${now.bits}> ${now.probability}% ${now.amplitude} (${now.phase}) `)
+				message.push(`    |${now.label}> ${now.probability}% ${now.amplitude} (${now.phase}) `)
 				message.push(chalk.grey.bold(` <<< ${then.probability}% ${then.amplitude} (${now.phase})`))
 				console.log(message.join(''))
 			})
 		} else {
 			this.each(function(now, index) {
-				console.log(`    |${now.bits}> ${now.probability}% ${now.amplitude} (${now.phase})`)
+				console.log(`    |${now.label}> ${now.probability}% ${now.amplitude} (${now.phase})`)
 			})
 		}
 		return this

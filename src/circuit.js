@@ -73,12 +73,11 @@ class Circuit {
 		}.bind(this))
 		this.circuit.on('gate-will-run', function(gate, index, length) {
 			if (this.options.trace) {
+				let string = `  Applying gate "${gate.name.toUpperCase()}" with targets ${gate.targets}`
+				if (gate.controls.length > 0) string = string + ` with controls ${gate.controls}`
+				if (this.options.changed) string = string + ` has changes:`
 				console.log(``)
-				if (this.options.changed) {
-					console.log(chalk.green.bold(`  Applied gate "${gate.name.toUpperCase()}" changes:`));
-				} else {
-					console.log(chalk.green.bold(`  Applied gate "${gate.name.toUpperCase()}"`));
-				}
+				console.log(chalk.green.bold(string));
 				console.log(``)
 			}
 		}.bind(this))
