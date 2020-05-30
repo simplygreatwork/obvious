@@ -1,12 +1,13 @@
 
 const utility = require('../src/utility')
-const state = 12
+const Bits = require('../src/bits')
+const bits = Bits.fromNumber(12, 4)
 const wave = []
 
-circuit('amplify-wave |  xx>', 5)
+circuit(`amplify-wave |${bits.toString(' x')}>`, 5)
 .h(0).h(1).h(2).h(3)
 .repeat(27, function() {
-	this.flip(state).mirror()
+	this.flip(bits).mirror()
 	this.peek(function(each, index) {
 		if (index === 3) wave.push(each.probability)
 	})
@@ -23,20 +24,21 @@ function circuit(name, size, options) {
 	
 	Object.assign(circuit, {
 		
-		flip: function(value) {
+		flip: function(bits) {
 			
 			return this
-			.toggle(value)
+			.toggle(bits)
 			.ccx(scratch(0), [0, 1])
 			.h(3)
 			.ccx(3, [scratch(0), 2])
 			.h(3)
 			.ccx(scratch(0), [0, 1])
-			.toggle(value)
+			.toggle(bits)
 		},
 		
-		toggle: function(value) {
+		toggle: function(bits) {
 			
+			let value = bits.toNumber()
 			utility.number_to_bits(value).reverse().forEach(function(bit, index) {
 				if (bit) circuit.x(index)
 			})

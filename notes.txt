@@ -29,3 +29,5 @@
 - make amplify example more configurable
 - e.g. which outcome?
 - also: how to customize the level of an amplification?
+
+- inside format.label - use Bits class instead
