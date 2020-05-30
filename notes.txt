@@ -31,3 +31,5 @@
 - also: how to customize the level of an amplification?
 
 - inside format.label - use Bits class instead
+
+- changes does not seem to be displaying changes properly

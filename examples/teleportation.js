@@ -1,10 +1,10 @@
 
-circuit('set state \'a\' on qubit 2', 5)
-.state_a(2)
-.run()
-
 circuit('set state \'a\' on qubit 1', 5)
 .state_a(1)
+.run()
+
+circuit('set state \'a\' on qubit 2', 5)
+.state_a(2)
 .run()
 
 circuit('set state \'a\' on source qubit 1 then teleport to destination qubit 2', 5)
