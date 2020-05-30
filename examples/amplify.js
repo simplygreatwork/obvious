@@ -41,6 +41,14 @@ function circuit(name, size, options) {
 	
 	Object.assign(circuit, {
 		
+		repeat: function(value, fn) {
+			
+			for (let i = 0; i < value; i++) {
+				fn.apply(this, [])
+			}
+			return this
+		},
+		
 		flip: function(bits) {
 			
 			return this
@@ -78,14 +86,6 @@ function circuit(name, size, options) {
 			.ccx(scratch(0), [0, 1])
 			.x(0).x(1).x(2).x(3)
 			.h(0).h(1).h(2).h(3)
-		},
-		
-		repeat: function(value, fn) {
-			
-			for (let i = 0; i < value; i++) {
-				fn.apply(this, [])
-			}
-			return this
 		}
 	})
 	
