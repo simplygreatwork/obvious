@@ -1,7 +1,7 @@
 
 const utility = require('../src/utility')
 const Bits = require('../src/bits')
-const bits = Bits.fromNumber(12, 4)
+const bits = Bits.fromNumber(3, 4)
 
 circuit(`amplify-input |${bits.toString(' x')}>`, 5)
 .h(0).h(1).h(2).h(3)
@@ -63,8 +63,7 @@ function circuit(name, size, options) {
 		
 		toggle: function(bits) {
 			
-			let value = bits.toNumber()
-			utility.number_to_bits(value).reverse().forEach(function(bit, index) {
+			bits.toArray().forEach(function(bit, index) {
 				if (bit) circuit.x(index)
 			})
 			return this
