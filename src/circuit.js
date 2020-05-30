@@ -9,6 +9,7 @@ class Circuit {
 	
 	constructor(name, size, options) {
 		
+		this.type = 'extended'
 		this.name = name
 		this.size = size
 		this.options = options || {}
@@ -42,6 +43,12 @@ class Circuit {
 	print() {
 		
 		this.circuit.print()		
+		return this
+	}
+
+	peek(fn) {
+		
+		this.circuit.peek(fn)	
 		return this
 	}
 	

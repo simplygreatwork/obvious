@@ -10,6 +10,7 @@ module.exports = class Circuit {
 	
 	constructor(size, options) {
 		
+		this.type = 'base'
 		this.size = size
 		this.options = options || {}
 		this.gates = []
@@ -45,12 +46,15 @@ module.exports = class Circuit {
 		options = options || {}
 		this.emit('circuit-will-run', this)
 		this.gates.forEach(function(gate, index) {
-			this.emit('gate-will-run', gate, index, this.gates.length)
-			let wires = gate.controls.concat(gate.targets)
-			let matrix = transform.resolve(this, library[gate.name], gate.options)
-			transform.apply(this, matrix, wires)
-			this.capture()
-			this.emit('gate-did-run', gate, index, this.gates.length)
+			if (gate.name == 'peek') this.each(gate.fn)
+			else {
+				this.emit('gate-will-run', gate, index, this.gates.length)
+				let wires = gate.controls.concat(gate.targets)
+				let matrix = transform.resolve(this, library[gate.name], gate.options)
+				transform.apply(this, matrix, wires)
+				this.capture()
+				this.emit('gate-did-run', gate, index, this.gates.length)
+			}
 		}.bind(this))
 		this.emit('circuit-did-run', this)
 		return this
@@ -74,9 +78,18 @@ module.exports = class Circuit {
 			index: index,
 			label: format.label(index, this.size),
 			amplitude: format.complex(amplitude, { fixedWidth: true, scale: 8, iotaChar: 'i' }),
-			probability: (math.pow(math.abs(amplitude), 2) * 100).toFixed(4).padStart(9, ' '),
+			probability: (math.pow(math.abs(amplitude), 2) * 100).toFixed(4).padStart(8, ' '),
 			phase: (Math.atan2(amplitude.im, amplitude.re) * 360 / (Math.PI * 2)).toFixed(2).padStart(6, ' ')
 		}
+	}
+	
+	peek(fn) {
+		
+		this.gates.push({
+			name: 'peek',
+			fn: fn
+		})
+		return this
 	}
 	
 	print(changes) {

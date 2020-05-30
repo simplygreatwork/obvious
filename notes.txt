@@ -25,3 +25,7 @@
 - circuit.write(5, 4, value)
 
 - no abbreviation  h -> hadamard
+
+- make amplify example more configurable
+- e.g. which outcome?
+- also: how to customize the level of an amplification?

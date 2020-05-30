@@ -1,50 +1,16 @@
 
-circuit('amplify-input |  xx>', 5)
-.h(0).h(1).h(2).h(3)
-.flip()
-.run()
+let wave = []
 
-circuit('amplify-output-1-time |  xx>', 5)
-.h(0).h(1).h(2).h(3)
-.repeat(1, function() {
-	this.flip().mirror()
-}).run()
-
-circuit('amplify-output-2-times |  xx>', 5)
-.h(0).h(1).h(2).h(3)
-.repeat(2, function() {
-	this.flip().mirror()
-}).run()
-
-circuit('amplify-output-3-times |  xx>', 5)
-.h(0).h(1).h(2).h(3)
-.repeat(3, function() {
-	this.flip().mirror()
-}).run()
-
-circuit('amplify-output-9-times |  xx>', 5)
-.h(0).h(1).h(2).h(3)
-.repeat(9, function() {
-	this.flip().mirror()
-}).run()
-
-circuit('amplify-output-15-times |  xx>', 5)
-.h(0).h(1).h(2).h(3)
-.repeat(15, function() {
-	this.flip().mirror()
-}).run()
-
-circuit('amplify-output-21-times |  xx>', 5)
-.h(0).h(1).h(2).h(3)
-.repeat(21, function() {
-	this.flip().mirror()
-}).run()
-
-circuit('amplify-output-27-times |  xx>', 5)
+circuit('amplify-wave |  xx>', 5)
 .h(0).h(1).h(2).h(3)
 .repeat(27, function() {
 	this.flip().mirror()
+	this.peek(function(each, index) {
+		if (index === 3) wave.push(each.probability)
+	})
 }).run()
+
+console.log('wave: ' + JSON.stringify(wave, null, 2))
 
 function circuit(name, size, options) {
 	
