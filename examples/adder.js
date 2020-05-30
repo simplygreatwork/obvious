@@ -36,7 +36,7 @@ function circuit(name, size) {
 			
 			utility.number_to_bits(value).reverse().forEach(function(bit, index) {
 				if (bit) circuit.x(variable(index))
-			})
+			}.bind(this))
 			return this
 		},
 		

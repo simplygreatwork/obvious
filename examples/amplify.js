@@ -1,49 +1,37 @@
 
+const utility = require('../src/utility')
+const state = 12
+
+// todo: the output |  xx> needs to mirror desired state to flip
+// todo: actually create the state by parsing a bit string instead: '0011'
+
 circuit('amplify-input |  xx>', 5)
 .h(0).h(1).h(2).h(3)
-.flip()
+.flip(state)
 .run()
 
 circuit('amplify-output-1-time |  xx>', 5)
 .h(0).h(1).h(2).h(3)
 .repeat(1, function() {
-	this.flip().mirror()
+	this.flip(state).mirror()
 }).run()
 
 circuit('amplify-output-2-times |  xx>', 5)
 .h(0).h(1).h(2).h(3)
 .repeat(2, function() {
-	this.flip().mirror()
-}).run()
-
-circuit('amplify-output-3-times |  xx>', 5)
-.h(0).h(1).h(2).h(3)
-.repeat(3, function() {
-	this.flip().mirror()
+	this.flip(state).mirror()
 }).run()
 
 circuit('amplify-output-9-times |  xx>', 5)
 .h(0).h(1).h(2).h(3)
 .repeat(9, function() {
-	this.flip().mirror()
+	this.flip(state).mirror()
 }).run()
 
 circuit('amplify-output-15-times |  xx>', 5)
 .h(0).h(1).h(2).h(3)
 .repeat(15, function() {
-	this.flip().mirror()
-}).run()
-
-circuit('amplify-output-21-times |  xx>', 5)
-.h(0).h(1).h(2).h(3)
-.repeat(21, function() {
-	this.flip().mirror()
-}).run()
-
-circuit('amplify-output-27-times |  xx>', 5)
-.h(0).h(1).h(2).h(3)
-.repeat(27, function() {
-	this.flip().mirror()
+	this.flip(state).mirror()
 }).run()
 
 function circuit(name, size, options) {
@@ -55,16 +43,24 @@ function circuit(name, size, options) {
 	
 	Object.assign(circuit, {
 		
-		flip: function() {
+		flip: function(value) {
 			
 			return this
-			.x(2).x(3)
+			.toggle(value)
 			.ccx(scratch(0), [0, 1])
 			.h(3)
 			.ccx(3, [scratch(0), 2])
 			.h(3)
 			.ccx(scratch(0), [0, 1])
-			.x(2).x(3)
+			.toggle(value)
+		},
+		
+		toggle: function(value) {
+			
+			utility.number_to_bits(value).reverse().forEach(function(bit, index) {
+				if (bit) circuit.x(index)
+			})
+			return this
 		},
 		
 		mirror: function() {
