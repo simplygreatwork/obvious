@@ -1,18 +1,26 @@
 
 const utility = require('../src/utility')
 const Bits = require('../src/bits')
-const bits = Bits.fromNumber(3, 4)
+const a = Bits.fromNumber(2, 4)
+const b = Bits.fromNumber(6, 4)
+const c = Bits.fromNumber(10, 4)
+const d = Bits.fromNumber(14, 4)
 
-circuit(`amplify-input |${bits.toString(' x')}>`, 5)
+circuit(`amplify-multiple-input`, 5)
 .h(0).h(1).h(2).h(3)
-.flip(bits)
+.flip(a).flip(b)
 .run()
 
-circuit(`amplify-output-15-times |${bits.toString(' x')}>`, 5)
+circuit(`amplify-multiple-1-time`, 5)
 .h(0).h(1).h(2).h(3)
-.repeat(15, function() {
-	this.flip(bits).mirror()
-}).run()
+.flip(a).flip(b).mirror()
+.run()
+
+circuit(`amplify-multiple-2-times`, 5)
+.h(0).h(1).h(2).h(3)
+.flip(a).flip(b).mirror()
+.flip(a).flip(b).mirror()
+.run()
 
 function circuit(name, size, options) {
 	

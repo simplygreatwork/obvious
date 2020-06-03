@@ -109,7 +109,7 @@ module.exports = {
 		}
 		circuit.amplitudes = newAmplitudes
 		circuit.stateBits = newStateBits
-		if (circuit.stateBits == 0 && Object.keys(circuit.state).length == 0) {
+		if (circuit.stateBits == 0 && Object.keys(circuit.amplitudes).length == 0) {
 			circuit.amplitudes['0'] = math.complex(1, 0)
 		}
 	}
