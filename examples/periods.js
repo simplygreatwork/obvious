@@ -1,7 +1,5 @@
 
-const Bits = require('../src/bits')
-
-// this example is not yet verified for correctness; e.g. frequency = squared - state.index
+// This example is not yet verified for correctness; e.g. frequency = squared - state.index
 
 frequency_from_period(2)
 frequency_from_period(4)
