@@ -1,11 +1,14 @@
 
-// This example is not yet verified for correctness; e.g. frequency = squared - state.index
+// This example is not yet verified for correctness
+// e.g. frequency = squared - state.index
+// This mmay require inverseQFT
 
-frequency_from_period(2)
-frequency_from_period(4)
-frequency_from_period(8)
+period(2)
+period(4)
+period(8)
+// period(3)
 
-function frequency_from_period(period) {
+function period(period) {
 	
 	let size = 4
 	Circuit(`period-${period}`, size)
@@ -38,6 +41,15 @@ function Circuit(name, size, options) {
 			return this
 			.h(0).h(1).h(2).h(3)
 			.z(0)
+		},
+		
+		period_3: function() {		// nope
+			
+			return this
+			.h(0).h(1).h(2).h(3)
+			.rz(0, [], {"params":{"phi":"pi/8"}})
+			.rz(1, [], {"params":{"phi":"pi/4"}})
+			.rz(2, [], {"params":{"phi":"pi/2"}})
 		},
 		
 		period_4: function() {

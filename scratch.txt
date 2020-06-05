@@ -1,0 +1,69 @@
+
+- use console colors: chalk
+- separate derived engines
+- use facade for gates
+	- to distinguish targets from controls
+- find out why quantastica starts so slowly
+- for adder.js example, make it easier to set and get 4-bit values
+
+- in addition to .each(), use .one() in adder.js
+	- circuit.one(function() {})
+	- or
+	- let result = circuit.one()
+	
+- consider whether to allow:
+- either circuit.addGate(targets, controls)
+- or circuit.addGate(controls, targets)
+- e.g. circuit.options({ controls_first : true})
+
+- allow: no-trace, no-changes
+
+- https://github.com/unconed/mathbox
+- adder.js get_value(index, length)
+
+- circuit.read(5, 4)
+- circuit.write(5, 4, value)
+- better:
+	- range(0, 1).read()
+	- range(0, 1).write(1)
+	- range(0, 4).read()
+	- range(0, 4).write(14)
+	- circuit.range(0, 3).read()
+	- circuit.range(0, 3).write(14)
+	- to keep range implementation out of the circuit implementation
+	
+- no abbreviation  h -> hadamard
+
+- make amplify example more configurable
+- e.g. which outcome?
+- also: how to customize the level of an amplification?
+
+- inside format.label - use Bits class instead
+
+- changes does not seem to be displaying changes properly
+
+- https://en.wikipedia.org/wiki/Alice_and_Bob
+
+- add individual qubit objects to circuits
+- add gate functions to individual qubits
+
+- create larger qfts dynamically
+- see: https://github.com/oreilly-qc/oreilly-qc.github.io/blob/master/samples/QCEngine/ch07_04_qft_big_sq_wave.js
+
+- move changes/changed out of core circuit
+
+- create an example which illustrates that phase operations on zero state have no effect
+- also illustrate in superposition
+
+- create a glossary
+- also: what is the formal name for the output array?
+	- state vector?
+
+- need to enforce when we are expecting a single result at 100% probability
+
+- how to create probability spread among 3 or 4
+- example: 33.33% 33.33% 33.33% 0%
+- instead of: 25% 25% 25% 25%
+
+- allow configuration of phase display 0 - 360
+
