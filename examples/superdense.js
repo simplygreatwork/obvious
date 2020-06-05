@@ -53,6 +53,7 @@ function Circuit(name, size, options) {
 			let alice = this.qubit(0)
 			Object.assign(alice, {
 				encode: function(value) {
+					
 					let array = Bits.fromNumber(value, 2).toArray()
 					if (array.pop()) alice.apply('z')
 					if (array.pop()) alice.apply('x')

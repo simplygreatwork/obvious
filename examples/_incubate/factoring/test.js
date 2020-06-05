@@ -16,6 +16,10 @@ class Test {
 		console.log('array: ' + array)
 		let result = this.power_mod(3, 7, 5)
 		console.log('result: ' + result)
+		console.log('\npowermod...')
+		for (let i = 0; i < 100; i++) {
+			console.log(powerMod(3, i, 13))
+		}
 	}
 	
 	factor(integer) {

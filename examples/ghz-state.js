@@ -5,7 +5,6 @@ circuit('ghz', 3)
 .cx(2, 1)
 .run()
 
-
 function circuit(name, size) {
 	
 	return require('../src/circuit.js')(name, size, {

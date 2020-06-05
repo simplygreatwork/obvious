@@ -20,3 +20,6 @@ bits = Bits.fromString(' x x', ' x')
 console.log('bits.toNumber(): ' + bits.toNumber())
 console.log('bits.toString(" x"): ' + bits.toString(' x'))
 console.log('bits.toString("01"): ' + bits.toString('01'))
+
+bits = Bits.fromString('111000100001001', '01')
+console.log('bits.toNumber(): ' + bits.toNumber())
