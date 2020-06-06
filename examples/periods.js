@@ -1,7 +1,7 @@
 
 // This example is not yet verified for correctness
 // e.g. frequency = squared - state.index
-// This mmay require inverseQFT
+// This may require inverseQFT
 
 period(2)
 period(4)

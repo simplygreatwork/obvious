@@ -13,6 +13,10 @@ circuit('root of not (x)', 2)
 .h(0).z(0).h(0)
 .run()
 
+circuit('root of not (x)', 2)
+.x(0)
+.run()
+
 function circuit(name, size, options) {
 	
 	return require('../src/circuit.js')(name, size, {

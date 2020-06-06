@@ -5,7 +5,12 @@
 	- to distinguish targets from controls
 - find out why quantastica starts so slowly
 - for adder.js example, make it easier to set and get 4-bit values
-
+	- circuit.unit(1, 4).write()
+	- circuit.unit(1, 4).reda()
+	- let cin = circuit.unit(0)
+	- let a = circuit.unit(1, 4)
+	- let b = circuit.unit(5, 4)
+	- let cout = circuit.unit(9)
 - in addition to .each(), use .one() in adder.js
 	- circuit.one(function() {})
 	- or
@@ -19,17 +24,19 @@
 - allow: no-trace, no-changes
 
 - https://github.com/unconed/mathbox
+
 - adder.js get_value(index, length)
+	- see unit.js
 
 - circuit.read(5, 4)
 - circuit.write(5, 4, value)
 - better:
-	- range(0, 1).read()
-	- range(0, 1).write(1)
-	- range(0, 4).read()
-	- range(0, 4).write(14)
-	- circuit.range(0, 3).read()
-	- circuit.range(0, 3).write(14)
+	- .unit(0, 1).read()
+	- .unit(0, 1).write(1)
+	- .unit(0, 4).read()
+	- .unit(0, 4).write(14)
+	- circuit.unit(0, 3).read()
+	- circuit.unit(0, 3).write(14)
 	- to keep range implementation out of the circuit implementation
 	
 - no abbreviation  h -> hadamard
@@ -60,10 +67,66 @@
 	- state vector?
 
 - need to enforce when we are expecting a single result at 100% probability
+- .one()
 
-- how to create probability spread among 3 or 4
+- how to create probability spread among 3 of 4?
 - example: 33.33% 33.33% 33.33% 0%
 - instead of: 25% 25% 25% 25%
 
 - allow configuration of phase display 0 - 360
 
+- create an examples index.md / README document
+
+- implement phase gate .phase(0, 20)
+
+- unit(0), unit(0, 1), unit(0), unit(0, 2)
+
+- implement measure and unit measure
+
+- remove number_to_bits & bits_to_number from Utility
+
+- move Chain into Utility.js
+
+- implement chain for units in Utility.js
+
+- example: circuit.unit(0, 2).unit(1).measure()
+
+- what if the unit qubits are not contiguous
+
+- implement circuit.unit
+
+- implement circuit.one - fail if less than 100.00%
+
+- .one() and .each() should probably actually be .measure() before run
+
+- can measuring into classical registers be optional?
+	- instead call circuit.measure(function(result) {})
+	- instead call circuit.unit(0).measure(function(result) {})
+
+- zero based indexes or one based indexes?
+- use circuit configuration
+	
+	let circuit = require('../src/circuit.js')(name, size, {
+		engine: 'optimized',
+		order: ['targets', 'controls'] || ['controls', 'targets']
+		indexing: 0 || 1
+	})
+
+- gate facade
+
+- issue: a default circuit should return 100% at state | >
+
+- maybe
+
+circuit.unit(0, 6, function(unit) {
+	unit.h()
+})
+.swap(0, 1)
+.run()
+
+or better
+
+circuit.unit(0, 6).h()
+.circuit()
+.swap(0, 1)
+.run()

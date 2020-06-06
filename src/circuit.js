@@ -3,6 +3,7 @@ const math = require('mathjs')
 const chalk = require('chalk')
 const library = require('./derived/quantastica/gates')
 const chain = require('./chain')
+const unit = require('./unit')
 const circuits = {}
 
 class Circuit {
@@ -30,6 +31,11 @@ class Circuit {
 		return this
 	}
 	
+	unit(index, length) {
+		
+		return unit(this, index, length)
+	}
+	
 	run() {
 		
 		Array.from(arguments).forEach(function(each, index) {
@@ -45,7 +51,7 @@ class Circuit {
 		this.circuit.print()		
 		return this
 	}
-
+	
 	peek(fn) {
 		
 		this.circuit.peek(fn)	

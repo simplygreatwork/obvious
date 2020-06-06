@@ -18,7 +18,7 @@ function encode(value) {
 	.measure(alice, bob)
 	.run()
 	.each(function(each) {
-		console.log('value encoded on alice: ' + value)
+		console.log('value encoded to alice: ' + value)
 		console.log('value decoded from alice and bob: ' + each.index + '\n')
 	})
 }
@@ -32,51 +32,34 @@ function Circuit(name, size, options) {
 	
 	Object.assign(circuit, {
 		
-		qubit: function(index) {
-			
-			let circuit = this
-			let qubit = {
-				index: index,
-				apply: function() {
-					let arguments_ = Array.from(arguments)
-					let command = arguments_.shift()
-					arguments_.unshift(this.index)
-					circuit[command].apply(this, arguments_)
-				}
-			}
-			qubit.apply = qubit.apply.bind(qubit)
-			return qubit
-		},
-		
 		alice: function() {
 			
-			let alice = this.qubit(0)
+			let alice = this.unit(0)
 			Object.assign(alice, {
 				encode: function(value) {
-					
 					let array = Bits.fromNumber(value, 2).toArray()
-					if (array.pop()) alice.apply('z')
-					if (array.pop()) alice.apply('x')
+					if (array.pop()) alice.z()
+					if (array.pop()) alice.x()
 				}
 			})
 			return alice
 		},
 		
 		bob: function() {
-			return this.qubit(1)
+			return this.unit(1)
 		},
 		
 		entangle: function(alice, bob) {
 			
-			alice.apply('h')
-			bob.apply('cx', 0)
+			alice.h()
+			bob.cx(0)
 			return this
 		},
 		
 		detangle: function(alice, bob) {
 			
-			bob.apply('cx', 0)
-			alice.apply('h')
+			bob.cx(0)
+			alice.h()
 			return this
 		},
 		

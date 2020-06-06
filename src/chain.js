@@ -10,7 +10,6 @@ module.exports = class Chain {
 	
 	simple(gates) {
 		
-		let chain = this
 		Object.keys(gates).forEach(function(key) {
 			let circuit = this.circuit
 			circuit[key.toLowerCase()] = function(targets, controls, options) {
@@ -23,7 +22,6 @@ module.exports = class Chain {
 	
 	composite(gates) {
 		
-		let chain = this
 		Object.keys(gates).forEach(function(key) {
 			let circuit = this.circuit
 			this[key.toLowerCase()] = function() {
