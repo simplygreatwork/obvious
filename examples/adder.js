@@ -1,5 +1,5 @@
 
-const utility = require('../src/utility')
+const Bits = require('../src/bits')
 
 let result = {}
 
@@ -8,8 +8,8 @@ circuit('adder-input', 10)
 .set_value(b, 12)
 .run('trace')
 .each(function(each) {
-	result.a = utility.bits_to_number(utility.number_to_bits(each.index, this.size).splice(5, 4))
-	result.b = utility.bits_to_number(utility.number_to_bits(each.index, this.size).splice(1, 4))
+	result.a = Bits.fromArray(Bits.fromNumber(each.index, this.size).toArray().splice(5, 4)).toNumber()
+	result.b = Bits.fromArray(Bits.fromNumber(each.index, this.size).toArray().splice(1, 4)).toNumber()
 	console.log(`\n${result.a} + ${result.b} = ?\n`)
 })
 
@@ -19,7 +19,7 @@ circuit('adder-output', 10)
 .add(a, b, cin, cout)
 .run('trace')
 .each(function(each) {
-	result.c = utility.bits_to_number(utility.number_to_bits(each.index, this.size).splice(1, 4))
+	result.c = Bits.fromArray(Bits.fromNumber(each.index, this.size).toArray().splice(1, 4)).toNumber()
 	console.log(`\n${result.a} + ${result.b} = ${result.c}\n`)
 })
 
@@ -34,7 +34,7 @@ function circuit(name, size) {
 		
 		set_value: function(variable, value) {
 			
-			utility.number_to_bits(value).reverse().forEach(function(bit, index) {
+			Bits.fromNumber(value, this.size).toArray().reverse().forEach(function(bit, index) {
 				if (bit) circuit.x(variable(index))
 			}.bind(this))
 			return this

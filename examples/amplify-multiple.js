@@ -1,5 +1,4 @@
 
-const utility = require('../src/utility')
 const Bits = require('../src/bits')
 const a = Bits.fromNumber(2, 4)
 const b = Bits.fromNumber(6, 4)

@@ -1,5 +1,4 @@
 
-const utility = require('../src/utility')
 const Bits = require('../src/bits')
 const bits = Bits.fromNumber(3, 4)
 const wave = []
