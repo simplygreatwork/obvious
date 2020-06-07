@@ -6,6 +6,11 @@ Circuit('superposition-b', 4)
 .run()
 
 Circuit('superposition-b', 4)
+.unit('*').h()
+.circuit()
+.run()
+
+Circuit('superposition-c', 4)
 .unit().h()
 .circuit()
 .run()

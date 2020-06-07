@@ -1,8 +1,6 @@
 
 let i = 0
-circuit('superposition-individually', 6)
-.h(i++)
-.h(i++)
+circuit('superposition-individually', 4)
 .h(i++)
 .h(i++)
 .h(i++)

@@ -1,12 +1,11 @@
 
 // This example is not yet verified for correctness
 // e.g. frequency = squared - state.index
-// This may require inverseQFT
 
 period(2)
 period(4)
 period(8)
-// period(3)
+// period(6)
 
 function period(period) {
 	
@@ -43,13 +42,13 @@ function Circuit(name, size, options) {
 			.z(0)
 		},
 		
-		period_3: function() {		// nope
+		period_6: function() {		// nope
 			
 			return this
-			.h(0).h(1).h(2).h(3)
-			.rz(0, [], {"params":{"phi":"pi/8"}})
-			.rz(1, [], {"params":{"phi":"pi/4"}})
-			.rz(2, [], {"params":{"phi":"pi/2"}})
+			.unit('all').h().circuit()
+			.spread(function(index) {
+				this.rz(index, [], { params: { phi: "pi / 3" }})
+			})
 		},
 		
 		period_4: function() {
@@ -67,6 +66,16 @@ function Circuit(name, size, options) {
 			.t(0)
 			.s(1)
 			.z(2)
+		},
+		
+		spread: function(fn) {
+			
+			for (var i = 0; i < this.size; i++) {
+				for (var j = 0; j < 1 << i; j++) {
+					fn.apply(this, [i])
+				}
+			}
+			return this
 		},
 		
 		qft: function(size) {
