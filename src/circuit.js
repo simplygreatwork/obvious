@@ -10,7 +10,7 @@ class Circuit {
 	
 	constructor(name, size, options) {
 		
-		this.type = 'extended'
+		this.type = 'optimized'
 		this.name = name
 		this.size = size
 		this.options = options || {}

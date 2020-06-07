@@ -1,16 +1,15 @@
 
-
-Circuit('superposition-b', 4)
+Circuit('unit-placing-every-qubit-into-superposition-a', 3)
 .unit('all').h()
 .circuit()
 .run()
 
-Circuit('superposition-b', 4)
+Circuit('unit-placing-every-qubit-into-superposition-b', 3)
 .unit('*').h()
 .circuit()
 .run()
 
-Circuit('superposition-c', 4)
+Circuit('unit-placing-every-qubit-into-superposition-c', 3)
 .unit().h()
 .circuit()
 .run()

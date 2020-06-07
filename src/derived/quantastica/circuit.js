@@ -10,7 +10,7 @@ module.exports = class Circuit {
 	
 	constructor(size, options) {
 		
-		this.type = 'base'
+		this.type = 'optimized'
 		this.size = size
 		this.options = options || {}
 		this.gates = []

@@ -1,17 +1,18 @@
 
-Circuit('phase-incremental-with-single-qubit', 1)
+Circuit('phase-incremental-with-one-qubit', 1)
 .x(0)
 .repeat(9, function() {
 	this.rz(0, [], { params: { phi: "pi / 18" }})
 })
 .run('trace', 'changed')
 
-Circuit('phase-span-in-superposition', 4)
+Circuit('phase-span-with-four-qubits-in-superposition', 4)
 .unit('all').h().circuit()
 .spread(function(index) {
 	this.rz(index, [], { params: { phi: "pi / 15" }})
 })
 .run()
+
 
 function Circuit(name, size) {
 	

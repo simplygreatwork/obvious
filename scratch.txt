@@ -99,7 +99,8 @@
 
 - .one() and .each() should probably actually be .measure() before run
 
-- can measuring into classical registers be optional?
+- can measuring into classical register variables be optional?
+	- instead measure into functions
 	- instead call circuit.measure(function(result) {})
 	- instead call circuit.unit(0).measure(function(result) {})
 
@@ -115,6 +116,7 @@
 - gate facade
 
 - issue: a default circuit should return 100% at state | >
+	- fixed
 
 - maybe
 
@@ -126,7 +128,20 @@ circuit.unit(0, 6, function(unit) {
 
 or better
 
-circuit.unit(0, 6).h()
+circuit
+.unit(0, 6)
+	.h()
 .circuit()
-.swap(0, 1)
+	.swap(0, 1)
 .run()
+
+- remove params attribute (consolidate)
+
+- implement circuit options
+	- targets/controls
+	- endian-ness
+	- engine
+	
+- difference between swap and teleport
+
+- how to conditional teleport?
