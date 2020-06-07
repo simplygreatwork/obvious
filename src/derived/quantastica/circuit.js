@@ -45,6 +45,7 @@ module.exports = class Circuit {
 		
 		options = options || {}
 		this.emit('circuit-will-run', this)
+		this.capture()
 		this.gates.forEach(function(gate, index) {
 			if (gate.name == 'peek') this.each(gate.fn)
 			else {
@@ -111,10 +112,11 @@ module.exports = class Circuit {
 	
 	each(fn) {
 		
-		if (! this.state) return
 		for (var index = 0, length = math.pow(2, this.size); index < length; index++) {
-			if (this.state[index]) {
+			if (this.state && this.state[index]) {
 				fn.apply(this, [this.state[index], index])
+			} else if (this.options.dense) {
+				fn.apply(this, [this.formulate(math.complex(0, 0), index), index])
 			}
 		}
 	}

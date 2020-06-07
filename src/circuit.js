@@ -48,13 +48,13 @@ class Circuit {
 	
 	print() {
 		
-		this.circuit.print()		
+		this.circuit.print(...arguments)		
 		return this
 	}
 	
-	peek(fn) {
+	peek() {
 		
-		this.circuit.peek(fn)	
+		this.circuit.peek(...arguments)
 		return this
 	}
 	
