@@ -52,7 +52,7 @@ function Circuit(name, size, options) {
 			return this
 			.unit('all').h().circuit()
 			.spread(function(index) {
-				this.rz(index, [], { params: { phi: "pi / " + period / 2 }})
+				this.rz(index, [], { phi: 'pi / ' + period / 2 })
 			})
 		},
 		
