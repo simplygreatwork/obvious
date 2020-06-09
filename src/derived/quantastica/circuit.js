@@ -79,6 +79,7 @@ module.exports = class Circuit {
 			index: index,
 			label: format.label(index, this.size),
 			amplitude: format.complex(amplitude, { fixedWidth: true, scale: 8, iotaChar: 'i' }),
+			magnitude: math.pow(math.abs(amplitude), 2),
 			probability: (math.pow(math.abs(amplitude), 2) * 100).toFixed(4).padStart(8, ' '),
 			phase: (Math.atan2(amplitude.im, amplitude.re) * 360 / (Math.PI * 2)).toFixed(2).padStart(6, ' ')
 		}

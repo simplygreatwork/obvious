@@ -1,23 +1,35 @@
 
-// This example is not yet verified for correctness
-// e.g. frequency = squared - state.index
+// This example is not yet verified for correctness; e.g. frequency = squared - state.index
 
-period(2)
-period(4)
-period(8)
-// period(6)
+frequency ({ period: 2, size: 4 })
+frequency ({ period: 4, size: 4 })
+frequency ({ period: 8, size: 4 })
 
-function period(period) {
+function frequency(options) {
 	
-	let size = 4
-	Circuit(`period-${period}`, size)
+	input(options.period, options.size)
+	output(options.period, options.size)
+}
+
+function input(period, size) {
+	
+	Circuit(`input-phases-for-a-period-of-${period}-using-${size}-qubits`, size)
+	.period(period)
+	.run()
+}
+
+function output(period, size) {
+	
+	let result = { index: -1, magnitude: 0}
+	Circuit(`output-for-a-period-of-${period}-using-${size}-qubits`, size)
 	.period(period)
 	.qft(size)
 	.run()
 	.each(function(state) {
-		let squared = Math.pow(size, 2)
-		console.log(`The frequency is ${squared - state.index} from a period of ${period} in ${squared}.\n`)
+		if (state.magnitude > result.magnitude) result = state
 	})
+	let squared = Math.pow(2, size)
+	console.log(`The frequency is ${squared - result.index} from a period of ${period} in ${squared}.\n`)
 }
 
 function Circuit(name, size, options) {
@@ -31,41 +43,11 @@ function Circuit(name, size, options) {
 		
 		period: function(period) {
 			
-			this['period_' + period]()
-			return this
-		},
-		
-		period_2: function() {
-			
-			return this
-			.h(0).h(1).h(2).h(3)
-			.z(0)
-		},
-		
-		period_6: function() {		// nope
-			
 			return this
 			.unit('all').h().circuit()
 			.spread(function(index) {
-				this.rz(index, [], { params: { phi: "pi / 3" }})
+				this.rz(index, [], { params: { phi: "pi / " + period / 2 }})
 			})
-		},
-		
-		period_4: function() {
-			
-			return this
-			.h(0).h(1).h(2).h(3)
-			.s(0)
-			.z(1)
-		},
-		
-		period_8: function() {
-			
-			return this
-			.h(0).h(1).h(2).h(3)
-			.t(0)
-			.s(1)
-			.z(2)
 		},
 		
 		spread: function(fn) {
@@ -78,7 +60,7 @@ function Circuit(name, size, options) {
 			return this
 		},
 		
-		qft: function(size) {
+		qft: function() {
 			return this.qft_4()
 		},
 		
