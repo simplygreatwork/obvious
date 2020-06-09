@@ -1,8 +1,7 @@
 
 // This example is not yet verified for correctness
 // e.g. frequency = squared - state.index
-// these is a workspace to create a QFT algorithm for n-qubits: a circuit with a dynamic number of qubits
-// the function below "qft_dynamic" is incomplete an is a work in process
+// this is a workspace to create a QFT algorithm for n-qubits: a circuit with a dynamic number of qubits
 
 frequency ({ period: 2, size: 4 })
 frequency ({ period: 4, size: 4 })
@@ -70,7 +69,12 @@ function Circuit(name, size, options) {
 		},
 		
 		qft: function(size) {
-			return this['qft_' + this.size]()
+			
+			if (true) {
+				return this.qft_dynamic()
+			} else {
+				return this['qft_' + this.size]()
+			}
 		},
 		
 		qft_4: function() {
@@ -141,17 +145,13 @@ function Circuit(name, size, options) {
 			.swap(2, 3)
 		},
 		
-		qft_dynamic: function() {					// work in process
+		qft_dynamic: function() {
 			
 			this.repeat(this.size, function(index) {
 				let inverse = this.size - 1 - index
 				this.h(inverse)
-				console.log('h: ' + inverse)
-				for (let j = inverse; j > 0; j--) {
-					let divisor = Math.pow(2, j)
-					let lambda = 'pi / ' + divisor
-					this.cu1(inverse, j, {"params":{"lambda": lambda}})
-					console.log('cu1: ', j, index, lambda)
+				for (let j = inverse - 1; j >= 0; j--) {
+					this.cu1(inverse, j, {"params":{"lambda": 'pi / ' + Math.pow(2, inverse - j)}})
 				}
 			}.bind(this))
 			for (let i = 0, length = Math.floor(this.size / 2); i < length; i++) {
