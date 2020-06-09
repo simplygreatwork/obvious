@@ -1,7 +1,7 @@
 
 Circuit('phase-incremental-with-one-qubit', 1)
 .x(0)
-.repeat(9, function() {
+.repeat(9, function(index) {
 	this.rz(0, [], { params: { phi: "pi / 18" }})
 })
 .run('trace', 'changed')
@@ -26,7 +26,7 @@ function Circuit(name, size) {
 		repeat: function(value, fn) {
 			
 			for (let i = 0; i < value; i++) {
-				fn.apply(this, [])
+				fn.apply(this, [i])
 			}
 			return this
 		},

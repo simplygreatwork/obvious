@@ -9,7 +9,7 @@ circuit(`amplify-input |${bits.toString(' x')}>`, 5)
 
 circuit(`amplify-output-15-times |${bits.toString(' x')}>`, 5)
 .h(0).h(1).h(2).h(3)
-.repeat(15, function() {
+.repeat(15, function(index) {
 	this.flip(bits).mirror()
 }).run()
 
@@ -25,7 +25,7 @@ function circuit(name, size, options) {
 		repeat: function(value, fn) {
 			
 			for (let i = 0; i < value; i++) {
-				fn.apply(this, [])
+				fn.apply(this, [i])
 			}
 			return this
 		},

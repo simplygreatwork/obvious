@@ -142,6 +142,9 @@ circuit
 	- endian-ness
 	- engine
 	
-- difference between swap and teleport
+- difference between swap and teleport?
 
 - how to conditional teleport?
+
+- maybe allow for passing of an array to unit()
+
