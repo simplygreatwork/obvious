@@ -30,14 +30,6 @@ function circuit(name, size, options) {
 	
 	Object.assign(circuit, {
 		
-		repeat: function(value, fn) {
-			
-			for (let i = 0; i < value; i++) {
-				fn.apply(this, [])
-			}
-			return this
-		},
-		
 		flip: function(bits) {
 			
 			return this

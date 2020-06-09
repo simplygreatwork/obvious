@@ -5,7 +5,7 @@ const wave = []
 
 circuit(`amplify-wave |${bits.toString(' x')}>`, 5)
 .h(0).h(1).h(2).h(3)
-.repeat(27, function() {
+.repeat(27, function(index) {
 	this.flip(bits).mirror()
 	this.peek(function(each, index) {
 		if (index === 3) wave.push(each.probability)
@@ -26,7 +26,7 @@ function circuit(name, size, options) {
 		repeat: function(value, fn) {
 			
 			for (let i = 0; i < value; i++) {
-				fn.apply(this, [])
+				fn.apply(this, [i])
 			}
 			return this
 		},
