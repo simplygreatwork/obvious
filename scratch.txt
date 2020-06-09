@@ -148,3 +148,9 @@ circuit
 
 - maybe allow for passing of an array to unit()
 
+- phase rotation changes do not appear to print correctly - no evidence of change from the right column
+
+- store to executed results of each example in the repo - for quick browsing review without installing
+
+- idea: circuit().input().run()
+- then: circuit().input().transform().run()

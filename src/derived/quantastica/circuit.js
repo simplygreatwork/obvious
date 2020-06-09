@@ -32,6 +32,7 @@ module.exports = class Circuit {
 		} else {
 			targets = utility.arrayify(targets)
 			controls = utility.arrayify(controls)
+			if (options && options.params === undefined) options = { params: options} 
 			this.gates.push({
 				name: name,
 				targets: targets,

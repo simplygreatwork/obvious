@@ -67,9 +67,9 @@ function Circuit(name, size, options) {
 		qft_4: function() {
 			
 			return this
-			.h(3).cu1(3, 2, {"params":{"lambda":"pi/2"}})
-			.h(2).cu1(3, 1, {"params":{"lambda":"pi/4"}}).cu1(2, 1, {"params":{"lambda":"pi/2"}})
-			.h(1).cu1(3, 0, {"params":{"lambda":"pi/8"}}).cu1(2, 0, {"params":{"lambda":"pi/4"}}).cu1(1, 0, {"params":{"lambda":"pi/2"}})
+			.h(3).cu1(3, 2, { lambda: "pi/2" })
+			.h(2).cu1(3, 1, { lambda: "pi/4" }).cu1(2, 1, { lambda: "pi/2" })
+			.h(1).cu1(3, 0, { lambda: "pi/8" }).cu1(2, 0, { lambda: "pi/4" }).cu1(1, 0, { lambda: "pi/2" })
 			.h(0)
 			.swap(0, 3)
 			.swap(1, 2)
