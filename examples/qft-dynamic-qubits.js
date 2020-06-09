@@ -4,20 +4,20 @@
 // these is a workspace to create a QFT algorithm for n-qubits: a circuit with a dynamic number of qubits
 // the function below "qft_dynamic" is incomplete an is a work in process
 
-period(2, 4)
-period(4, 4)
-period(8, 4)
-period(2, 5)
-period(4, 5)
-period(8, 5)
-period(2, 6)
-period(4, 6)
-period(8, 6)
+frequency ({ period: 2, size: 4 })
+frequency ({ period: 4, size: 4 })
+frequency ({ period: 8, size: 4 })
+frequency ({ period: 2, size: 5 })
+frequency ({ period: 4, size: 5 })
+frequency ({ period: 8, size: 5 })
+frequency ({ period: 2, size: 6 })
+frequency ({ period: 4, size: 6 })
+frequency ({ period: 8, size: 6 })
 
-function period(period, size) {
+function frequency(options) {
 	
-	input(period, size)
-	output(period, size)
+	input(options.period, options.size)
+	output(options.period, options.size)
 }
 
 function input(period, size) {
@@ -29,14 +29,16 @@ function input(period, size) {
 
 function output(period, size) {
 	
+	let result = { index: -1, magnitude: 0}
 	Circuit(`output-for-a-period-of-${period}-using-${size}-qubits`, size)
 	.period(period)
 	.qft(size)
 	.run()
 	.each(function(state) {
-		let squared = Math.pow(2, size)
-		console.log(`The frequency is ${squared - state.index} from a period of ${period} in ${squared}.\n`)
+		if (state.magnitude > result.magnitude) result = state
 	})
+	let squared = Math.pow(2, size)
+	console.log(`The frequency is ${squared - result.index} from a period of ${period} in ${squared}.\n`)
 }
 
 function Circuit(name, size, options) {
@@ -139,7 +141,7 @@ function Circuit(name, size, options) {
 			.swap(2, 3)
 		},
 		
-		qft_dynamic: function() {				// work in process
+		qft_dynamic: function() {					// work in process
 			
 			this.repeat(this.size, function(index) {
 				let inverse = this.size - 1 - index
