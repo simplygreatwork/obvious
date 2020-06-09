@@ -4,8 +4,10 @@ let alice = circuit.unit(0)
 alice.h()
 circuit.run()
 
-circuit = Circuit('unit-with-qubit-length-of-two', 2)
-let pair = circuit.unit(0, 2)
+circuit = Circuit('unit-with-qubit-length-of-two', 3)
+let single = circuit.unit(0)
+let pair = circuit.unit(1, 2)
+single.x()
 pair.h()
 circuit.run()
 
