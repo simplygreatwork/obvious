@@ -10,7 +10,7 @@ circuit('setting the last bit (0) changes the leftmost bit below', 10)
 function circuit(name, size) {
 	
 	return require('../src/circuit.js')(name, size, {
-		engine: 'quantastica',
+		engine: 'optimized',
 		order: ['targets', 'controls']
 	})
 }

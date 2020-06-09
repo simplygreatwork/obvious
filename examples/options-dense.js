@@ -8,7 +8,7 @@ circuit('display non-zero state outcomes only', 3)
 function circuit(name, size) {
 	
 	return require('../src/circuit.js')(name, size, {
-		engine: 'quantastica',
+		engine: 'optimized',
 		order: ['targets', 'controls']
 	})
 }

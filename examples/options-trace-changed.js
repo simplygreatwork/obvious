@@ -17,7 +17,7 @@ circuit('trace off entirely', 2)
 function circuit(name, size) {
 	
 	return require('../src/circuit.js')(name, size, {
-		engine: 'quantastica',
+		engine: 'optimized',
 		order: ['targets', 'controls']
 	})
 }

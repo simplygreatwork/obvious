@@ -14,7 +14,7 @@ circuit('apply pauli-x gate to each qubit without tracing - display result at en
 function circuit(name, size) {
 	
 	return require('../src/circuit.js')(name, size, {
-		engine: 'quantastica',
+		engine: 'optimized',
 		order: ['targets', 'controls']
 	})
 }

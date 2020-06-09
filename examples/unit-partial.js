@@ -12,7 +12,7 @@ circuit.run()
 function Circuit(name, size) {
 	
 	return require('../src/circuit.js')(name, size, {
-		engine: 'quantastica',
+		engine: 'optimized',
 		order: ['targets', 'controls']
 	})
 }

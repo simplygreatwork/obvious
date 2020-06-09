@@ -8,7 +8,7 @@ circuit('origin-state-with-3-qubits', 1)
 function circuit(name, size) {
 	
 	return require('../src/circuit.js')(name, size, {
-		engine: 'quantastica',
+		engine: 'optimized',
 		order: ['targets', 'controls']
 	})
 }

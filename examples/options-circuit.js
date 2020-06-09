@@ -1,7 +1,7 @@
 
-let circuit = require('../src/circuit.js')
-
 // illustrations of circuit configuration options - none are actually yet implemented
+
+let circuit = require('../src/circuit.js')
 
 circuit('circuit gates added with controls before targets', 3, {
 	order: ['controls', 'targets']
