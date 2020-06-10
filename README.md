@@ -13,7 +13,7 @@
 - Trace gate operations to display state changes as gates are applied.
 - Prints amplitude, probability, and phase.
 - Reasonably performant for 10 - 20 qubits using the quantastica engine.
-- Primarly focus is to create a breadth of easy to follow quantum computing examples.
+- The primary focus is to create a breadth of easy to follow quantum computing examples.
 - Compare and contrast desired outcomes and non-desired outcomes.
 - Wherever possible, display input state alone first and then output state.
 
