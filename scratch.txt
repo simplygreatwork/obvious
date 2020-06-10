@@ -154,3 +154,13 @@ circuit
 
 - idea: circuit().input().run()
 - then: circuit().input().transform().run()
+
+- is it possible to illustatate the vector state of each qubit from the amplitudes?
+- look at quantum-circuit
+
+- example with non-contrived inputs
+- because amplifying "14" seems contrived
+- come up with some example where we amplify some individual outcome bits with indivuidual meaning
+- what sort of illustration can we come up with with say 16 or 20 qubits
+
+- how does entanglement work in a simulator? how does another qubit automatically update?

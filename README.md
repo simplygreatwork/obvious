@@ -15,6 +15,7 @@
 - Reasonably performant for 10 - 20 qubits using the quantastica engine.
 - Primarly focus is to create a breadth of easy to follow quantum computing examples.
 - Compare and contrast desired outcomes and non-desired outcomes.
+- Wherever possible, display input state alone first and then output state.
 
 ## Goals
 
@@ -56,3 +57,4 @@
 - https://github.com/adamisntdead/qics
 - https://www.quantum-inspire.com/
 - https://qiskit.org/
+
