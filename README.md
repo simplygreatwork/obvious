@@ -1,12 +1,6 @@
 
 ## A small, hackable, optimized quantum computing for learning quantum computing.
 
-- Currently based on a condensed implementation of Quantastica's Quantum Circuit.
-	- https://github.com/quantastica/quantum-circuit
-- Previous engines have been or are based on:
-	- https://github.com/adamisntdead/qics
-	- https://github.com/qcsimulator/qcsimulator.github.io
-
 ## Features
 
 - A small, hackable, optimized library for learning quantum computing.
@@ -16,6 +10,36 @@
 - The primary focus is to create a breadth of easy to follow quantum computing examples.
 - Compare and contrast desired outcomes and non-desired outcomes.
 - Wherever possible, display input state alone first and then output state.
+
+## Examples
+
+- [encode two classical bits inside a single qubit](/examples/superdense.js)
+- [amplify a probability amplitude](/examples/amplify.js)
+- [teleport the state of one qubit to another qubit](/examples/teleportation.js)
+- [find the frequency of a period of phases](/examples/frequency.js)
+- [add two integers](/examples/adder.js)
+- [create a bell state](/examples/bell-state.js)
+- [create a GHZ state](/examples/ghz-state.js)
+- [rotate phase](/examples/phase-rotation.js)
+- [implement a two condition not operator](/examples/toffoli.js)
+- [more examples](/examples/)
+
+## Install
+
+```
+git clone https://github.com/simplygreatwork/obvious.git
+npm install
+cd examples
+node amplify.js
+```
+
+## Simulation
+
+- Currently based on a condensed implementation of Quantastica's Quantum Circuit.
+	- https://github.com/quantastica/quantum-circuit
+- Previous engines have been or are based on:
+	- https://github.com/adamisntdead/qics
+	- https://github.com/qcsimulator/qcsimulator.github.io
 
 ## Goals
 
