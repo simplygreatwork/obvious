@@ -1,14 +1,7 @@
 
-circuit('phase-t', 1)
+circuit('phase-z', 1)
 .x(0)
-.t(0)
-.t(0)
-.t(0)
-.t(0)
-.t(0)
-.t(0)
-.t(0)
-.t(0)
+.z(0)
 .run('trace', 'changed')
 
 function circuit(name, size) {

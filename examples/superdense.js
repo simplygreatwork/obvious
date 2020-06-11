@@ -18,8 +18,8 @@ function encode(value) {
 	.measure(alice, bob)
 	.run()
 	.each(function(each) {
-		console.log('value encoded to alice: ' + value)
-		console.log('value decoded from alice and bob: ' + each.index + '\n')
+		console.log(`The value encoded to Alice is ${value}.`)
+		console.log(`The value decoded from Alice and Bob together is ${each.index}.\n`)
 	})
 }
 

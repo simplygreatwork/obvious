@@ -1,5 +1,5 @@
 
-circuit('display every possible state outcome - even zero probablity', 3)
+circuit('display every possible state outcome - even zero probability', 3)
 .run('dense')
 
 circuit('display non-zero state outcomes only', 3)
