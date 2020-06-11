@@ -185,3 +185,5 @@ circuit
 - but show how to use negative phi, sdagger, tdagger
 
 - illustrate s, t as rz(phi)
+
+- illustrate how some gates can be constructed with other primitives
