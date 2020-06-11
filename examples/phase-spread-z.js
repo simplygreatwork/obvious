@@ -1,12 +1,12 @@
 
-Circuit('spread a phase rotation of a z-gate over one qubits', 3)
+Circuit('spread a phase rotation of a z-gate over one qubit', 1)
 .unit('all').h().circuit()
 .spread(function(index) {
 	this.z(index, [])
 })
 .run()
 
-Circuit('spread a phase rotation of a z-gate over two qubits', 4)
+Circuit('spread a phase rotation of a z-gate over two qubits', 2)
 .unit('all').h().circuit()
 .spread(function(index) {
 	this.z(index, [])
