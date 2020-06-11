@@ -1,31 +1,24 @@
 
-circuit('set state \'a\' on qubit 1', 5)
-.state_a(1)
-.run()
 
-circuit('set state \'a\' on qubit 2', 5)
-.state_a(2)
-.run()
+teleport({ state: 'a', from: 1, to: 2})
+teleport({ state: 'b', from: 4, to: 1})
 
-circuit('set state \'a\' on source qubit 1 then teleport to destination qubit 2', 5)
-.state_a(1)
-.teleport(1, 2)
-.measure(1, 2)
-.run('trace', 'changed')
-
-circuit('set state \'b\' on destination qubit 1', 5)
-.state_b(1)
-.run()
-
-circuit('set state \'b\' on source qubit 4', 5)
-.state_b(4)
-.run()
-
-circuit('set state \'b\' on source qubit 4 then teleport to destination qubit 1', 5)
-.state_b(4)
-.teleport(4, 1)
-.measure(4, 1)
-.run('trace', 'changed')
+function teleport(options) {
+	
+	circuit(`illustrating state \'${options.state}\' applied to the source qubit ${options.from}`, 5)
+	.state(options.state, options.from)
+	.run()
+	
+	circuit(`illustrating state \'${options.state}\' applied to the destination qubit ${options.to}`, 5)
+	.state(options.state, options.to)
+	.run()
+	
+	circuit(`set state \'${options.state}\' on the source qubit ${options.from} then teleport to the destination qubit ${options.to}`, 5)
+	.state(options.state, options.from)
+	.teleport(options.from, options.to)
+	.measure(options.from, options.to)
+	.run('trace', 'changed')
+}
 
 function circuit(name, size, options) {
 	
@@ -36,12 +29,16 @@ function circuit(name, size, options) {
 	
 	Object.assign(circuit, {
 		
-		state_a: function(from) {
-			return this.h(from).r4(from).h(from).r4(from).h(from)
+		state: function(state, target) {
+			return this['state_' + state].apply(this, [target])
 		},
 		
-		state_b: function(from) {
-			return this.h(from).r8(from).h(from).r4(from).h(from)
+		state_a: function(target) {
+			return this.h(target).r4(target).h(target).r4(target).h(target)
+		},
+		
+		state_b: function(target) {
+			return this.h(target).r8(target).h(target).r4(target).h(target)
 		},
 		
 		teleport: function(from, to) {
