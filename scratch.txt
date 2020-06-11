@@ -171,7 +171,7 @@ circuit
 - so run again multiple times to measure for more certainty
 
 - create header for state results
-	- the phase column is not obvious
+	- because the phase column is not obvious
 	
 - puzzle: table of 10: alternate seating of male female
 - puzzle: table of 12: alternate seating of male, female, girl, boy 
@@ -187,3 +187,21 @@ circuit
 - illustrate s, t as rz(phi)
 
 - illustrate how some gates can be constructed with other primitives
+
+- refactor adder.js as add(3, 12)
+
+- ensure that the alogorithms are adaptable to dynamic qubits
+
+- refactor amplify.js as amplify(Bits.fromNumber(3, 4))
+
+- create a list of simple statements of fact
+	- possible outcomes = 2^n-qubits
+	- can really only know probability by measuring multiple (100-1000) times
+	- some gates are reversible
+	- some gates are not reversible
+	- any gate can be created with u3
+	- t-gate is the same as rx (pi / ?)
+	- altering phase on zero has no effect - qubit must be on/up or in superposition
+	- some common gates can be constructed from other gates
+	- finds wave frequency from period
+	- a single qubit can also hold 2 classical bits (why?) (but can use multiple qubits)

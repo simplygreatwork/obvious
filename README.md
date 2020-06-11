@@ -21,7 +21,7 @@
 - [create a bell state](/examples/bell-state.js)
 - [create a GHZ state](/examples/ghz-state.js)
 - [rotate phase](/examples/phase-rotation.js)
-- [implement a two condition not operator](/examples/toffoli.js)
+- [implement a two condition not operator](/examples/not-conditionally-toffoli-constructed.js)
 - [more examples](/examples/)
 
 ## Install
