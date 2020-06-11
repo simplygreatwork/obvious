@@ -2,7 +2,7 @@
 circuit('origin-state-with-1-qubit', 1)
 .run('dense')
 
-circuit('origin-state-with-3-qubits', 1)
+circuit('origin-state-with-3-qubits', 3)
 .run('dense')
 
 function circuit(name, size) {
