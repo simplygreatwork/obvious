@@ -6,7 +6,7 @@
 - find out why quantastica starts so slowly
 - for adder.js example, make it easier to set and get 4-bit values
 	- circuit.unit(1, 4).write()
-	- circuit.unit(1, 4).reda()
+	- circuit.unit(1, 4).read()
 	- let cin = circuit.unit(0)
 	- let a = circuit.unit(1, 4)
 	- let b = circuit.unit(5, 4)
@@ -164,3 +164,24 @@ circuit
 - what sort of illustration can we come up with with say 16 or 20 qubits
 
 - how does entanglement work in a simulator? how does another qubit automatically update?
+
+- illustrate why it is necessary to run a circuit many times
+- because you can't actually see the internal structure of the probability
+- you measure but you might not get the most likely result
+- so run again multiple times to measure for more certainty
+
+- create header for state results
+	- the phase column is not obvious
+	
+- puzzle: table of 10: alternate seating of male female
+- puzzle: table of 12: alternate seating of male, female, girl, boy 
+- puzzle: how to turn the qubits off
+- puzzle: what are some ideas for desired state outputs
+- puzzle: maze?
+
+- example: reversibility
+- illustrate what is reversible and what is not reversible
+- illustrate that phase is no technically reversible until loop around again
+- but show how to use negative phi, sdagger, tdagger
+
+- illustrate s, t as rz(phi)

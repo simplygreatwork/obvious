@@ -101,7 +101,7 @@ module.exports = class Circuit {
 			this.changes(function(now, then, index) {
 				let message = []
 				message.push(`    |${now.label}> ${now.probability}% ${now.amplitude} (${now.phase}) `)
-				message.push(chalk.grey.bold(` <<< ${then.probability}% ${then.amplitude} (${now.phase})`))
+				message.push(chalk.grey.bold(` <<< ${then.probability}% ${then.amplitude} (${then.phase})`))
 				console.log(message.join(''))
 			})
 		} else {
