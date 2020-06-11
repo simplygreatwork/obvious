@@ -1,12 +1,12 @@
 
-Circuit('spread a phase rotation over four qubits using a custom angle', 4)
+Circuit('spread a phase rotation of pi / 8 over four qubits', 4)
 .unit('all').h().circuit()
 .spread(function(index) {
 	this.rz(index, [], { phi: 'pi / 8' })
 })
 .run()
 
-Circuit('spread a phase rotation over five qubits using a custom angle', 5)
+Circuit('spread a phase rotation of pi / 8 over five qubits', 5)
 .unit('all').h().circuit()
 .spread(function(index) {
 	this.rz(index, [], { phi: 'pi / 8' })

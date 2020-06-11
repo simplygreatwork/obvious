@@ -1,27 +1,35 @@
 
+// this example does not use quantum superposition so it's basically classical addition
+// todo: create an example which adds values in super position
+
 const Bits = require('../src/bits')
 
-let result = {}
+add({ a: 3, b: 12})
 
-circuit('adder-input', 10)
-.set_value(a, 3)
-.set_value(b, 12)
-.run('trace')
-.each(function(each) {
-	result.a = Bits.fromArray(Bits.fromNumber(each.index, this.size).toArray().splice(5, 4)).toNumber()
-	result.b = Bits.fromArray(Bits.fromNumber(each.index, this.size).toArray().splice(1, 4)).toNumber()
-	console.log(`\n${result.a} + ${result.b} = ?\n`)
-})
-
-circuit('adder-output', 10)
-.set_value(a, 3)
-.set_value(b, 12)
-.add(a, b, cin, cout)
-.run('trace')
-.each(function(each) {
-	result.c = Bits.fromArray(Bits.fromNumber(each.index, this.size).toArray().splice(1, 4)).toNumber()
-	console.log(`\n${result.a} + ${result.b} = ${result.c}\n`)
-})
+function add(options) {
+	
+	let values = {}
+	
+	circuit(`illustrating the inputs: a and b`, 10)
+	.set_value(a, options.a)
+	.set_value(b, options.b)
+	.run('trace')
+	.each(function(each) {
+		values.a = Bits.fromArray(Bits.fromNumber(each.index, this.size).toArray().splice(5, 4)).toNumber()
+		values.b = Bits.fromArray(Bits.fromNumber(each.index, this.size).toArray().splice(1, 4)).toNumber()
+		console.log(`\n${values.a} + ${values.b} = ?\n`)
+	})
+	
+	circuit('adding a + b into b', 10)
+	.set_value(a, options.a)
+	.set_value(b, options.b)
+	.add(a, b, cin, cout)
+	.run('trace')
+	.each(function(each) {
+		values.result = Bits.fromArray(Bits.fromNumber(each.index, this.size).toArray().splice(1, 4)).toNumber()
+		console.log(`\n${values.a} + ${values.b} = ${values.result}\n`)
+	})
+}
 
 function circuit(name, size) {
 	

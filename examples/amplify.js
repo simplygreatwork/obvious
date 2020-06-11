@@ -1,17 +1,23 @@
 
 const Bits = require('../src/bits')
-const bits = Bits.fromNumber(3, 4)
 
-circuit(`amplify-input |${bits.toString(' x')}>`, 5)
-.h(0).h(1).h(2).h(3)
-.flip(bits)
-.run()
+amplify(3)
 
-circuit(`amplify-output-15-times |${bits.toString(' x')}>`, 5)
-.h(0).h(1).h(2).h(3)
-.repeat(15, function(index) {
-	this.flip(bits).mirror()
-}).run()
+function amplify(value) {
+	
+	const bits = Bits.fromNumber(3, 4)
+	
+	circuit(`the input state to amplify has its phase flipped |${bits.toString(' x')}>`, 5)
+	.h(0).h(1).h(2).h(3)
+	.flip(bits)
+	.run()
+	
+	circuit(`the probability of the input state has been amplified 15 times |${bits.toString(' x')}>`, 5)
+	.h(0).h(1).h(2).h(3)
+	.repeat(15, function(index) {
+		this.flip(bits).mirror()
+	}).run()
+}
 
 function circuit(name, size, options) {
 	

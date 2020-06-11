@@ -205,3 +205,14 @@ circuit
 	- some common gates can be constructed from other gates
 	- finds wave frequency from period
 	- a single qubit can also hold 2 classical bits (why?) (but can use multiple qubits)
+
+- idea: highlight important aspects in red
+	- look at the amplify example
+
+- need markers for bit ranges
+	- specifically for adder.js
+
+- with simple two qubit circuit - illustate how probablity and phase are caluclated
+
+- illustate how magnitude must always add up to 1
+- illustate how probability must always add up to 100%

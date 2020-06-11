@@ -1,12 +1,12 @@
 
-Circuit('spread a phase rotation over three qubits using a t-gate', 3)
+Circuit('spread a phase rotation of a t-gate over three qubits', 3)
 .unit('all').h().circuit()
 .spread(function(index) {
 	this.t(index, [])
 })
 .run()
 
-Circuit('spread a phase rotation over four qubits using a t-gate', 4)
+Circuit('spread a phase rotation of a t-gate over four qubits', 4)
 .unit('all').h().circuit()
 .spread(function(index) {
 	this.t(index, [])
