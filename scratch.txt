@@ -228,3 +228,12 @@ circuit
 - illustrate how to create an arbitrary gate using u3
 
 - remove the dashes from circuit names - use spaces and real sentences instead
+
+- implement auto-reversability
+
+.autoreverse({
+	gates: function() {
+		this.h(0).h(1).h(2).h(3)
+	}
+}
+})

@@ -1,0 +1,33 @@
+-----------------------------------------------------------------------------------
+
+Running circuit "the x (not) gate inverts the magnitude and hence probability between the qubit up and down states"
+
+  Initial state
+
+    | > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "H" with targets 0
+
+    | >  50.0000%  0.70710678+0.00000000i (  0.00)
+    |x>  50.0000%  0.70710678+0.00000000i (  0.00)
+
+  Applying gate "T" with targets 0
+
+    | >  50.0000%  0.70710678+0.00000000i (  0.00)
+    |x>  50.0000%  0.50000000+0.50000000i ( 45.00)
+
+  Applying gate "H" with targets 0
+
+    | >  85.3553%  0.85355339+0.35355339i ( 22.50)
+    |x>  14.6447%  0.14644661-0.35355339i (-67.50)
+
+  Applying gate "X" with targets 0
+
+    | >  14.6447%  0.14644661-0.35355339i (-67.50)
+    |x>  85.3553%  0.85355339+0.35355339i ( 22.50)
+
+  Finished "the x (not) gate inverts the magnitude and hence probability between the qubit up and down states"
+
+    | >  14.6447%  0.14644661-0.35355339i (-67.50)
+    |x>  85.3553%  0.85355339+0.35355339i ( 22.50)
+
