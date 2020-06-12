@@ -200,7 +200,8 @@ circuit
 	- some gates are reversible
 	- some gates are not reversible
 	- any gate can be created with u3
-	- t-gate is the same as rx (pi / ?)
+	- u1 is the same as rz (confirm)
+	- t-gate is the same as rx (pi / 4)
 	- altering phase on zero has no effect - qubit must be on/up or in superposition
 	- some common gates can be constructed from other gates
 	- finds wave frequency from period
@@ -218,8 +219,9 @@ circuit
 - illustate how probability must always add up to 100%
 
 - for these examples, consider highjacking console.log instead of using logger.log
+- however, leave logger intact as the underlying basis
 
-- pass every option to circuit class using oln
+- pass every option to circuit class using oln (done)
 
 - illustarte how pauli-x (not) is actually a magnitude inversion operation
 
@@ -230,10 +232,23 @@ circuit
 - remove the dashes from circuit names - use spaces and real sentences instead
 
 - implement auto-reversability
+- something like:
 
+```
 .autoreverse({
 	gates: function() {
 		this.h(0).h(1).h(2).h(3)
 	}
-}
 })
+
+```
+
+- print gate params in logger output: phi, lambda, etc
+
+- illustate why scratch qubits as needed and how to use one
+
+- figure out how to measure a single qubit from the circuit register
+
+- introduce alice and bob to teleportation
+
+- work on re-implementing simon's, bernstein-vazirani, deutch jozsa 

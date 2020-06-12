@@ -6,7 +6,7 @@ amplify(3)
 
 function amplify(value) {
 	
-	const bits = Bits.fromNumber(3, 4)
+	const bits = Bits.fromNumber(value, 4)			// todo: assert between 0 and circuit size ^ 2 - 1
 	
 	circuit(`the input state to amplify has its phase flipped |${bits.toString(' x')}>`, 5)
 	.h(0).h(1).h(2).h(3)
