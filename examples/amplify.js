@@ -22,7 +22,9 @@ function amplify(value) {
 
 function circuit(name, size, options) {
 	
-	let circuit = require('../src/circuit.js')(name, size, {
+	let circuit = require('../src/circuit.js')({
+		name: name,
+		size: size,
 		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']

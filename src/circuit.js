@@ -8,14 +8,11 @@ const circuits = {}
 
 class Circuit {
 	
-	constructor(name, size, options) {
+	constructor(options) {
 		
-		this.type = 'optimized'
-		this.name = name
-		this.size = size
-		this.options = options || {}
-		this.logger = this.options.logger
-		this.circuit = new (require('./derived/quantastica/circuit'))(size, options, this.logger)
+		Object.assign(this, options)
+		this.options = {}
+		this.circuit = new (require('./derived/quantastica/circuit'))(this.size, this.options, this.logger)
 		this.chain = new chain(this)
 		this.listen()
 	}
@@ -109,10 +106,10 @@ class Circuit {
 	}
 }
 
-module.exports = function(name, size, options) {
+module.exports = function(options) {
 	
-	if (size !== undefined) {
-		circuits[name] = new Circuit(name, size, options)
+	if (options.size !== undefined) {
+		circuits[options.name] = new Circuit(options)
 	}
-	return circuits[name]
+	return circuits[options.name]
 }

@@ -15,7 +15,9 @@ circuit('ccx-constructed-toffoli', 3)
 
 function circuit(name, size, options) {
 	
-	let circuit = require('../src/circuit.js')(name, size, {
+	let circuit = require('../src/circuit.js')({
+		name: name,
+		size: size,
 		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']

@@ -14,7 +14,9 @@ circuit('cswap-after', 3)
 
 function circuit(name, size) {
 	
-	return require('../src/circuit.js')(name, size, {
+	return require('../src/circuit.js')({
+		name: name,
+		size: size,
 		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']

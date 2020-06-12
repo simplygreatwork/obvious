@@ -17,7 +17,9 @@ Circuit('spread a phase rotation of an s-gate over three qubits', 3)
 
 function Circuit(name, size) {
 	
-	let circuit = require('../src/circuit.js')(name, size, {
+	let circuit = require('../src/circuit.js')({
+		name: name,
+		size: size,
 		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']

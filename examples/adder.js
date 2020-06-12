@@ -34,11 +34,15 @@ function add(options) {
 
 function circuit(name, size) {
 	
-	let circuit = require('../src/circuit.js')(name, size, {
+	let circuit = require('../src/circuit.js')({
+		name: name,
+		size: size,
 		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})
+	
+	console.log('circuit.name: ' + circuit.name)
 	
 	Object.assign(circuit, {
 		

@@ -18,7 +18,9 @@ Circuit('phase-rotation-with-four-qubits-in-superposition', 4)
 
 function Circuit(name, size) {
 	
-	let circuit = require('../src/circuit.js')(name, size, {
+	let circuit = require('../src/circuit.js')({
+		name: name,
+		size: size,
 		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']

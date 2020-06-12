@@ -32,7 +32,9 @@ circuit('change the phase using an s-gate and then reverse using 2 t-dagger gate
 
 function circuit(name, size) {
 	
-	return require('../src/circuit.js')(name, size, {
+	return require('../src/circuit.js')({
+		name: name,
+		size: size,
 		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']

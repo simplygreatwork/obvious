@@ -216,3 +216,7 @@ circuit
 
 - illustate how magnitude must always add up to 1
 - illustate how probability must always add up to 100%
+
+- for these examples, consider highjacking console.log instead of using logger.log
+
+- pass every option to circuit class using oln

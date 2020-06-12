@@ -18,7 +18,9 @@ Circuit('unit-placing-every-qubit-into-superposition-c', 3)
 
 function Circuit(name, size) {
 	
-	return require('../src/circuit.js')(name, size, {
+	return require('../src/circuit.js')({
+		name: name,
+		size: size,
 		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']

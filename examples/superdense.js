@@ -27,6 +27,8 @@ function encode(value) {
 function Circuit(name, size, options) {
 	
 	let circuit = require('../src/circuit.js')(name, size, {
+		name: name,
+		size: size,
 		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']

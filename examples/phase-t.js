@@ -16,6 +16,8 @@ circuit('phase-t', 1)
 function circuit(name, size) {
 	
 	return require('../src/circuit.js')(name, size, {
+		name: name,
+		size: size,
 		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
