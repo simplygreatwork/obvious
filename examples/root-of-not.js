@@ -1,4 +1,6 @@
 
+const logger = require('../src/logger')()
+
 circuit('root of not (x)', 2)
 .h(0).s(0).h(0)
 .h(0).s(0).h(0)
@@ -20,6 +22,7 @@ circuit('x', 2)
 function circuit(name, size, options) {
 	
 	return require('../src/circuit.js')(name, size, {
+		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})

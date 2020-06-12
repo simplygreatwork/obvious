@@ -1,4 +1,5 @@
 
+const logger = require('../src/logger')()
 
 teleport({ state: 'a', from: 1, to: 2})
 teleport({ state: 'b', from: 4, to: 1})
@@ -23,6 +24,7 @@ function teleport(options) {
 function circuit(name, size, options) {
 	
 	let circuit = require('../src/circuit.js')(name, size, {
+		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})

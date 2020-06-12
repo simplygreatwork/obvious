@@ -1,0 +1,162 @@
+-----------------------------------------------------------------------------------
+
+Running circuit "illustrating the inputs: a and b"
+
+  Initial state
+
+    |          > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 1
+
+    |        x > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 2
+
+    |       xx > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 7
+
+    |  x    xx > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 8
+
+    | xx    xx > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Finished "illustrating the inputs: a and b"
+
+    | xx    xx > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+
+3 + 12 = ?
+
+-----------------------------------------------------------------------------------
+
+Running circuit "adding a + b into b"
+
+  Initial state
+
+    |          > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 1
+
+    |        x > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 2
+
+    |       xx > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 7
+
+    |  x    xx > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 8
+
+    | xx    xx > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CX" with targets 5 with controls 1
+
+    | xx x  xx > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CX" with targets 0 with controls 1
+
+    | xx x  xxx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CCX" with targets 1 with controls 0,5
+
+    | xx x  x x> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CX" with targets 6 with controls 2
+
+    | xxxx  x x> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CX" with targets 1 with controls 2
+
+    | xxxx  xxx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CCX" with targets 2 with controls 1,6
+
+    | xxxx   xx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CX" with targets 7 with controls 3
+
+    | xxxx   xx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CX" with targets 2 with controls 3
+
+    | xxxx   xx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CCX" with targets 3 with controls 2,7
+
+    | xxxx   xx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CX" with targets 8 with controls 4
+
+    | xxxx   xx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CX" with targets 3 with controls 4
+
+    | xxxx   xx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CCX" with targets 4 with controls 3,8
+
+    | xxxx   xx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CX" with targets 4 with controls 9
+
+    | xxxx   xx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CCX" with targets 4 with controls 3,8
+
+    | xxxx   xx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CX" with targets 3 with controls 4
+
+    | xxxx   xx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CX" with targets 8 with controls 3
+
+    | xxxx   xx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CCX" with targets 3 with controls 2,7
+
+    | xxxx   xx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CX" with targets 2 with controls 3
+
+    | xxxx   xx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CX" with targets 7 with controls 2
+
+    | xxxx   xx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CCX" with targets 2 with controls 1,6
+
+    | xxxx  xxx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CX" with targets 1 with controls 2
+
+    | xxxx  x x> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CX" with targets 6 with controls 1
+
+    | xxxx  x x> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CCX" with targets 1 with controls 0,5
+
+    | xxxx  xxx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CX" with targets 0 with controls 1
+
+    | xxxx  xx > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CX" with targets 5 with controls 0
+
+    | xxxx  xx > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Finished "adding a + b into b"
+
+    | xxxx  xx > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+
+3 + 12 = 15
+

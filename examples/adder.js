@@ -1,8 +1,9 @@
 
+const logger = require('../src/logger')()
+const Bits = require('../src/bits')
+
 // this example does not use quantum superposition so it's basically classical addition
 // todo: create an example which adds values in super position
-
-const Bits = require('../src/bits')
 
 add({ a: 3, b: 12})
 
@@ -17,7 +18,7 @@ function add(options) {
 	.each(function(each) {
 		values.a = Bits.fromArray(Bits.fromNumber(each.index, this.size).toArray().splice(5, 4)).toNumber()
 		values.b = Bits.fromArray(Bits.fromNumber(each.index, this.size).toArray().splice(1, 4)).toNumber()
-		console.log(`\n${values.a} + ${values.b} = ?\n`)
+		logger.log(`\n${values.a} + ${values.b} = ?\n`)
 	})
 	
 	circuit('adding a + b into b', 10)
@@ -27,13 +28,14 @@ function add(options) {
 	.run('trace')
 	.each(function(each) {
 		values.result = Bits.fromArray(Bits.fromNumber(each.index, this.size).toArray().splice(1, 4)).toNumber()
-		console.log(`\n${values.a} + ${values.b} = ${values.result}\n`)
+		logger.log(`\n${values.a} + ${values.b} = ${values.result}\n`)
 	})
 }
 
 function circuit(name, size) {
 	
 	let circuit = require('../src/circuit.js')(name, size, {
+		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})

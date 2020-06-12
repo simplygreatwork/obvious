@@ -1,0 +1,44 @@
+-----------------------------------------------------------------------------------
+
+Running circuit "cswap-before"
+
+  Initial state
+
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 0
+
+    |  x> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 2
+
+    |x x> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Finished "cswap-before"
+
+    |x x> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "cswap-after"
+
+  Initial state
+
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 0
+
+    |  x> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 2
+
+    |x x> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "CSWAP" with targets 1,2 with controls 0
+
+    | xx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Finished "cswap-after"
+
+    | xx> 100.0000%  1.00000000+0.00000000i (  0.00)
+

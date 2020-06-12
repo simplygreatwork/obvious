@@ -1,4 +1,6 @@
 
+const logger = require('../src/logger')()
+
 Circuit('unit-placing-every-qubit-into-superposition-a', 3)
 .unit('all').h()
 .circuit()
@@ -17,6 +19,7 @@ Circuit('unit-placing-every-qubit-into-superposition-c', 3)
 function Circuit(name, size) {
 	
 	return require('../src/circuit.js')(name, size, {
+		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})

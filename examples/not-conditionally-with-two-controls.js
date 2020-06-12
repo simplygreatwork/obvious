@@ -1,4 +1,6 @@
 
+const logger = require('../src/logger')()
+
 circuit('ccx false', 3)
 .x(0)
 .ccx(2, [0, 1])
@@ -13,6 +15,7 @@ circuit('ccx true', 3)
 function circuit(name, size) {
 	
 	return require('../src/circuit.js')(name, size, {
+		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})

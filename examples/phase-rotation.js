@@ -1,4 +1,6 @@
 
+const logger = require('../src/logger')()
+
 Circuit('phase-rotation-with-one-qubit-on', 1)
 .x(0)
 .repeat(9, function(index) {
@@ -17,6 +19,7 @@ Circuit('phase-rotation-with-four-qubits-in-superposition', 4)
 function Circuit(name, size) {
 	
 	let circuit = require('../src/circuit.js')(name, size, {
+		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})

@@ -1,0 +1,63 @@
+-----------------------------------------------------------------------------------
+
+Running circuit "circuit gates added with controls before targets"
+
+
+  Finished "circuit gates added with controls before targets"
+
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "circuit gates added with targets before controls (default)"
+
+
+  Finished "circuit gates added with targets before controls (default)"
+
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "circuit states with big endian state vector bits - lowest bit on left side"
+
+
+  Finished "circuit states with big endian state vector bits - lowest bit on left side"
+
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "circuit states with little endian state vector bits - lowest bit on rights side (default)"
+
+
+  Finished "circuit states with little endian state vector bits - lowest bit on rights side (default)"
+
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "circuit with custom state vector bit characters - "0" and "1""
+
+
+  Finished "circuit with custom state vector bit characters - "0" and "1""
+
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "circuit with custom state vector bit characters - "x" and " ""
+
+
+  Finished "circuit with custom state vector bit characters - "x" and " ""
+
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "circuit with custom simulator backend"
+
+
+  Finished "circuit with custom simulator backend"
+
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+

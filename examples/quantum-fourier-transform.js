@@ -1,4 +1,6 @@
 
+const logger = require('../src/logger')()
+
 // This example is not yet verified for correctness
 // e.g. frequency = squared - state.index
 // this is a workspace to create a QFT algorithm for n-qubits: a circuit with a dynamic number of qubits
@@ -38,12 +40,13 @@ function output(period, size) {
 		if (state.magnitude > result.magnitude) result = state
 	})
 	let squared = Math.pow(2, size)
-	console.log(`The frequency is ${squared - result.index} from a period of ${period} in ${squared}.\n`)
+	logger.log(`The frequency is ${squared - result.index} from a period of ${period} in ${squared}.\n`)
 }
 
 function Circuit(name, size, options) {
 	
 	let circuit = require('../src/circuit.js')(name, size, {
+		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})

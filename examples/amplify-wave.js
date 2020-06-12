@@ -1,4 +1,5 @@
 
+const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 const bits = Bits.fromNumber(3, 4)
 const wave = []
@@ -12,11 +13,12 @@ circuit(`amplify-wave |${bits.toString(' x')}>`, 5)
 	})
 }).run()
 
-console.log('wave: ' + JSON.stringify(wave, null, 2))
+logger.log('wave: ' + JSON.stringify(wave, null, 2))
 
 function circuit(name, size, options) {
 	
 	let circuit = require('../src/circuit.js')(name, size, {
+		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})

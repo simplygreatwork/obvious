@@ -1,0 +1,13 @@
+
+Math.sqrt(-2): NaN
+math.sqrt(math.complex(-2)): 1.4142135623730951i
+math.sqrt(math.complex(2)): 1.4142135623730951
+
+math.pi: 
+1 degree = math.pi / 180: 
+360 degrees = math.pi * 2: 
+180 degrees = math.pi: 
+90 degrees = math.pi / 2: 
+45 degrees = math.pi / 4: 
+22.5 degrees = math.pi / 8: 
+

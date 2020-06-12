@@ -1,0 +1,48 @@
+-----------------------------------------------------------------------------------
+
+Running circuit "superdense-0"
+
+
+  Finished "superdense-0"
+
+    |  > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+The value encoded to Alice is 0.
+The value decoded from Alice and Bob together is 0.
+
+-----------------------------------------------------------------------------------
+
+Running circuit "superdense-1"
+
+
+  Finished "superdense-1"
+
+    | x> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+The value encoded to Alice is 1.
+The value decoded from Alice and Bob together is 1.
+
+-----------------------------------------------------------------------------------
+
+Running circuit "superdense-2"
+
+
+  Finished "superdense-2"
+
+    |x > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+The value encoded to Alice is 2.
+The value decoded from Alice and Bob together is 2.
+
+-----------------------------------------------------------------------------------
+
+Running circuit "superdense-3"
+
+
+  Finished "superdense-3"
+
+    |xx> 100.0000% -1.00000000+0.00000000i (180.00)
+
+The value encoded to Alice is 3.
+The value decoded from Alice and Bob together is 3.
+

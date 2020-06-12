@@ -1,4 +1,6 @@
 
+const logger = require('../src/logger')()
+
 circuit('ccx-built-in-matrix', 3)
 .x(0)
 .x(1)
@@ -14,6 +16,7 @@ circuit('ccx-constructed-toffoli', 3)
 function circuit(name, size, options) {
 	
 	let circuit = require('../src/circuit.js')(name, size, {
+		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})

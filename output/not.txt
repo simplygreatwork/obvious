@@ -1,0 +1,32 @@
+-----------------------------------------------------------------------------------
+
+Running circuit "setting the first bit (0) changes the rightmost bit below"
+
+  Initial state
+
+    |          > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 0
+
+    |         x> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Finished "setting the first bit (0) changes the rightmost bit below"
+
+    |         x> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "setting the last bit (0) changes the leftmost bit below"
+
+  Initial state
+
+    |          > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 9
+
+    |x         > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Finished "setting the last bit (0) changes the leftmost bit below"
+
+    |x         > 100.0000%  1.00000000+0.00000000i (  0.00)
+

@@ -1,4 +1,6 @@
 
+const logger = require('../src/logger')()
+
 let i = 0
 circuit('superposition-individually', 4)
 .h(i++)
@@ -15,6 +17,7 @@ circuit('superposition-of-unit', 4)
 function circuit(name, size) {
 	
 	return require('../src/circuit.js')(name, size, {
+		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})

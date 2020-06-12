@@ -1,4 +1,5 @@
 
+const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
 encode(0)
@@ -18,14 +19,15 @@ function encode(value) {
 	.measure(alice, bob)
 	.run()
 	.each(function(each) {
-		console.log(`The value encoded to Alice is ${value}.`)
-		console.log(`The value decoded from Alice and Bob together is ${each.index}.\n`)
+		circuit.log(`The value encoded to Alice is ${value}.`)
+		circuit.log(`The value decoded from Alice and Bob together is ${each.index}.\n`)
 	})
 }
 
 function Circuit(name, size, options) {
 	
 	let circuit = require('../src/circuit.js')(name, size, {
+		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})

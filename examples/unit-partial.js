@@ -1,4 +1,6 @@
 
+const logger = require('../src/logger')()
+
 let circuit = Circuit('unit-of-one-qubit', 1)
 let alice = circuit.unit(0)
 alice.h()
@@ -14,6 +16,7 @@ circuit.run()
 function Circuit(name, size) {
 	
 	return require('../src/circuit.js')(name, size, {
+		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})

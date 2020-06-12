@@ -1,4 +1,5 @@
 
+const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 const a = Bits.fromNumber(2, 4)
 const b = Bits.fromNumber(6, 4)
@@ -24,6 +25,7 @@ circuit(`amplify-two-states-two-times`, 5)
 function circuit(name, size, options) {
 	
 	let circuit = require('../src/circuit.js')(name, size, {
+		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})

@@ -1,0 +1,22 @@
+-----------------------------------------------------------------------------------
+
+Running circuit "spread a phase rotation of a z-gate over one qubit"
+
+
+  Finished "spread a phase rotation of a z-gate over one qubit"
+
+    | >  50.0000%  0.70710678+0.00000000i (  0.00)
+    |x>  50.0000% -0.70710678+0.00000000i (180.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "spread a phase rotation of a z-gate over two qubits"
+
+
+  Finished "spread a phase rotation of a z-gate over two qubits"
+
+    |  >  25.0000%  0.50000000+0.00000000i (  0.00)
+    | x>  25.0000% -0.50000000+0.00000000i (180.00)
+    |x >  25.0000%  0.50000000+0.00000000i (  0.00)
+    |xx>  25.0000% -0.50000000+0.00000000i (180.00)
+

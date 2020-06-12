@@ -1,11 +1,14 @@
 
+const logger = require('../src/logger')()
+
 circuit('circuit', 1).library(function(gates) {
-	console.log('library: ' + JSON.stringify(Object.keys(gates), null, 2))
+	logger.log('library: ' + JSON.stringify(Object.keys(gates), null, 2))
 })
 
 function circuit(name, size) {
 	
 	return require('../src/circuit.js')(name, size, {
+		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})

@@ -1,4 +1,6 @@
 
+const logger = require('../src/logger')()
+
 // the frequency results here tend to be approximate
 // the periods do not fit neatly into the resulting state vector; e.g. 16 / 3 = 5.3333 instead of 16 / 4 = 4
 // for periods with these remainders, I need more study to determine whether to round down
@@ -35,12 +37,13 @@ function output(period, size) {
 		if (state.magnitude > result.magnitude) result = state
 	})
 	let squared = Math.pow(2, size)
-	console.log(`The frequency is approximately ${squared - result.index} from a period of ${period} in ${squared}.\n`)
+	logger.log(`The frequency is approximately ${squared - result.index} from a period of ${period} in ${squared}.\n`)
 }
 
 function Circuit(name, size, options) {
 	
 	let circuit = require('../src/circuit.js')(name, size, {
+		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})

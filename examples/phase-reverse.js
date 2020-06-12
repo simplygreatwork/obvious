@@ -1,4 +1,6 @@
 
+const logger = require('../src/logger')()
+
 circuit('attempting to change phase has no effect if the qubit is not on', 1)
 .rz(0, [], { phi: 'pi / 4' })
 .run('trace')
@@ -31,6 +33,7 @@ circuit('change the phase using an s-gate and then reverse using 2 t-dagger gate
 function circuit(name, size) {
 	
 	return require('../src/circuit.js')(name, size, {
+		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})

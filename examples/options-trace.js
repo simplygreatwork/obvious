@@ -1,4 +1,6 @@
 
+const logger = require('../src/logger')()
+
 circuit('apply pauli-x gate to each qubit with tracing', 3)
 .x(0)
 .x(1)
@@ -14,6 +16,7 @@ circuit('apply pauli-x gate to each qubit without tracing - display result at en
 function circuit(name, size) {
 	
 	return require('../src/circuit.js')(name, size, {
+		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})

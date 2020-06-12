@@ -8,11 +8,12 @@ const utility = require('../../utility')
 
 module.exports = class Circuit {
 	
-	constructor(size, options) {
+	constructor(size, options, logger) {
 		
 		this.type = 'optimized'
 		this.size = size
 		this.options = options || {}
+		this.logger = logger
 		this.gates = []
 		this.reverseBitOrder = false
 		this.amplitudes = {'0': math.complex(1, 0)}
@@ -102,12 +103,12 @@ module.exports = class Circuit {
 				let message = []
 				message.push(`    |${now.label}> ${now.probability}% ${now.amplitude} (${now.phase}) `)
 				message.push(chalk.grey.bold(` <<< ${then.probability}% ${then.amplitude} (${then.phase})`))
-				console.log(message.join(''))
-			})
+				this.logger.log(message.join(''))
+			}.bind(this))
 		} else {
 			this.each(function(now, index) {
-				console.log(`    |${now.label}> ${now.probability}% ${now.amplitude} (${now.phase})`)
-			})
+				this.logger.log(`    |${now.label}> ${now.probability}% ${now.amplitude} (${now.phase})`)
+			}.bind(this))
 		}
 		return this
 	}

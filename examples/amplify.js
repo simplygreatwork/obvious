@@ -1,4 +1,5 @@
 
+const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
 amplify(3)
@@ -22,6 +23,7 @@ function amplify(value) {
 function circuit(name, size, options) {
 	
 	let circuit = require('../src/circuit.js')(name, size, {
+		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})

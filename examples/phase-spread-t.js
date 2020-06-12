@@ -1,4 +1,6 @@
 
+const logger = require('../src/logger')()
+
 Circuit('spread a phase rotation of a t-gate over three qubits', 3)
 .unit('all').h().circuit()
 .spread(function(index) {
@@ -17,6 +19,7 @@ Circuit('spread a phase rotation of a t-gate over four qubits', 4)
 function Circuit(name, size) {
 	
 	let circuit = require('../src/circuit.js')(name, size, {
+		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})

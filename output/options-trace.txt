@@ -1,0 +1,33 @@
+-----------------------------------------------------------------------------------
+
+Running circuit "apply pauli-x gate to each qubit with tracing"
+
+  Initial state
+
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 0
+
+    |  x> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 1
+
+    | xx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 2
+
+    |xxx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Finished "apply pauli-x gate to each qubit with tracing"
+
+    |xxx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "apply pauli-x gate to each qubit without tracing - display result at end"
+
+
+  Finished "apply pauli-x gate to each qubit without tracing - display result at end"
+
+    |xxx> 100.0000%  1.00000000+0.00000000i (  0.00)
+
