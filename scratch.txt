@@ -221,6 +221,10 @@ circuit
 
 - pass every option to circuit class using oln
 
-- remove circuit.log
-
 - illustarte how pauli-x (not) is actually a magnitude inversion operation
+
+- illustrate how u1 is the same as rz
+- illustrate how cu1 is the same as crz
+- illustrate how to create an arbitrary gate using u3
+
+- remove the dashes from circuit names - use spaces and real sentences instead

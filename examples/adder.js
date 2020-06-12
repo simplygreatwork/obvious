@@ -42,8 +42,6 @@ function circuit(name, size) {
 		order: ['targets', 'controls']
 	})
 	
-	console.log('circuit.name: ' + circuit.name)
-	
 	Object.assign(circuit, {
 		
 		set_value: function(variable, value) {
