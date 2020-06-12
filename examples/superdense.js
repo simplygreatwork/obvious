@@ -19,14 +19,14 @@ function encode(value) {
 	.measure(alice, bob)
 	.run()
 	.each(function(each) {
-		circuit.log(`The value encoded to Alice is ${value}.`)
-		circuit.log(`The value decoded from Alice and Bob together is ${each.index}.\n`)
+		logger.log(`The value encoded to Alice is ${value}.`)
+		logger.log(`The value decoded from Alice and Bob together is ${each.index}.\n`)
 	})
 }
 
 function Circuit(name, size, options) {
 	
-	let circuit = require('../src/circuit.js')(name, size, {
+	let circuit = require('../src/circuit.js')({
 		name: name,
 		size: size,
 		logger: logger,

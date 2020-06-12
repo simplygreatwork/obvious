@@ -220,3 +220,7 @@ circuit
 - for these examples, consider highjacking console.log instead of using logger.log
 
 - pass every option to circuit class using oln
+
+- remove circuit.log
+
+- illustarte how pauli-x (not) is actually a magnitude inversion operation

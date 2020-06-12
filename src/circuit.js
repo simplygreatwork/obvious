@@ -44,12 +44,6 @@ class Circuit {
 		return this
 	}
 	
-	log() {
-		
-		this.logger.log(...arguments)
-		return this
-	}
-	
 	print() {
 		
 		this.circuit.print(...arguments)		
