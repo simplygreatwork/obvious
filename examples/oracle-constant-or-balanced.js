@@ -16,12 +16,12 @@ run()
 
 function run() {
 	
-	circuit = Circuit('oracle-random', 4)
+	circuit = Circuit('oracle-random', 3)
 	circuit.unit('*').h()
 	let oracle = Oracle()
 	oracle.apply(circuit)
 	circuit.unit('*').h()
-	circuit.run()
+	circuit.run('trace')
 	let kind = circuit.kind()
 	console.log('detected oracle kind: ' + kind)
 	console.log('correct?: ' + oracle["kind?"](kind))
@@ -44,7 +44,7 @@ function Circuit(name, size) {
 			
 			let result = 'balanced'
 			this.each(function(each, index) {
-				if (index === 0 && each.magnitude === 1) result = 'constant'
+				if (each.index === 0 && each.magnitude === 1) result = 'constant'
 			})
 			return result
 		}

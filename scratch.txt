@@ -254,3 +254,14 @@ circuit
 - work on re-implementing simon's, bernstein-vazirani, deutch jozsa 
 
 - want these examples to tell stories, actually show, don't tell
+
+- once two qubits are entangled, what are some effects we can demo?
+- if we rotate z on 0, will 1 also rotate on z? how can we verify this?
+- how to compare and contrast entagled state vs non-entangled state?
+
+- need to measure for adder.js and deutsch-jozsa oracle
+
+- implement harness for multi-run probability calc
+
+- want to list the state index when printing results table
+	- helpful for changes
