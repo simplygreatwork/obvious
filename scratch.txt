@@ -252,3 +252,5 @@ circuit
 - introduce alice and bob to teleportation
 
 - work on re-implementing simon's, bernstein-vazirani, deutch jozsa 
+
+- want these examples to tell stories, actually show, don't tell
