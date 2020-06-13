@@ -37,9 +37,8 @@ function Circuit(name, size) {
 		kind: function() {
 			
 			let bits = this.measure()
-			let value = bits.toNumber()
 			console.log(`The measured state of this circuit is |${bits.toString(' x')}> (${bits.toNumber()})`)
-			return value === 0 ? 'constant' : 'balanced'
+			return bits.toNumber() === 0 ? 'constant' : 'balanced'
 		}
 	})
 	
