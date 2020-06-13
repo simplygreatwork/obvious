@@ -5,6 +5,7 @@ const library = require('./gates')
 const transform = require('./transform')
 const format = require('./format')
 const utility = require('../../utility')
+const Bits = require('../../bits')
 
 module.exports = class Circuit {
 	
@@ -148,6 +149,21 @@ module.exports = class Circuit {
 			}
 		}
 		return false
+	}
+	
+	measure() {
+		
+		if (this.measurement) return this.measurement 
+		this.measurement = null
+		let random = Math.random()
+		let value = 0
+		this.each(function(each, index) {
+			if (random > value && random < value + each.magnitude) {
+				this.measurement = Bits.fromNumber(each.index, this.size)
+			}
+			value = value + each.magnitude
+		}.bind(this))
+		return this.measurement
 	}
 	
 	on(key, func) {

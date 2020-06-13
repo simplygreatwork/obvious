@@ -1,10 +1,4 @@
 
-// The Deutsch-Jozsa algorithm
-
-// todo: need to actually measure the circuit to get a single result
-// if the measured result is zero, infer that the oracle is constant
-// if the measured result is non-zero, infer that the oracle is balanced
-// and finally, confirm with the oracle itself whether your have correctly inferred the oracle kind by calling: oracle["kind?"]("balanced")
 
 const logger = require('../src/logger')()
 
@@ -16,15 +10,15 @@ run()
 
 function run() {
 	
-	circuit = Circuit('oracle-random', 3)
+	circuit = Circuit('a constant or a balanced oracle', 3)
 	circuit.unit('*').h()
 	let oracle = Oracle()
 	oracle.apply(circuit)
 	circuit.unit('*').h()
-	circuit.run('trace')
+	circuit.run()
 	let kind = circuit.kind()
-	console.log('detected oracle kind: ' + kind)
-	console.log('correct?: ' + oracle["kind?"](kind))
+	console.log(`The kind of oracle detected was "${kind}".`)
+	console.log(`Was the kind of oracle detected correctly? : ${oracle.confirm(kind)}`)
 	console.log('')
 }
 
@@ -40,13 +34,12 @@ function Circuit(name, size) {
 	
 	Object.assign(circuit, {
 		
-		kind: function() {				// todo: actually measure the circuit to get a single result
+		kind: function() {
 			
-			let result = 'balanced'
-			this.each(function(each, index) {
-				if (each.index === 0 && each.magnitude === 1) result = 'constant'
-			})
-			return result
+			let bits = this.measure()
+			let value = bits.toNumber()
+			console.log(`The measured state of this circuit is |${bits.toString(' x')}> (${bits.toNumber()})`)
+			return value === 0 ? 'constant' : 'balanced'
 		}
 	})
 	
@@ -59,7 +52,7 @@ function Oracle() {
 		apply: function(circuit) {
 			return
 		},
-		'kind?': function(kind) {
+		confirm: function(kind) {
 			return kind == 'constant'
 		}
 	} : {
@@ -69,8 +62,10 @@ function Oracle() {
 			.z(0).cx(2, 1)
 			.h(2)
 		},
-		'kind?': function(kind) {
+		confirm: function(kind) {
 			return kind == 'balanced'
 		}
 	}
 }
+
+// The Deutsch-Jozsa algorithm

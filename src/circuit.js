@@ -64,6 +64,10 @@ class Circuit {
 		return this
 	}
 	
+	measure() {
+		return this.circuit.measure()
+	}
+	
 	listen() {
 		
 		this.circuit.on('circuit-will-run', function(circuit) {
