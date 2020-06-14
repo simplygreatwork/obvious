@@ -2,6 +2,9 @@
 
 const logger = require('../src/logger')()
 
+// the quantum implementation of the Deutsch-Jozsa algorithm
+// important: need to explain how the classical solution corresponds to the Deutsch-Jozsa algorithm
+
 run()
 run()
 run()
@@ -10,7 +13,7 @@ run()
 
 function run() {
 	
-	circuit = Circuit('a constant or a balanced oracle', 3)
+	let circuit = Circuit('a constant or a balanced oracle', 3)
 	circuit.unit('*').h()
 	let oracle = Oracle()
 	oracle.apply(circuit)
@@ -66,5 +69,3 @@ function Oracle() {
 		}
 	}
 }
-
-// The Deutsch-Jozsa algorithm

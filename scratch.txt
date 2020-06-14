@@ -265,3 +265,7 @@ circuit
 
 - want to list the state index when printing results table
 	- helpful for changes
+
+- search for qasm examples and openqasm examples
+
+- important: still need to explain how the quantum Deutsch-Jozsa solution corresponds to the classical solution
