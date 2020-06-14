@@ -42,7 +42,7 @@ function Box() {
 			} else if (this.tally[0] === this.tally[1]) {
 				return 'balanced'
 			} else {
-				return 'unbalanced'
+				return 'non-balanced'
 			}
 		}
 	})
@@ -65,7 +65,7 @@ function Oracle() {
 				confirm: function(kind) { return kind == 'balanced' ? 'yes' : 'no' }
 			}, {
 				test: function(value) { return [0, 0, 1][value % 3]},			// potential issue: a single bit would always be constant or balanced
-				confirm: function(kind) { return kind == 'unbalanced' ? 'yes' : 'no' }
+				confirm: function(kind) { return kind == 'non-balanced' ? 'yes' : 'no' }
 			}]
 			
 			return Object.assign(oracles[Math.floor(Math.random() * 4)], {
