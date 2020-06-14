@@ -6,7 +6,8 @@ const logger = require('../src/logger')()
 // the oracle must be tested at least once per valid input (0 or 1) to determine whether the function is constant or balanced
 // a 10-bit version of this classical oracle would need to test each value from 0 1023 (2^10) 
 // the quantum version can perform this task with a single run using superposition for any number of bits
-// todo: convert this example to demo multiple bits
+// todo: the classical and quantum versions of this algorithm need to be runnable as 2^n
+// todo: so convert this example to demo multiple bits
 
 run()
 run()

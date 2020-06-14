@@ -4,6 +4,7 @@ const logger = require('../src/logger')()
 
 // the quantum implementation of the Deutsch-Jozsa algorithm
 // important: need to explain how the classical solution corresponds to the Deutsch-Jozsa algorithm
+// todo: the classical and quantum versions of this algorithm need to be runnable as 2^n
 
 run()
 run()
