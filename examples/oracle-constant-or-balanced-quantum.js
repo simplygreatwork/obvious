@@ -13,7 +13,7 @@ function run() {
 	
 	let circuit = Circuit('a randomly installed oracle which is either constant or balanced', 3)
 	circuit.unit('*').h()
-	let oracle = Oracle()
+	let oracle = Oracle().random()
 	oracle.apply(circuit)
 	circuit.unit('*').h()
 	circuit.run()
@@ -48,22 +48,28 @@ function Circuit(name, size) {
 
 function Oracle() {
 	
-	return Math.random() < 0.5 ? {
-		apply: function(circuit) {
-			return
-		},
-		confirm: function(kind) {
-			return kind == 'constant' ? 'yes' : 'no'
-		}
-	} : {
-		apply: function(circuit) {
-			return circuit
-			.h(2)
-			.z(0).cx(2, 1)
-			.h(2)
-		},
-		confirm: function(kind) {
-			return kind == 'balanced' ? 'yes' : 'no'
+	return {
+		
+		random: function(options) {
+			
+			return Math.random() < 0.5 ? {
+				apply: function(circuit) {
+					return
+				},
+				confirm: function(kind) {
+					return kind == 'constant' ? 'yes' : 'no'
+				}
+			} : {
+				apply: function(circuit) {
+					return circuit
+					.h(2)
+					.z(0).cx(2, 1)
+					.h(2)
+				},
+				confirm: function(kind) {
+					return kind == 'balanced' ? 'yes' : 'no'
+				}
+			}
 		}
 	}
 }

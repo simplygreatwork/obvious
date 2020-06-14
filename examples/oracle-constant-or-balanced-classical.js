@@ -1,8 +1,8 @@
 
 const logger = require('../src/logger')()
 
-// a classical background for the Deutsch-Jozsa algorithm
-// suppose that an oracle contains a list of values either 0 or 1
+// a classical deterministic background for the Deutsch-Jozsa algorithm
+// suppose that an oracle contains a fixed list of values either 0 or 1
 // if every element of the oracle returns 0, the oracle is constant
 // if every element of the oracle returns 1, the oracle is constant
 // if half of the elements return 0 and half return 1, the oracle is balanced
@@ -21,8 +21,8 @@ function run() {
 	let box = new Box()
 	let oracle = Oracle().random({ bits : 3})
 	let kind = box.test(oracle)
-	console.log(`The kind of oracle detected was "${kind}". [${box.tally}]`)
-	console.log(`Was the kind of oracle detected correctly? : ${oracle.confirm(kind)}`)
+	console.log(`A ${kind} oracle was detected. [${box.tally}]`)
+	console.log(`Does the oracle confirm this? ${oracle.confirm(kind)}`)
 	console.log('')
 }
 
@@ -56,16 +56,16 @@ function Oracle() {
 			
 			let oracles = [{
 				test: function(value) { return 0 },
-				confirm: function(kind) { return kind == 'constant' }
+				confirm: function(kind) { return kind == 'constant' ? 'yes' : 'no' }
 			}, {
 				test: function(value) {	return 1 },
-				confirm: function(kind) { return kind == 'constant' }
+				confirm: function(kind) { return kind == 'constant' ? 'yes' : 'no' }
 			}, {
 				test: function(value) { return value % 2 },
-				confirm: function(kind) { return kind == 'balanced' }
+				confirm: function(kind) { return kind == 'balanced' ? 'yes' : 'no' }
 			}, {
 				test: function(value) { return [0, 0, 1][value % 3]},			// potential issue: a single bit would always be constant or balanced
-				confirm: function(kind) { return kind == 'unbalanced' }
+				confirm: function(kind) { return kind == 'unbalanced' ? 'yes' : 'no' }
 			}]
 			
 			return Object.assign(oracles[Math.floor(Math.random() * 4)], {
