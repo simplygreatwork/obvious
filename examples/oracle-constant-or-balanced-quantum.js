@@ -5,11 +5,9 @@ const logger = require('../src/logger')()
 // important: need to explain how the classical solution corresponds to the Deutsch-Jozsa algorithm
 // todo: the classical and quantum versions of this algorithm need to be runnable as 2^n
 
-run()
-run()
-run()
-run()
-run()
+repeat(10, function() {
+	run()
+})
 
 function run() {
 	
@@ -21,7 +19,7 @@ function run() {
 	circuit.run()
 	let kind = circuit.kind()
 	console.log(`A ${kind} oracle was detected.`)
-	console.log(`Was the kind of oracle detected correctly? : ${oracle.confirm(kind)}`)
+	console.log(`Does the oracle confirm this? ${oracle.confirm(kind)}`)
 	console.log('')
 }
 
@@ -40,7 +38,7 @@ function Circuit(name, size) {
 		kind: function() {
 			
 			let bits = this.measure()
-			console.log(`The measured state of this circuit is |${bits.toString(' x')}> (${bits.toNumber()})`)
+			console.log(`The measured state of this circuit is |${bits.toString(' x')}> as index |${bits.toNumber()}>`)
 			return bits.toNumber() === 0 ? 'constant' : 'balanced'
 		}
 	})
@@ -55,7 +53,7 @@ function Oracle() {
 			return
 		},
 		confirm: function(kind) {
-			return kind == 'constant'
+			return kind == 'constant' ? 'yes' : 'no'
 		}
 	} : {
 		apply: function(circuit) {
@@ -65,7 +63,14 @@ function Oracle() {
 			.h(2)
 		},
 		confirm: function(kind) {
-			return kind == 'balanced'
+			return kind == 'balanced' ? 'yes' : 'no'
 		}
+	}
+}
+
+function repeat(number, fn) {
+	
+	for (let i = 0; i < number; i++) {
+		fn.apply(this, [i])
 	}
 }

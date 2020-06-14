@@ -72,6 +72,7 @@ node amplify.js
 
 ## References & Links
 
+- https://github.com/pnnl/QASMBench
 - https://www.oreilly.com/library/view/programming-quantum-computers/978149203967/9
 - https://oreilly-qc.github.io/
 - https://quantum-circuit.com/
