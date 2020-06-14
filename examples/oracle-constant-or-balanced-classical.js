@@ -10,6 +10,7 @@ const logger = require('../src/logger')()
 // to detect whether constant or balanced, a 10-bit oracle would need to be queried a total of 1024 times (2^10)
 // but the quantum version can perform this task with a single run using superposition for any number of bits
 // todo: the classical and quantum versions of this algorithm need to be runnable as 2^n
+// todo: illustate the actual manual value test and result for each index
 
 repeat(10, function() {
 	run()
@@ -53,26 +54,23 @@ function Oracle() {
 		
 		random: function(options) {
 			
-			let size = Math.pow(2, options.bits)
 			let oracles = [{
-				size: size,
 				test: function(value) { return 0 },
 				confirm: function(kind) { return kind == 'constant' }
 			}, {
-				size: size,
 				test: function(value) {	return 1 },
 				confirm: function(kind) { return kind == 'constant' }
 			}, {
-				size: size,
 				test: function(value) { return value % 2 },
 				confirm: function(kind) { return kind == 'balanced' }
 			}, {
-				size: size,
 				test: function(value) { return [0, 0, 1][value % 3]},			// potential issue: a single bit would always be constant or balanced
 				confirm: function(kind) { return kind == 'unbalanced' }
 			}]
 			
-			return oracles[Math.floor(Math.random() * 4)]
+			return Object.assign(oracles[Math.floor(Math.random() * 4)], {
+				size: Math.pow(2, options.bits)
+			})
 		}
 	}
 }
