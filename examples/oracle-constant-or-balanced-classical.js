@@ -1,7 +1,7 @@
 
 const logger = require('../src/logger')()
 
-// a classical version of the basis of Deutsch-Jozsa algorithm
+// a classical version of the basis for the Deutsch-Jozsa algorithm
 // a randomly chosen single bit classical oracle which returns either a constant result or balanced result for each input 0 or 1
 // the oracle must be tested at least once per valid input (0 or 1) to determine whether the function is constant or balanced
 // a 10-bit version of this classical oracle would need to test each value from 0 1023 (2^10) 
