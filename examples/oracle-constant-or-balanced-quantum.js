@@ -1,5 +1,4 @@
 
-
 const logger = require('../src/logger')()
 
 // the quantum implementation of the Deutsch-Jozsa algorithm
