@@ -11,16 +11,9 @@ const logger = require('../src/logger')()
 // but the quantum version can perform this task with a single run using superposition for any number of bits
 // todo: the classical and quantum versions of this algorithm need to be runnable as 2^n
 
-run()
-run()
-run()
-run()
-run()
-run()
-run()
-run()
-run()
-run()
+repeat(10, function() {
+	run()
+})
 
 function run() {
 	
