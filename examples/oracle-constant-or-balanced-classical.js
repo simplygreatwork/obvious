@@ -19,8 +19,7 @@ function run() {
 	
 	let box = new Box()
 	let oracle = Oracle().random({ bits : 3})
-	box.test(oracle)
-	let kind = box.kind()
+	let kind = box.test(oracle)
 	console.log(`The kind of oracle detected was "${kind}". [${box.tally}]`)
 	console.log(`Was the kind of oracle detected correctly? : ${oracle.confirm(kind)}`)
 	console.log('')
@@ -37,10 +36,6 @@ function Box() {
 				let result = oracle.test(index)
 				this.tally[result] = this.tally[result] + 1
 			}.bind(this))
-		},
-		
-		kind: function() {
-			
 			if (this.tally[0] === 0 || this.tally[1] === 0) {
 				return 'constant'
 			} else if (this.tally[0] === this.tally[1]) {
