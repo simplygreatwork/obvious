@@ -14,14 +14,14 @@ run()
 
 function run() {
 	
-	let circuit = Circuit('a constant or a balanced oracle', 3)
+	let circuit = Circuit('a randomly installed oracle which is either constant or balanced', 3)
 	circuit.unit('*').h()
 	let oracle = Oracle()
 	oracle.apply(circuit)
 	circuit.unit('*').h()
 	circuit.run()
 	let kind = circuit.kind()
-	console.log(`The kind of oracle detected was "${kind}".`)
+	console.log(`A ${kind} oracle was detected.`)
 	console.log(`Was the kind of oracle detected correctly? : ${oracle.confirm(kind)}`)
 	console.log('')
 }
