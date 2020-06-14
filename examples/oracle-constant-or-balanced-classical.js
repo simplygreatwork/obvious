@@ -1,5 +1,4 @@
 
-
 const logger = require('../src/logger')()
 
 // a classical background for the Deutsch-Jozsa algorithm
@@ -27,7 +26,7 @@ function run() {
 	
 	let box = new Box()
 	let oracle = Oracle().random({ bits : 3})
-	box.evaluate(oracle)
+	box.test(oracle)
 	let kind = box.kind()
 	console.log(`The kind of oracle detected was "${kind}". [${box.tally}]`)
 	console.log(`Was the kind of oracle detected correctly? : ${oracle.confirm(kind)}`)
@@ -38,7 +37,7 @@ function Box() {
 	
 	Object.assign(this, {
 		
-		evaluate: function(oracle) {
+		test: function(oracle) {
 			
 			this.tally = [0, 0]
 			repeat(oracle.size, function(index) {
@@ -47,28 +46,14 @@ function Box() {
 			}.bind(this))
 		},
 		
-		is_constant: function() {
-			return this.tally[0] === 0 || this.tally[1] === 0
-		},
-		
-		is_balanced: function() {
-			return this.tally[0] === this.tally[1]
-		},
-		
 		kind: function() {
 			
-			if (this.is_constant()) {
+			if (this.tally[0] === 0 || this.tally[1] === 0) {
 				return 'constant'
-			} else if (this.is_balanced()) {
+			} else if (this.tally[0] === this.tally[1]) {
 				return 'balanced'
 			} else {
 				return 'unbalanced'
-			}
-			
-			if (false) {
-				return this.is_constant() ? 'constant' : 'balanced'
-			} else {
-				return this.is_balanced() ? 'balanced' : 'constant'
 			}
 		}
 	})
@@ -95,7 +80,7 @@ function Oracle() {
 				confirm: function(kind) { return kind == 'balanced' }
 			}, {
 				size: size,
-				test: function(value) { return [0, 0, 1][value % 3]},		// issue: single bit will always be constant or balanced
+				test: function(value) { return [0, 0, 1][value % 3]},			// potential issue: a single bit would always be constant or balanced
 				confirm: function(kind) { return kind == 'unbalanced' }
 			}]
 			
