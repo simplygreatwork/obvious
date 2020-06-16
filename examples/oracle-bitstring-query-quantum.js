@@ -4,7 +4,6 @@ const Bits = require('../src/bits')
 
 // the quantum version of the Bernstein-Vazirani algorithm
 // todo: need to be able to measure only part of the circuit register
-// not complete: work in process
 
 repeat(1, function() {
 	run()

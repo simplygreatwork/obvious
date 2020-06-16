@@ -272,3 +272,4 @@ circuit
 
 - Bits array might be storing the bits in the wrong (reverse) order: should be little endian
 - in Bits.js, maybe store bits as 0/1 and not booleans
+- todo: need to be able to measure only part of the circuit register
