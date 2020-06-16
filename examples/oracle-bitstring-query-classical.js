@@ -29,7 +29,7 @@ function Host() {
 			repeat(oracle.length, function(index) {
 				let bitmask = this.bitmask(oracle.length - 1 - index, oracle)
 				let result = oracle.query(bitmask)
-				console.log(`Querying the oracle with bitmask "${bitmask}" returns result: ${result}".`)
+				console.log(`Querying the oracle with bitmask "${bitmask}" returns: ${result}.`)
 				this.bits.unshift(result == 0 ? false : true)
 			}.bind(this))
 			return Bits.fromArray(this.bits).toString('01')
