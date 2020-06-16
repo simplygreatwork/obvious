@@ -35,7 +35,7 @@ function Host() {
 			
 			this.tally = [0, 0]
 			repeat(oracle.size, function(index) {
-				let result = oracle.test(index)
+				let result = oracle.query(index)
 				this.tally[result] = this.tally[result] + 1
 			}.bind(this))
 			if (this.tally[0] === 0 || this.tally[1] === 0) {
@@ -59,16 +59,16 @@ function Oracle() {
 			options.size = options.size || 4
 			
 			let oracles = [{
-				test: function(value) { return 0 },
+				query: function(value) { return 0 },
 				confirm: function(kind) { return kind == 'constant' ? 'yes' : 'no' }
 			}, {
-				test: function(value) {	return 1 },
+				query: function(value) {	return 1 },
 				confirm: function(kind) { return kind == 'constant' ? 'yes' : 'no' }
 			}, {
-				test: function(value) { return value % 2 },
+				query: function(value) { return value % 2 },
 				confirm: function(kind) { return kind == 'balanced' ? 'yes' : 'no' }
 			}, {
-				test: function(value) { return [0, 0, 1][value % 3]},			// potential issue: a single bit would always be constant or balanced
+				query: function(value) { return [0, 0, 1][value % 3]},			// potential issue: a single bit would always be constant or balanced
 				confirm: function(kind) { return kind == 'non-balanced' ? 'yes' : 'no' }
 			}]
 			

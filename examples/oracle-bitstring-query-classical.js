@@ -27,19 +27,12 @@ function Host() {
 			
 			this.bits = []
 			repeat(oracle.length, function(index) {
-				let bitmask = this.bitmask(oracle.length - 1 - index, oracle)
+				let bitmask = Bits.fromNumber(0, oracle.length).flip(oracle.length - 1 - index).toString()
 				let result = oracle.query(bitmask)
 				console.log(`Querying the oracle with bitmask "${bitmask}" returns: ${result}.`)
 				this.bits.unshift(result == 0 ? false : true)
 			}.bind(this))
-			return Bits.fromArray(this.bits).toString('01')
-		},
-		
-		bitmask: function(index, oracle) {
-			
-			let array = Bits.fromNumber(0, oracle.length).toArray()
-			array[index] = true
-			return Bits.fromArray(array).toString('01')
+			return Bits.fromArray(this.bits).toString()
 		}
 	})
 }
@@ -53,13 +46,13 @@ function Oracle() {
 			options = options || {}
 			options.length = options.length || 4
 			let random = Math.floor(Math.random() * Math.pow(2, options.length))
-			let bitstring = Bits.fromNumber(random, options.length).toString('01')
+			let bitstring = Bits.fromNumber(random, options.length).toString()
 			
 			let oracle = {
 				query: function(value) {
 					let result = 0
-					value = Bits.fromString(value, '01').toNumber()
-					let target = Bits.fromString(this.bitstring, '01').toNumber()
+					value = Bits.fromString(value).toNumber()
+					let target = Bits.fromString(this.bitstring).toNumber()
 					let product = value & target
 					while (product > 0) {
 						if (product % 2 === 1) result++

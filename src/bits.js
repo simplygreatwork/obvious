@@ -9,7 +9,9 @@ module.exports = class Bits {
 	}
 	
 	flip(index) {
+		
 		this.array[index] = ! this.array[index]
+		return this
 	}
 	
 	toNumber() {
@@ -21,6 +23,7 @@ module.exports = class Bits {
 	
 	toString(pattern) {
 		
+		pattern = pattern || '01'
 		let result = []
 		let off = pattern.charAt(0)
 		let on = pattern.charAt(1)
@@ -45,11 +48,10 @@ module.exports = class Bits {
 	
 	static fromString(string, pattern) {
 		
-		if (pattern) {
-			string = string
-			.split(pattern.charAt(0)).join('0')
-			.split(pattern.charAt(1)).join('1')
-		}
+		pattern = pattern || '01'
+		string = string
+		.split(pattern.charAt(0)).join('0')
+		.split(pattern.charAt(1)).join('1')
 		return new Bits(string.split('').map(function(each) {
 			return each === '1'
 		}))
