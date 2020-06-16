@@ -1,5 +1,4 @@
 
-
 const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
@@ -39,19 +38,17 @@ function Host() {
 
 function Oracle(options) {
 	
-	let length = options && options.length ? options.length : 4
-	let random = Math.floor(Math.random() * Math.pow(2, length))
+	this.length = options && options.length ? options.length : 4
+	let random = Math.floor(Math.random() * Math.pow(2, this.length))
+	this.bitstring = Bits.fromNumber(random, this.length).toString()
 	
 	Object.assign(this, {
-		
-		length: length,
-		bitstring: Bits.fromNumber(random, length).toString(),
 		
 		query: function(value) {
 			
 			let input = Bits.fromString(value).toNumber()
 			let target = Bits.fromString(this.bitstring).toNumber()
-			return this.matches(value, target)
+			return this.matches(input, target)
 		},
 		
 		matches: function(input, target) {
