@@ -20,7 +20,6 @@ function run() {
 	circuit.unit(0, 3).h()
 	circuit.run()
 	let result = circuit.evaluate()
-	logger.log(`The host oracle's internal value is "${oracle.bitstring}".`)
 	logger.log(`The host detected an oracle value of "${result}".`)
 	logger.log(`Does the oracle confirm this? ${oracle.confirm(result)}`)
 	logger.log('')
@@ -42,7 +41,7 @@ function Circuit(name, size) {
 			
 			let bits = this.measure()				// todo: need to be able to measure only part of the circuit register
 			let array = bits.toArray()
-			array.pop()
+			array.reverse().pop()					// todo: review endian-ness in Bits.js
 			bits = Bits.fromArray(array)
 			return bits
 		}
@@ -55,7 +54,6 @@ function Oracle(options) {
 	
 	let length = options && options.length ? options.length : 4
 	let random = Math.floor(Math.random() * Math.pow(2, length))
-	if (true) random = 7
 	
 	Object.assign(this, {
 		
@@ -67,7 +65,6 @@ function Oracle(options) {
 			let array = Bits.fromString(this.bitstring).toArray()
 			let scratch = circuit.unit(3)
 			repeat(3, function(index) {
-				// index = this.length - 1 - index
 				if (array[index]) scratch.cx(index)
 			}.bind(this))
 		},

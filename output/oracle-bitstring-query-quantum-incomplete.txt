@@ -5,10 +5,9 @@ Running circuit "a random oracle for a bitwise query"
 
   Finished "a random oracle for a bitwise query"
 
-    | x  >  50.0000%  0.70710678+0.00000000i (  0.00)
-    |xx  >  50.0000% -0.70710678+0.00000000i (180.00)
+    | xxx>  50.0000%  0.70710678+0.00000000i (  0.00)
+    |xxxx>  50.0000% -0.70710678+0.00000000i (180.00)
 
-The host oracle's internal value is "001".
-The host detected an oracle value of "100".
-Does the oracle confirm this? no
+The host detected an oracle value of "111".
+Does the oracle confirm this? yes
 

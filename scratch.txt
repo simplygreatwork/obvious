@@ -269,3 +269,6 @@ circuit
 - search for qasm examples and openqasm examples
 
 - important: still need to explain how the quantum Deutsch-Jozsa solution corresponds to the classical solution
+
+- Bits array might be storing the bits in the wrong (reverse) order: should be little endian
+- in Bits.js, maybe store bits as 0/1 and not booleans
