@@ -3,6 +3,8 @@
 const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
+// a classical background for the Bernstein-Vazirani algorithm
+
 repeat(5, function() {
 	run()
 })
