@@ -12,11 +12,11 @@ repeat(5, function() {
 function run() {
 	
 	let host = new Host()
-	let oracle = new Oracle({ length: 4 })
+	let oracle = new Oracle({ length: 5 })
 	let result = host.test(oracle)
-	console.log(`The host detected an oracle value of "${result}".`)
-	console.log(`Does the oracle confirm this? ${oracle.confirm(result)}`)
-	console.log('')
+	logger.log(`The host detected an oracle value of "${result}".`)
+	logger.log(`Does the oracle confirm this? ${oracle.confirm(result)}`)
+	logger.log('')
 }
 
 function Host() {
@@ -29,7 +29,7 @@ function Host() {
 			repeat(oracle.length, function(index) {
 				let bitmask = Bits.fromNumber(0, oracle.length).flip(oracle.length - 1 - index).toString()
 				let result = oracle.query(bitmask)
-				console.log(`Querying the oracle with bitmask "${bitmask}" returns: ${result}.`)
+				logger.log(`Querying the oracle with bitmask "${bitmask}" returns: ${result}.`)
 				this.bits.unshift(result == 0 ? false : true)
 			}.bind(this))
 			return Bits.fromArray(this.bits).toString()

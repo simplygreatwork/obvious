@@ -11,7 +11,6 @@ const logger = require('../src/logger')()
 // but the quantum version can perform this task with a single run using superposition for any number of bits
 // todo: the classical and quantum versions of this algorithm need to be runnable as 2^n
 // todo: illustate the actual manual value test and result for each index
-// todo: query vs test
 
 repeat(10, function() {
 	run()
@@ -20,7 +19,7 @@ repeat(10, function() {
 function run() {
 	
 	let host = new Host()
-	let oracle = Oracle().random({ size : 3})
+	let oracle = new Oracle({ length : 3 })
 	let kind = host.test(oracle)
 	console.log(`A ${kind} oracle was detected. [${host.tally}]`)
 	console.log(`Does the oracle confirm this? ${oracle.confirm(kind)}`)
@@ -49,34 +48,24 @@ function Host() {
 	})
 }
 
-function Oracle() {
+function Oracle(options) {
 	
-	return {
-		
-		random: function(options) {
-			
-			options = options || {}
-			options.size = options.size || 4
-			
-			let oracles = [{
-				query: function(value) { return 0 },
-				confirm: function(kind) { return kind == 'constant' ? 'yes' : 'no' }
-			}, {
-				query: function(value) {	return 1 },
-				confirm: function(kind) { return kind == 'constant' ? 'yes' : 'no' }
-			}, {
-				query: function(value) { return value % 2 },
-				confirm: function(kind) { return kind == 'balanced' ? 'yes' : 'no' }
-			}, {
-				query: function(value) { return [0, 0, 1][value % 3]},			// potential issue: a single bit would always be constant or balanced
-				confirm: function(kind) { return kind == 'non-balanced' ? 'yes' : 'no' }
-			}]
-			
-			return Object.assign(oracles[Math.floor(Math.random() * 4)], {
-				size: Math.pow(2, options.size)
-			})
-		}
-	}
+	let length = options && options.length ? options.length : 4
+	let oracles = [{
+		query: function(value) { return 0 },
+		confirm: function(kind) { return kind == 'constant' ? 'yes' : 'no' }
+	}, {
+		query: function(value) {	return 1 },
+		confirm: function(kind) { return kind == 'constant' ? 'yes' : 'no' }
+	}, {
+		query: function(value) { return value % 2 },
+		confirm: function(kind) { return kind == 'balanced' ? 'yes' : 'no' }
+	}, {
+		query: function(value) { return [0, 0, 1][value % 3]},			// potential issue: a single bit would always be constant or balanced
+		confirm: function(kind) { return kind == 'non-balanced' ? 'yes' : 'no' }
+	}]
+	Object.assign(this, { size: Math.pow(2, length) })
+	Object.assign(this, oracles[Math.floor(Math.random() * 4)])
 }
 
 function repeat(number, fn) {
