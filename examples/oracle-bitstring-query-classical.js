@@ -12,7 +12,7 @@ repeat(5, function() {
 function run() {
 	
 	let host = new Host()
-	let oracle = Oracle().random({ length: 4 })
+	let oracle = new Oracle({ length: 4 })
 	let result = host.test(oracle)
 	console.log(`The host detected an oracle value of "${result}".`)
 	console.log(`Does the oracle confirm this? ${oracle.confirm(result)}`)
@@ -37,40 +37,30 @@ function Host() {
 	})
 }
 
-function Oracle() {
+function Oracle(options) {
 	
-	return {
+	let length = options && options.length ? options.length : 4
+	let random = Math.floor(Math.random() * Math.pow(2, length))
+	
+	Object.assign(this, {
 		
-		random: function(options) {
-			
-			options = options || {}
-			options.length = options.length || 4
-			let random = Math.floor(Math.random() * Math.pow(2, options.length))
-			let bitstring = Bits.fromNumber(random, options.length).toString()
-			
-			let oracle = {
-				query: function(value) {
-					let result = 0
-					value = Bits.fromString(value).toNumber()
-					let target = Bits.fromString(this.bitstring).toNumber()
-					let product = value & target
-					while (product > 0) {
-						if (product % 2 === 1) result++
-						product >>= 1
-					}
-					return result
-				},
-				confirm: function(value) {
-					return this.bitstring === value ? 'yes' : 'no'
-				}
+		length: length,
+		bitstring: Bits.fromNumber(random, length).toString(),
+		query: function(value) {
+			let result = 0
+			value = Bits.fromString(value).toNumber()
+			let target = Bits.fromString(this.bitstring).toNumber()
+			let product = value & target
+			while (product > 0) {
+				if (product % 2 === 1) result++
+				product >>= 1
 			}
-			
-			return Object.assign(oracle, {
-				length: options.length,
-				bitstring: bitstring,
-			})
+			return result
+		},
+		confirm: function(value) {
+			return this.bitstring === value ? 'yes' : 'no'
 		}
-	}
+	})
 }
 
 function repeat(number, fn) {
