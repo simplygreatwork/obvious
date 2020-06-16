@@ -46,17 +46,25 @@ function Oracle(options) {
 		
 		length: length,
 		bitstring: Bits.fromNumber(random, length).toString(),
+		
 		query: function(value) {
-			let result = 0
-			value = Bits.fromString(value).toNumber()
+			
+			let input = Bits.fromString(value).toNumber()
 			let target = Bits.fromString(this.bitstring).toNumber()
-			let product = value & target
+			return this.matches(value, target)
+		},
+		
+		matches: function(input, target) {
+			
+			let result = 0
+			let product = input & target
 			while (product > 0) {
 				if (product % 2 === 1) result++
 				product >>= 1
 			}
 			return result
 		},
+		
 		confirm: function(value) {
 			return this.bitstring === value ? 'yes' : 'no'
 		}
