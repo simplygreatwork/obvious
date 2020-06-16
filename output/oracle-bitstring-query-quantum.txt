@@ -1,0 +1,9 @@
+-----------------------------------------------------------------------------------
+
+Running circuit "a random oracle for a bitwise query"
+
+
+  Finished "a random oracle for a bitwise query"
+
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+

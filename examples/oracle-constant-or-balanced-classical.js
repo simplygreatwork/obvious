@@ -11,6 +11,7 @@ const logger = require('../src/logger')()
 // but the quantum version can perform this task with a single run using superposition for any number of bits
 // todo: the classical and quantum versions of this algorithm need to be runnable as 2^n
 // todo: illustate the actual manual value test and result for each index
+// todo: query vs test
 
 repeat(10, function() {
 	run()
@@ -18,15 +19,15 @@ repeat(10, function() {
 
 function run() {
 	
-	let box = new Box()
-	let oracle = Oracle().random({ bits : 3})
-	let kind = box.test(oracle)
-	console.log(`A ${kind} oracle was detected. [${box.tally}]`)
+	let host = new Host()
+	let oracle = Oracle().random({ size : 3})
+	let kind = host.test(oracle)
+	console.log(`A ${kind} oracle was detected. [${host.tally}]`)
 	console.log(`Does the oracle confirm this? ${oracle.confirm(kind)}`)
 	console.log('')
 }
 
-function Box() {
+function Host() {
 	
 	Object.assign(this, {
 		
@@ -54,6 +55,9 @@ function Oracle() {
 		
 		random: function(options) {
 			
+			options = options || {}
+			options.size = options.size || 4
+			
 			let oracles = [{
 				test: function(value) { return 0 },
 				confirm: function(kind) { return kind == 'constant' ? 'yes' : 'no' }
@@ -69,7 +73,7 @@ function Oracle() {
 			}]
 			
 			return Object.assign(oracles[Math.floor(Math.random() * 4)], {
-				size: Math.pow(2, options.bits)
+				size: Math.pow(2, options.size)
 			})
 		}
 	}
