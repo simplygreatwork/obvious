@@ -59,7 +59,7 @@ function Oracle() {
 				query: function(value) {
 					let result = 0
 					value = Bits.fromString(value, '01').toNumber()
-					let target = Bits.fromString(bitstring, '01').toNumber()
+					let target = Bits.fromString(this.bitstring, '01').toNumber()
 					let product = value & target
 					while (product > 0) {
 						if (product % 2 === 1) result++
