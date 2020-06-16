@@ -27,14 +27,19 @@ function Host() {
 			
 			this.bits = []
 			repeat(oracle.length, function(index) {
-				let array = Bits.fromNumber(0, oracle.length).toArray()
-				array[index] = true
-				let bitstring = Bits.fromArray(array).toString('01')
-				let result = oracle.query(bitstring)
-				console.log(`Querying the oracle for bitstring "${bitstring}" returns result: ${result}".`)
-				this.bits.push(result == 0 ? false : true)
+				let bitmask = this.bitmask(oracle.length - 1 - index, oracle)
+				let result = oracle.query(bitmask)
+				console.log(`Querying the oracle with bitmask "${bitmask}" returns result: ${result}".`)
+				this.bits.unshift(result == 0 ? false : true)
 			}.bind(this))
 			return Bits.fromArray(this.bits).toString('01')
+		},
+		
+		bitmask: function(index, oracle) {
+			
+			let array = Bits.fromNumber(0, oracle.length).toArray()
+			array[index] = true
+			return Bits.fromArray(array).toString('01')
 		}
 	})
 }
