@@ -10,6 +10,7 @@ module.exports = class Bits {
 	
 	flip(index) {
 		
+		index = this.array.length - 1 - index
 		this.array[index] = ! this.array[index]
 		return this
 	}

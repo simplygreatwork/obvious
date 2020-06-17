@@ -5,13 +5,13 @@ const Bits = require('../src/bits')
 // the quantum version of the Bernstein-Vazirani algorithm
 // todo: need to be able to measure only part of the circuit register
 
-repeat(1, function() {
+repeat(10, function() {
 	run()
 })
 
 function run() {
 	
-	let circuit = Circuit('a random oracle for a bitwise query', 4)
+	let circuit = Circuit('a random oracle for a bitwise probing', 4)
 	let oracle = new Oracle({ length: 3 })
 	circuit.unit('*').h()
 	circuit.unit(3).z()
@@ -38,9 +38,9 @@ function Circuit(name, size) {
 		
 		evaluate: function() {
 			
-			let bits = this.measure()				// todo: need to be able to measure only part of the circuit register
+			let bits = this.measure()
 			let array = bits.toArray()
-			array.reverse().pop()					// todo: review endian-ness in Bits.js
+			array.shift()
 			bits = Bits.fromArray(array)
 			return bits
 		}
@@ -51,21 +51,18 @@ function Circuit(name, size) {
 
 function Oracle(options) {
 	
-	let length = options && options.length ? options.length : 4
-	let random = Math.floor(Math.random() * Math.pow(2, length))
+	this.length = options && options.length ? options.length : 4
+	let random = Math.floor(Math.random() * Math.pow(2, this.length))
+	this.bitstring = Bits.fromNumber(random, this.length).toString()
 	
 	Object.assign(this, {
 		
-		length: length,
-		bitstring: Bits.fromNumber(random, length).toString(),
-		
 		query: function(circuit) {
 			
-			let array = Bits.fromString(this.bitstring).toArray()
 			let scratch = circuit.unit(3)
-			repeat(3, function(index) {
-				if (array[index]) scratch.cx(index)
-			}.bind(this))
+			Bits.fromString(this.bitstring).toArray().reverse().forEach(function(each, index) {
+				if (each) scratch.cx(index)
+			})
 		},
 		
 		confirm: function(value) {

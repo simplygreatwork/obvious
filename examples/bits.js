@@ -24,3 +24,10 @@ logger.log('bits.toString("01"): ' + bits.toString('01'))
 
 bits = Bits.fromString('111000100001001', '01')
 logger.log('bits.toNumber(): ' + bits.toNumber())
+
+bits = Bits.fromString('0000').flip(0)
+logger.log('bits: ' + bits)
+
+bits = Bits.fromNumber(1, 4)
+logger.log('bits: ' + bits)
+logger.log('array: ' + bits.toArray())

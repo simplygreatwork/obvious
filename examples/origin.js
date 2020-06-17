@@ -12,7 +12,9 @@ circuit('the-origin-state-with-4-qubits', 4)
 
 function circuit(name, size) {
 	
-	return require('../src/circuit.js')(name, size, {
+	return require('../src/circuit.js')({
+		name: name,
+		size: size,
 		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
