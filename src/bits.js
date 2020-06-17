@@ -4,13 +4,21 @@ module.exports = class Bits {
 	constructor(array) {
 		
 		this.array = array
-		this.endian = 'little'
-		this.endian = 'big'
+		this.endian_ = 'little'
+	}
+	
+	endian(endian) {
+		
+		if (endian) {
+			this.endian_ = endian
+		} else {
+			return this.endian_
+		}
 	}
 	
 	flip(index) {
 		
-		index = this.array.length - 1 - index
+		if (this.endian() == 'little') index = this.array.length - 1 - index
 		this.array[index] = ! this.array[index]
 		return this
 	}
@@ -36,6 +44,24 @@ module.exports = class Bits {
 	
 	toArray() {
 		return this.array
+	}
+	
+	iterate(fn) {
+		
+		let reverse = false
+		if (this.endian() == 'little') reverse = true
+		if (reverse) this.array.reverse()
+		this.array.forEach(fn)
+		if (reverse) this.array.reverse()
+	}
+	
+	invert() {
+		
+		let array = JSON.parse(JSON.stringify(this.array))
+		array = array.map(function(each) {
+			return ! each
+		})
+		return Bits.fromArray(array)
 	}
 	
 	static fromNumber(number, length) {

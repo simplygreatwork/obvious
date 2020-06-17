@@ -26,7 +26,7 @@ function Host() {
 			
 			this.bits = []
 			repeat(oracle.length, function(index) {
-				let bitmask = Bits.fromNumber(0, oracle.length).flip(oracle.length - 1 - index).toString()
+				let bitmask = Bits.fromNumber(0, oracle.length).flip(index).toString()
 				let result = oracle.query(bitmask)
 				logger.log(`Querying the oracle with bitmask "${bitmask}" returns: ${result}.`)
 				this.bits.unshift(result == 0 ? false : true)

@@ -1,0 +1,108 @@
+-----------------------------------------------------------------------------------
+
+Running circuit "a randomly installed oracle which is either constant or balanced"
+
+
+  Finished "a randomly installed oracle which is either constant or balanced"
+
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a randomly installed oracle which is either constant or balanced"
+
+
+  Finished "a randomly installed oracle which is either constant or balanced"
+
+    |  x>  25.0000%  0.50000000+0.00000000i (  0.00)
+    | xx>  25.0000%  0.50000000+0.00000000i (  0.00)
+    |x x>  25.0000%  0.50000000+0.00000000i (  0.00)
+    |xxx>  25.0000% -0.50000000+0.00000000i (180.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a randomly installed oracle which is either constant or balanced"
+
+
+  Finished "a randomly installed oracle which is either constant or balanced"
+
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a randomly installed oracle which is either constant or balanced"
+
+
+  Finished "a randomly installed oracle which is either constant or balanced"
+
+    |  x>  25.0000%  0.50000000+0.00000000i (  0.00)
+    | xx>  25.0000%  0.50000000+0.00000000i (  0.00)
+    |x x>  25.0000%  0.50000000+0.00000000i (  0.00)
+    |xxx>  25.0000% -0.50000000+0.00000000i (180.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a randomly installed oracle which is either constant or balanced"
+
+
+  Finished "a randomly installed oracle which is either constant or balanced"
+
+    |  x>  25.0000%  0.50000000+0.00000000i (  0.00)
+    | xx>  25.0000%  0.50000000+0.00000000i (  0.00)
+    |x x>  25.0000%  0.50000000+0.00000000i (  0.00)
+    |xxx>  25.0000% -0.50000000+0.00000000i (180.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a randomly installed oracle which is either constant or balanced"
+
+
+  Finished "a randomly installed oracle which is either constant or balanced"
+
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a randomly installed oracle which is either constant or balanced"
+
+
+  Finished "a randomly installed oracle which is either constant or balanced"
+
+    |  x>  25.0000%  0.50000000+0.00000000i (  0.00)
+    | xx>  25.0000%  0.50000000+0.00000000i (  0.00)
+    |x x>  25.0000%  0.50000000+0.00000000i (  0.00)
+    |xxx>  25.0000% -0.50000000+0.00000000i (180.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a randomly installed oracle which is either constant or balanced"
+
+
+  Finished "a randomly installed oracle which is either constant or balanced"
+
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a randomly installed oracle which is either constant or balanced"
+
+
+  Finished "a randomly installed oracle which is either constant or balanced"
+
+    |  x>  25.0000%  0.50000000+0.00000000i (  0.00)
+    | xx>  25.0000%  0.50000000+0.00000000i (  0.00)
+    |x x>  25.0000%  0.50000000+0.00000000i (  0.00)
+    |xxx>  25.0000% -0.50000000+0.00000000i (180.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a randomly installed oracle which is either constant or balanced"
+
+
+  Finished "a randomly installed oracle which is either constant or balanced"
+
+    |  x>  25.0000%  0.50000000+0.00000000i (  0.00)
+    | xx>  25.0000%  0.50000000+0.00000000i (  0.00)
+    |x x>  25.0000%  0.50000000+0.00000000i (  0.00)
+    |xxx>  25.0000% -0.50000000+0.00000000i (180.00)
+

@@ -11,3 +11,5 @@ bits.toNumber(): 28937
 bits: 0001
 bits: 0001
 array: false,false,false,true
+bits: 1001
+bits.invert().toString(): 0110

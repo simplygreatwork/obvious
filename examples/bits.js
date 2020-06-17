@@ -31,3 +31,7 @@ logger.log('bits: ' + bits)
 bits = Bits.fromNumber(1, 4)
 logger.log('bits: ' + bits)
 logger.log('array: ' + bits.toArray())
+
+bits = Bits.fromNumber(9, 4)
+logger.log('bits: ' + bits)
+logger.log('bits.invert().toString(): ' + bits.invert().toString())
