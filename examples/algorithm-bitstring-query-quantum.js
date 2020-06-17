@@ -11,12 +11,16 @@ repeat(10, function() {
 
 function run() {
 	
-	let circuit = Circuit('a random oracle for a bitwise probing', 4)
-	let oracle = new Oracle({ length: 3 })
-	circuit.unit('*').h()
-	circuit.unit(3).z()
+	let length = 4
+	let circuit = Circuit('a random oracle for a bitwise probing', length)
+	let oracle = new Oracle({ length: length - 1 })
+	let all = circuit.unit('*')
+	let main = circuit.unit(0, length - 1)
+	let scratch = circuit.unit(length - 1)
+	all.h()
+	scratch.z()
 	oracle.query(circuit)
-	circuit.unit(0, 3).h()
+	main.h()
 	circuit.run()
 	let result = circuit.evaluate()
 	logger.log(`The host detected an oracle value of "${result}".`)
@@ -60,7 +64,7 @@ function Oracle(options) {
 		query: function(circuit) {
 			
 			let scratch = circuit.unit(3)
-			Bits.fromString(this.bitstring).toArray().reverse().forEach(function(each, index) {
+			Bits.fromString(this.bitstring).iterate(function(each, index) {
 				if (each) scratch.cx(index)
 			})
 		},

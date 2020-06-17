@@ -278,3 +278,9 @@ circuit
 - because endian-ness of Bit.js could be configurable, I need methods for bit(x) and iterate(fn)
 
 - add Bits.invert - for extra validation for Bernstein-Vazirani example
+
+- illustrate more clearly how root of not applied twice creates a not (x)
+
+- idea: can measure a specific qubit be measuring all - then extracting that bit
+
+- classical "frame of reference"

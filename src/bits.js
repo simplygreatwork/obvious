@@ -16,6 +16,12 @@ module.exports = class Bits {
 		}
 	}
 	
+	bit(index) {
+		
+		if (this.endian() == 'little') index = this.array.length - 1 - index
+		return this.array[index]
+	}
+	
 	flip(index) {
 		
 		if (this.endian() == 'little') index = this.array.length - 1 - index
@@ -62,6 +68,15 @@ module.exports = class Bits {
 			return ! each
 		})
 		return Bits.fromArray(array)
+	}
+	
+	xor(bits) {
+		
+		let result = []
+		this.iterate(function(bit, index) {
+			result.unshift(bit != bits.bit(index))
+		})
+		return Bits.fromArray(result)
 	}
 	
 	static fromNumber(number, length) {
