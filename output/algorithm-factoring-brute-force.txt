@@ -1,5 +1,5 @@
-The host detected one prime factor of "509".
-The oracle acknowledged the other prime factor of "557".
-509 * 557 = 283513.
+The host detected one prime factor of "787".
+The oracle acknowledged the other prime factor of "863".
+787 * 863 = 679181.
 Does the oracle confirm the semiprime? yes
 

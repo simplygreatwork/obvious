@@ -2,10 +2,12 @@
 const logger = require('../src/logger')()
 const math = require('mathjs')
 
-// find the two prime numbers which are the primt factors of a semiprime product
-// this is a brute force ullustration which will not scale well
+// a brute force illustration of the intent behind Shor's algorithm 
+// this finds the two prime numbers which are the prime factors of a semiprime product
+// prime a * prime b = the semiprime product
+// this will not scale well
 
-let system = new System({ max: 1000 })
+let primes = new Primes({ max: 1000 })
 let host = new Host()
 let oracle = new Oracle()
 let a = host.test(oracle)
@@ -24,8 +26,7 @@ function Host() {
 		test: function(oracle) {
 			
 			let result = null
-			repeat(system.primes.length, function(index) {
-				let prime = system.primes[index]
+			primes.iterate(function(prime) {
 				if (oracle.query(prime) === 0) {
 					result = prime
 					return 'break'
@@ -42,10 +43,9 @@ function Oracle() {
 		
 		initialize: function() {
 			
-			let length = system.primes.length
 			this.factors = []
-			this.factors.push(system.primes[Math.floor(Math.random() * length)])
-			this.factors.push(system.primes[Math.floor(Math.random() * length)])
+			this.factors.push(primes.random())
+			this.factors.push(primes.random())
 			this.semiprime = this.factors[0] * this.factors[1]
 		},
 		
@@ -65,15 +65,35 @@ function Oracle() {
 	this.initialize()
 }
 
-function System(options) {
+function Primes(options) {
 	
-	this.primes = []
-	let max = options && options.max ? options.max : 100
-	repeat(max, function(index) {
-		if (math.isPrime(index)) {
-			this.primes.push(index)
+	Object.assign(this, {
+		
+		initialize: function() {
+			
+			this.primes = []
+			let max = options && options.max ? options.max : 100
+			repeat(max, function(index) {
+				if (math.isPrime(index)) {
+					this.primes.push(index)
+				}
+			}.bind(this))
+		},
+		
+		random: function() {
+			return this.primes[Math.floor(Math.random() * this.primes.length)]
+		},
+		
+		iterate: function(fn) {
+			
+			repeat(this.primes.length, function(index) {
+				let prime = this.primes[index]
+				return fn(prime)
+			}.bind(this))
 		}
-	}.bind(this))
+	})
+	
+	this.initialize()
 }
 
 function repeat(number, fn) {
