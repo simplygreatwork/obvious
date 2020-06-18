@@ -286,3 +286,5 @@ circuit
 - classical "frame of reference"
 
 - add measure() to unit.js
+
+- use http://scholar.google.com/ to find the original algorithm papers

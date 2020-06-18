@@ -3,8 +3,6 @@ const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
 // a classical illustration of Simon's algorithm
-// todo: investigate how to property handle case of all secret bits off (0000): e.g. when no pairs exist
-// todo: review whether the algorithm permits a secret of 0000
 
 repeat(20, function() {
 	run()
@@ -13,7 +11,7 @@ repeat(20, function() {
 function run() {
 	
 	let host = new Host()
-	let oracle = new Oracle({ length: 14 })
+	let oracle = new Oracle({ length: 5 })
 	let result = host.test(oracle)
 	logger.log('')
 	logger.log(`The host detected an oracle value of "${result}".`)
@@ -41,7 +39,6 @@ function Host() {
 					this.results[result] = bitstring
 				}
 			}.bind(this))
-			answer = answer || Bits.fromNumber(0, oracle.length).toString()		// review
 			return answer
 		}
 	})
@@ -54,7 +51,7 @@ function Oracle(options) {
 		initialize: function() {
 			
 			this.length = options && options.length ? options.length : 4
-			let random = Math.floor(Math.random() * Math.pow(2, this.length))
+			let random = Math.floor(Math.random() * Math.pow(2, this.length - 1)) + 1		// the secret cannot be zero
 			this.secret = Bits.fromNumber(random, this.length).toString()
 			this.table = {}
 			let link = 0
