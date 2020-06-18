@@ -12,19 +12,14 @@ let a = host.test(oracle)
 let b = oracle.sibling(a)
 let semiprime = a * b
 logger.log(`The host detected one prime factor of "${a}".`)
-logger.log(`The oracle returned the other prime factor of "${b}".`)
+logger.log(`The oracle acknowledged the other prime factor of "${b}".`)
 logger.log(`${a} * ${b} = ${semiprime}.`)
 logger.log(`Does the oracle confirm the semiprime? ${oracle.confirm(semiprime)}`)
 logger.log('')
 
-function Host(options) {
+function Host() {
 	
-	Object.assign(this, options)
 	Object.assign(this, {
-		
-		initialize: function() {
-			return
-		},
 		
 		test: function(oracle) {
 			
@@ -33,7 +28,7 @@ function Host(options) {
 				let prime = system.primes[index]
 				if (oracle.query(prime) === 0) {
 					result = prime
-					return false
+					return 'break'
 				}
 			}.bind(this))
 			return result
@@ -41,18 +36,17 @@ function Host(options) {
 	})
 }
 
-function Oracle(options) {
+function Oracle() {
 	
-	Object.assign(this, options)
 	Object.assign(this, {
 		
 		initialize: function() {
 			
 			let length = system.primes.length
-			this.secrets = []
-			this.secrets.push(system.primes[Math.floor(Math.random() * length)])
-			this.secrets.push(system.primes[Math.floor(Math.random() * length)])
-			this.semiprime = this.secrets[0] * this.secrets[1]
+			this.factors = []
+			this.factors.push(system.primes[Math.floor(Math.random() * length)])
+			this.factors.push(system.primes[Math.floor(Math.random() * length)])
+			this.semiprime = this.factors[0] * this.factors[1]
 		},
 		
 		query: function(value) {
