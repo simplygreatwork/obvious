@@ -22,10 +22,11 @@
 - [create a GHZ state](/examples/ghz-state.js)
 - [rotate phase](/examples/phase-rotation.js)
 - [implement a two condition not operator](/examples/not-conditionally-toffoli-constructed.js)
-- [the Deutsch-Jozsa algorithm: a classical implementation](/examples/algorithm-constant-or-balanced-classical.js)
+- [the Deutsch-Jozsa algorithm: a classical illustration](/examples/algorithm-constant-or-balanced-classical.js)
 - [the Deutsch-Jozsa algorithm: a quantum implementation](/examples/algorithm-constant-or-balanced-quantum.js)
-- [the Bernstein-Vazirani algorithm: a classical implementation](/examples/algorithm-bitstring-query-classical.js)
+- [the Bernstein-Vazirani algorithm: a classical illustration](/examples/algorithm-bitstring-query-classical.js)
 - [the Bernstein-Vazirani algorithm: a quantum implementation](/examples/algorithm-bitstring-query-quantum.js)
+- [Simon's algorithm: a classical illustration](/examples/algorithm-exclusive-or-pairs-classical.js)
 - [more examples](/examples/)
 
 ## Install
