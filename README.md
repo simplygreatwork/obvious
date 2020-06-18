@@ -47,7 +47,7 @@ node amplify.js
 
 ## Special Thanks (Acknowledgements and Attribution)
 
-- Thank you to David B Kemp. Occasionally, I ping David with emails about his project jsqubits. He is super helpful.
+- Thank you to [David B Kemp](http://davidbkemp.github.io/). Occasionally, I ping David with emails about his project jsqubits. He is super helpful.
 - Thank you to Quantastica for publishing the simulator Quantum Circuit using an MIT license. I am current using a paired down version of Quantum Circuit for these quantum examples.
 
 ## Goals
