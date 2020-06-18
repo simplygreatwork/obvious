@@ -22,6 +22,10 @@
 - [create a GHZ state](/examples/ghz-state.js)
 - [rotate phase](/examples/phase-rotation.js)
 - [implement a two condition not operator](/examples/not-conditionally-toffoli-constructed.js)
+- [the Deutsch-Jozsa algorithm: a classical implementation](/examples/algorithm-constant-or-balanced-classical.js)
+- [the Deutsch-Jozsa algorithm: a quantum implementation](/examples/algorithm-constant-or-balanced-quantum.js)
+- [the Bernstein-Vazirani algorithm: a classical implementation](/examples/algorithm-bitstring-query-classical.js)
+- [the Bernstein-Vazirani algorithm: a quantum implementation](/examples/algorithm-bitstring-query-quantum.js)
 - [more examples](/examples/)
 
 ## Install
@@ -40,6 +44,11 @@ node amplify.js
 - Previous engines have been or are based on:
 	- https://github.com/adamisntdead/qics
 	- https://github.com/qcsimulator/qcsimulator.github.io
+
+## Special Thanks (Acknowledgements and Attribution)
+
+- Thank you to David B Kemp. Occasionally, I ping David with emails about his project jsqubits. He is super helpful.
+- Thank you to Quantastica for publishing the simulator Quantum Circuit using an MIT license. I am current using a paired down version of Quantum Circuit for these quantum examples.
 
 ## Goals
 
@@ -82,4 +91,3 @@ node amplify.js
 - https://github.com/adamisntdead/qics
 - https://www.quantum-inspire.com/
 - https://qiskit.org/
-
