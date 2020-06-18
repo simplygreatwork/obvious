@@ -3,7 +3,6 @@ const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
 // the quantum version of the Bernstein-Vazirani algorithm
-// todo: need to be able to measure only part of the circuit register
 
 repeat(10, function() {
 	run()
