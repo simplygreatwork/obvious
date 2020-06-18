@@ -284,3 +284,5 @@ circuit
 - idea: can measure a specific qubit be measuring all - then extracting that bit
 
 - classical "frame of reference"
+
+- add measure() to unit.js
