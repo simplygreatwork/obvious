@@ -3,7 +3,7 @@ const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
 // this example does not use quantum superposition so it's basically classical addition
-// todo: create an example which adds values in super position
+// todo: create an example which adds values in superposition
 
 add({ a: 3, b: 12})
 
