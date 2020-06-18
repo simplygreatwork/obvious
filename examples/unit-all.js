@@ -1,17 +1,17 @@
 
 const logger = require('../src/logger')()
 
-Circuit('a unit placing every qubit into superposition (a)', 3)
+Circuit(`a unit placing every qubit into superposition ('all')`, 3)
 .unit('all').h()
 .circuit()
 .run()
 
-Circuit('a unit placing every qubit into superposition (b)', 3)
+Circuit(`a unit placing every qubit into superposition ('*')`, 3)
 .unit('*').h()
 .circuit()
 .run()
 
-Circuit('a unit placing every qubit into superposition (c)', 3)
+Circuit(`a unit placing every qubit into superposition`, 3)
 .unit().h()
 .circuit()
 .run()
