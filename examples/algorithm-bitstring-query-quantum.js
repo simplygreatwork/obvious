@@ -41,16 +41,7 @@ function Circuit(name, size) {
 	Object.assign(circuit, {
 		
 		evaluate: function(main) {
-			
-			if (true) {
-				return main.measure()
-			} else {
-				let bits = this.measure()
-				let array = bits.toArray()
-				array.shift()
-				bits = Bits.fromArray(array)
-				return bits
-			}
+			return main.measure()
 		}
 	})
 	
