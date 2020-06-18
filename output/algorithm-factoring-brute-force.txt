@@ -1,5 +1,7 @@
-The host detected one prime factor of "787".
-The oracle acknowledged the other prime factor of "863".
-787 * 863 = 679181.
-Does the oracle confirm the semiprime? yes
+
+The host found one prime factor of 29.
+The oracle acknowledged the other prime factor of 487.
+The factor 29 times the factor 487 equals the semiprime product 14123.
+29 * 487 = 14123.
+Does the oracle confirm this semiprime? yes
 

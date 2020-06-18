@@ -13,10 +13,12 @@ let oracle = new Oracle()
 let a = host.test(oracle)
 let b = oracle.sibling(a)
 let semiprime = a * b
-logger.log(`The host detected one prime factor of "${a}".`)
-logger.log(`The oracle acknowledged the other prime factor of "${b}".`)
+logger.log('')
+logger.log(`The host found one prime factor of ${a}.`)
+logger.log(`The oracle acknowledged the other prime factor of ${b}.`)
+logger.log(`The factor ${a} times the factor ${b} equals the semiprime product ${semiprime}.`)
 logger.log(`${a} * ${b} = ${semiprime}.`)
-logger.log(`Does the oracle confirm the semiprime? ${oracle.confirm(semiprime)}`)
+logger.log(`Does the oracle confirm this semiprime? ${oracle.confirm(semiprime)}`)
 logger.log('')
 
 function Host() {
@@ -43,10 +45,10 @@ function Oracle() {
 		
 		initialize: function() {
 			
-			this.factors = []
-			this.factors.push(primes.random())
-			this.factors.push(primes.random())
-			this.semiprime = this.factors[0] * this.factors[1]
+			let factors = []
+			factors.push(primes.random())
+			factors.push(primes.random())
+			this.semiprime = factors[0] * factors[1]
 		},
 		
 		query: function(value) {
