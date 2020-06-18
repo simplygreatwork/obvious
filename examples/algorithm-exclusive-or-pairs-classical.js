@@ -2,8 +2,9 @@
 const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
-// a classical illustration for Simon's algorithm
+// a classical illustration of Simon's algorithm
 // todo: investigate how to property handle case of all secret bits off (0000): e.g. no pairs exist
+// todo: consider that the secret can never be 0000
 
 repeat(20, function() {
 	run()
@@ -12,7 +13,7 @@ repeat(20, function() {
 function run() {
 	
 	let host = new Host()
-	let oracle = new Oracle({ length: 4 })
+	let oracle = new Oracle({ length: 14 })
 	let result = host.test(oracle)
 	logger.log(`The host detected an oracle value of "${result}".`)
 	logger.log(`Does the oracle confirm this? ${oracle.confirm(result)}`)

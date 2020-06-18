@@ -1,0 +1,5 @@
+The host detected one prime factor of "433".
+The oracle returned the other prime factor of "307".
+433 * 307 = 132931.
+Does the oracle confirm the semiprime? yes
+

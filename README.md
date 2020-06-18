@@ -80,7 +80,7 @@ node amplify.js
 		- Allows for custom displays and custom debugging and tracing.
 		- Keeps the core circuit and gate implementations tight and focused.
 
-## References & Links
+## References & links
 
 - https://github.com/pnnl/QASMBench
 - https://www.oreilly.com/library/view/programming-quantum-computers/978149203967/9
