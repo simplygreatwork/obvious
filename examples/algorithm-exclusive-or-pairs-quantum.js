@@ -3,7 +3,7 @@ const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
 // a quantum implementation of Simon's algorithm
-// a work in progress - just am unfinished skeleton right now targeting a 2-bit bitstring
+// a work in progress - just an unfinished skeleton right now targeting a 2-bit bitstring
 // thought: likely need to run the circuit once per number of qubits to get the answer
 
 repeat(1, function() {
