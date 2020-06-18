@@ -22,9 +22,10 @@ function run() {
 	let host = new Host()
 	let oracle = new Oracle({ length : 3 })
 	let kind = host.test(oracle)
-	console.log(`A ${kind} oracle was detected. [${host.tally}]`)
-	console.log(`Does the oracle confirm this? ${oracle.confirm(kind)}`)
-	console.log('')
+	logger.log('')
+	logger.log(`A ${kind} oracle was detected. [${host.tally}]`)
+	logger.log(`Does the oracle confirm this? ${oracle.confirm(kind)}`)
+	logger.log('')
 }
 
 function Host() {

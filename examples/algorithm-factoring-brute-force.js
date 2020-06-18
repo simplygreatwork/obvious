@@ -3,7 +3,7 @@ const logger = require('../src/logger')()
 const math = require('mathjs')
 
 // a brute force illustration of the intent behind Shor's algorithm 
-// this finds the two prime numbers which are the prime factors of a semiprime product
+// this illustration finds the two prime numbers which are the prime factors of a semiprime product
 // prime a * prime b = the semiprime product
 // this will not scale well to very large sets of prime numbers
 
@@ -73,23 +73,23 @@ function Primes(options) {
 		
 		initialize: function() {
 			
-			this.primes = []
+			this.array = []
 			let max = options && options.max ? options.max : 100
 			repeat(max, function(index) {
 				if (math.isPrime(index)) {
-					this.primes.push(index)
+					this.array.push(index)
 				}
 			}.bind(this))
 		},
 		
 		random: function() {
-			return this.primes[Math.floor(Math.random() * this.primes.length)]
+			return this.array[Math.floor(Math.random() * this.array.length)]
 		},
 		
 		iterate: function(fn) {
 			
-			repeat(this.primes.length, function(index) {
-				let prime = this.primes[index]
+			repeat(this.array.length, function(index) {
+				let prime = this.array[index]
 				return fn(prime)
 			}.bind(this))
 		}

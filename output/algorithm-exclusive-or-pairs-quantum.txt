@@ -1,0 +1,12 @@
+-----------------------------------------------------------------------------------
+
+Running circuit "a quantum circuit to find a secret bitstring using xor"
+
+
+  Finished "a quantum circuit to find a secret bitstring using xor"
+
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+
+Does the oracle confirm? no
+

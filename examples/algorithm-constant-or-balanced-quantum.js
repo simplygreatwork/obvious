@@ -13,14 +13,15 @@ function run() {
 	
 	let circuit = Circuit('a randomly installed oracle which is either constant or balanced', 3)
 	circuit.unit('*').h()
-	let oracle = Oracle().random()
+	let oracle = new Oracle()
 	oracle.apply(circuit)
 	circuit.unit('*').h()
 	circuit.run()
 	let kind = circuit.kind()
-	console.log(`A ${kind} oracle was detected.`)
-	console.log(`Does the oracle confirm this? ${oracle.confirm(kind)}`)
-	console.log('')
+	logger.log('')
+	logger.log(`A ${kind} oracle was detected.`)
+	logger.log(`Does the oracle confirm this? ${oracle.confirm(kind)}`)
+	logger.log('')
 }
 
 function Circuit(name, size) {
@@ -38,7 +39,7 @@ function Circuit(name, size) {
 		kind: function() {
 			
 			let bits = this.measure()
-			console.log(`The measured state of this circuit is |${bits.toString(' x')}> as index |${bits.toNumber()}>`)
+			logger.log(`The measured state of this circuit is |${bits.toString(' x')}> as index |${bits.toNumber()}>`)
 			return bits.toNumber() === 0 ? 'constant' : 'balanced'
 		}
 	})
@@ -46,32 +47,28 @@ function Circuit(name, size) {
 	return circuit
 }
 
-function Oracle() {
+function Oracle(options) {
 	
-	return {
-		
-		random: function(options) {
-			
-			return Math.random() < 0.5 ? {
-				apply: function(circuit) {
-					return
-				},
-				confirm: function(kind) {
-					return kind == 'constant' ? 'yes' : 'no'
-				}
-			} : {
-				apply: function(circuit) {
-					return circuit
-					.h(2)
-					.z(0).cx(2, 1)
-					.h(2)
-				},
-				confirm: function(kind) {
-					return kind == 'balanced' ? 'yes' : 'no'
-				}
-			}
+	let oracles = [{
+		apply: function(circuit) {
+			return
+		},
+		confirm: function(kind) {
+			return kind == 'constant' ? 'yes' : 'no'
 		}
-	}
+	}, {
+		apply: function(circuit) {
+			return circuit
+			.h(2)
+			.z(0).cx(2, 1)
+			.h(2)
+		},
+		confirm: function(kind) {
+			return kind == 'balanced' ? 'yes' : 'no'
+		}
+	}]
+	
+	Object.assign(this, oracles[Math.floor(Math.random() * 2)])
 }
 
 function repeat(number, fn) {

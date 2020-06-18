@@ -5,10 +5,11 @@ Running circuit "a random oracle for a bitwise probing"
 
   Finished "a random oracle for a bitwise probing"
 
-    |   x>  50.0000%  0.70710678+0.00000000i (  0.00)
-    |x  x>  50.0000% -0.70710678+0.00000000i (180.00)
+    |  x >  50.0000%  0.70710678+0.00000000i (  0.00)
+    |x x >  50.0000% -0.70710678+0.00000000i (180.00)
 
-The host detected an oracle value of "001".
+
+The host detected an oracle value of "010".
 Does the oracle confirm this? yes
 
 -----------------------------------------------------------------------------------
@@ -21,98 +22,8 @@ Running circuit "a random oracle for a bitwise probing"
     |   x>  50.0000%  0.70710678+0.00000000i (  0.00)
     |x  x>  50.0000% -0.70710678+0.00000000i (180.00)
 
-The host detected an oracle value of "001".
-Does the oracle confirm this? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a random oracle for a bitwise probing"
-
-
-  Finished "a random oracle for a bitwise probing"
-
-    |  xx>  50.0000%  0.70710678+0.00000000i (  0.00)
-    |x xx>  50.0000% -0.70710678+0.00000000i (180.00)
-
-The host detected an oracle value of "011".
-Does the oracle confirm this? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a random oracle for a bitwise probing"
-
-
-  Finished "a random oracle for a bitwise probing"
-
-    | x x>  50.0000%  0.70710678+0.00000000i (  0.00)
-    |xx x>  50.0000% -0.70710678+0.00000000i (180.00)
-
-The host detected an oracle value of "101".
-Does the oracle confirm this? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a random oracle for a bitwise probing"
-
-
-  Finished "a random oracle for a bitwise probing"
-
-    | x x>  50.0000%  0.70710678+0.00000000i (  0.00)
-    |xx x>  50.0000% -0.70710678+0.00000000i (180.00)
-
-The host detected an oracle value of "101".
-Does the oracle confirm this? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a random oracle for a bitwise probing"
-
-
-  Finished "a random oracle for a bitwise probing"
-
-    | x x>  50.0000%  0.70710678+0.00000000i (  0.00)
-    |xx x>  50.0000% -0.70710678+0.00000000i (180.00)
-
-The host detected an oracle value of "101".
-Does the oracle confirm this? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a random oracle for a bitwise probing"
-
-
-  Finished "a random oracle for a bitwise probing"
-
-    | x x>  50.0000%  0.70710678+0.00000000i (  0.00)
-    |xx x>  50.0000% -0.70710678+0.00000000i (180.00)
-
-The host detected an oracle value of "101".
-Does the oracle confirm this? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a random oracle for a bitwise probing"
-
-
-  Finished "a random oracle for a bitwise probing"
-
-    |   x>  50.0000%  0.70710678+0.00000000i (  0.00)
-    |x  x>  50.0000% -0.70710678+0.00000000i (180.00)
 
 The host detected an oracle value of "001".
-Does the oracle confirm this? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a random oracle for a bitwise probing"
-
-
-  Finished "a random oracle for a bitwise probing"
-
-    | x  >  50.0000%  0.70710678+0.00000000i (  0.00)
-    |xx  >  50.0000% -0.70710678+0.00000000i (180.00)
-
-The host detected an oracle value of "100".
 Does the oracle confirm this? yes
 
 -----------------------------------------------------------------------------------
@@ -125,6 +36,105 @@ Running circuit "a random oracle for a bitwise probing"
     |    >  50.0000%  0.70710678+0.00000000i (  0.00)
     |x   >  50.0000% -0.70710678+0.00000000i (180.00)
 
+
 The host detected an oracle value of "000".
+Does the oracle confirm this? yes
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a random oracle for a bitwise probing"
+
+
+  Finished "a random oracle for a bitwise probing"
+
+    |   x>  50.0000%  0.70710678+0.00000000i (  0.00)
+    |x  x>  50.0000% -0.70710678+0.00000000i (180.00)
+
+
+The host detected an oracle value of "001".
+Does the oracle confirm this? yes
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a random oracle for a bitwise probing"
+
+
+  Finished "a random oracle for a bitwise probing"
+
+    | xxx>  50.0000%  0.70710678+0.00000000i (  0.00)
+    |xxxx>  50.0000% -0.70710678+0.00000000i (180.00)
+
+
+The host detected an oracle value of "111".
+Does the oracle confirm this? yes
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a random oracle for a bitwise probing"
+
+
+  Finished "a random oracle for a bitwise probing"
+
+    | x  >  50.0000%  0.70710678+0.00000000i (  0.00)
+    |xx  >  50.0000% -0.70710678+0.00000000i (180.00)
+
+
+The host detected an oracle value of "100".
+Does the oracle confirm this? yes
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a random oracle for a bitwise probing"
+
+
+  Finished "a random oracle for a bitwise probing"
+
+    | xxx>  50.0000%  0.70710678+0.00000000i (  0.00)
+    |xxxx>  50.0000% -0.70710678+0.00000000i (180.00)
+
+
+The host detected an oracle value of "111".
+Does the oracle confirm this? yes
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a random oracle for a bitwise probing"
+
+
+  Finished "a random oracle for a bitwise probing"
+
+    | xxx>  50.0000%  0.70710678+0.00000000i (  0.00)
+    |xxxx>  50.0000% -0.70710678+0.00000000i (180.00)
+
+
+The host detected an oracle value of "111".
+Does the oracle confirm this? yes
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a random oracle for a bitwise probing"
+
+
+  Finished "a random oracle for a bitwise probing"
+
+    |  xx>  50.0000%  0.70710678+0.00000000i (  0.00)
+    |x xx>  50.0000% -0.70710678+0.00000000i (180.00)
+
+
+The host detected an oracle value of "011".
+Does the oracle confirm this? yes
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a random oracle for a bitwise probing"
+
+
+  Finished "a random oracle for a bitwise probing"
+
+    | xxx>  50.0000%  0.70710678+0.00000000i (  0.00)
+    |xxxx>  50.0000% -0.70710678+0.00000000i (180.00)
+
+
+The host detected an oracle value of "111".
 Does the oracle confirm this? yes
 

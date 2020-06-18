@@ -22,6 +22,7 @@ function run() {
 	main.h()
 	circuit.run()
 	let result = circuit.evaluate(main)
+	logger.log('')
 	logger.log(`The host detected an oracle value of "${result}".`)
 	logger.log(`Does the oracle confirm this? ${oracle.confirm(result)}`)
 	logger.log('')

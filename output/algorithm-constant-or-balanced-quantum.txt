@@ -5,10 +5,12 @@ Running circuit "a randomly installed oracle which is either constant or balance
 
   Finished "a randomly installed oracle which is either constant or balanced"
 
-    |  x>  25.0000%  0.50000000+0.00000000i (  0.00)
-    | xx>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |x x>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxx>  25.0000% -0.50000000+0.00000000i (180.00)
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+The measured state of this circuit is |   > as index |0>
+
+A constant oracle was detected.
+Does the oracle confirm this? yes
 
 -----------------------------------------------------------------------------------
 
@@ -19,35 +21,10 @@ Running circuit "a randomly installed oracle which is either constant or balance
 
     |   > 100.0000%  1.00000000+0.00000000i (  0.00)
 
------------------------------------------------------------------------------------
+The measured state of this circuit is |   > as index |0>
 
-Running circuit "a randomly installed oracle which is either constant or balanced"
-
-
-  Finished "a randomly installed oracle which is either constant or balanced"
-
-    |  x>  25.0000%  0.50000000+0.00000000i (  0.00)
-    | xx>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |x x>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxx>  25.0000% -0.50000000+0.00000000i (180.00)
-
------------------------------------------------------------------------------------
-
-Running circuit "a randomly installed oracle which is either constant or balanced"
-
-
-  Finished "a randomly installed oracle which is either constant or balanced"
-
-    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
-
------------------------------------------------------------------------------------
-
-Running circuit "a randomly installed oracle which is either constant or balanced"
-
-
-  Finished "a randomly installed oracle which is either constant or balanced"
-
-    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+A constant oracle was detected.
+Does the oracle confirm this? yes
 
 -----------------------------------------------------------------------------------
 
@@ -61,6 +38,53 @@ Running circuit "a randomly installed oracle which is either constant or balance
     |x x>  25.0000%  0.50000000+0.00000000i (  0.00)
     |xxx>  25.0000% -0.50000000+0.00000000i (180.00)
 
+The measured state of this circuit is | xx> as index |3>
+
+A balanced oracle was detected.
+Does the oracle confirm this? yes
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a randomly installed oracle which is either constant or balanced"
+
+
+  Finished "a randomly installed oracle which is either constant or balanced"
+
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+The measured state of this circuit is |   > as index |0>
+
+A constant oracle was detected.
+Does the oracle confirm this? yes
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a randomly installed oracle which is either constant or balanced"
+
+
+  Finished "a randomly installed oracle which is either constant or balanced"
+
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+The measured state of this circuit is |   > as index |0>
+
+A constant oracle was detected.
+Does the oracle confirm this? yes
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a randomly installed oracle which is either constant or balanced"
+
+
+  Finished "a randomly installed oracle which is either constant or balanced"
+
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+The measured state of this circuit is |   > as index |0>
+
+A constant oracle was detected.
+Does the oracle confirm this? yes
+
 -----------------------------------------------------------------------------------
 
 Running circuit "a randomly installed oracle which is either constant or balanced"
@@ -73,14 +97,10 @@ Running circuit "a randomly installed oracle which is either constant or balance
     |x x>  25.0000%  0.50000000+0.00000000i (  0.00)
     |xxx>  25.0000% -0.50000000+0.00000000i (180.00)
 
------------------------------------------------------------------------------------
+The measured state of this circuit is | xx> as index |3>
 
-Running circuit "a randomly installed oracle which is either constant or balanced"
-
-
-  Finished "a randomly installed oracle which is either constant or balanced"
-
-    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+A balanced oracle was detected.
+Does the oracle confirm this? yes
 
 -----------------------------------------------------------------------------------
 
@@ -90,6 +110,11 @@ Running circuit "a randomly installed oracle which is either constant or balance
   Finished "a randomly installed oracle which is either constant or balanced"
 
     |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+The measured state of this circuit is |   > as index |0>
+
+A constant oracle was detected.
+Does the oracle confirm this? yes
 
 -----------------------------------------------------------------------------------
 
@@ -102,4 +127,23 @@ Running circuit "a randomly installed oracle which is either constant or balance
     | xx>  25.0000%  0.50000000+0.00000000i (  0.00)
     |x x>  25.0000%  0.50000000+0.00000000i (  0.00)
     |xxx>  25.0000% -0.50000000+0.00000000i (180.00)
+
+The measured state of this circuit is |x x> as index |5>
+
+A balanced oracle was detected.
+Does the oracle confirm this? yes
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a randomly installed oracle which is either constant or balanced"
+
+
+  Finished "a randomly installed oracle which is either constant or balanced"
+
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+The measured state of this circuit is |   > as index |0>
+
+A constant oracle was detected.
+Does the oracle confirm this? yes
 

@@ -1,14 +1,16 @@
-Querying the oracle with bitmask "0001" returns: 0.
-Querying the oracle with bitmask "0010" returns: 0.
-Querying the oracle with bitmask "0100" returns: 0.
+Querying the oracle with bitmask "0001" returns: 1.
+Querying the oracle with bitmask "0010" returns: 1.
+Querying the oracle with bitmask "0100" returns: 1.
 Querying the oracle with bitmask "1000" returns: 0.
-The host detected an oracle value of "0000".
+
+The host detected an oracle value of "0111".
 Does the oracle confirm this? yes
 
 Querying the oracle with bitmask "0001" returns: 0.
 Querying the oracle with bitmask "0010" returns: 0.
 Querying the oracle with bitmask "0100" returns: 0.
 Querying the oracle with bitmask "1000" returns: 1.
+
 The host detected an oracle value of "1000".
 Does the oracle confirm this? yes
 
@@ -16,20 +18,23 @@ Querying the oracle with bitmask "0001" returns: 0.
 Querying the oracle with bitmask "0010" returns: 1.
 Querying the oracle with bitmask "0100" returns: 0.
 Querying the oracle with bitmask "1000" returns: 0.
+
 The host detected an oracle value of "0010".
 Does the oracle confirm this? yes
 
 Querying the oracle with bitmask "0001" returns: 0.
 Querying the oracle with bitmask "0010" returns: 1.
 Querying the oracle with bitmask "0100" returns: 0.
-Querying the oracle with bitmask "1000" returns: 1.
-The host detected an oracle value of "1010".
+Querying the oracle with bitmask "1000" returns: 0.
+
+The host detected an oracle value of "0010".
 Does the oracle confirm this? yes
 
 Querying the oracle with bitmask "0001" returns: 1.
-Querying the oracle with bitmask "0010" returns: 1.
-Querying the oracle with bitmask "0100" returns: 1.
-Querying the oracle with bitmask "1000" returns: 1.
-The host detected an oracle value of "1111".
+Querying the oracle with bitmask "0010" returns: 0.
+Querying the oracle with bitmask "0100" returns: 0.
+Querying the oracle with bitmask "1000" returns: 0.
+
+The host detected an oracle value of "0001".
 Does the oracle confirm this? yes
 

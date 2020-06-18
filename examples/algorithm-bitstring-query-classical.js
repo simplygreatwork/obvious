@@ -13,6 +13,7 @@ function run() {
 	let host = new Host()
 	let oracle = new Oracle({ length: 4 })
 	let result = host.test(oracle)
+	logger.log('')
 	logger.log(`The host detected an oracle value of "${result}".`)
 	logger.log(`Does the oracle confirm this? ${oracle.confirm(result)}`)
 	logger.log('')
