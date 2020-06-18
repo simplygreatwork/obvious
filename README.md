@@ -1,9 +1,9 @@
 
-## A small, hackable, optimized quantum computing for learning quantum computing.
+## A small, hackable, optimized framework for learning quantum computing with examples.
 
 ## Features
 
-- A small, hackable, optimized library for learning quantum computing.
+- A small, hackable, optimized framework for learning quantum computing with examples.
 - Trace gate operations to display state changes as gates are applied.
 - Prints amplitude, probability, and phase.
 - Reasonably performant for 10 - 20 qubits using the quantastica engine.
