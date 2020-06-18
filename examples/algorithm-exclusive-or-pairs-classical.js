@@ -2,7 +2,7 @@
 const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
-// a classical background for Simon's algorithm
+// a classical illustration for Simon's algorithm
 // todo: investigate how to property handle case of all secret bits off (0000): e.g. no pairs exist
 
 repeat(20, function() {
@@ -29,14 +29,15 @@ function Host() {
 			this.results = {}
 			repeat(Math.pow(2, oracle.length), function(index) {
 				let bitstring = Bits.fromNumber(index, oracle.length).toString()
-				let result = oracle.query(bitstring) + ''
+				let result = oracle.query(bitstring)
 				if (this.results[result] !== undefined) {
 					let a = Bits.fromString(bitstring)
 					let b = Bits.fromString(this.results[result])
 					answer = a.xor(b).toString()
 					return 'break'
+				} else {
+					this.results[result] = bitstring
 				}
-				this.results[result] = bitstring
 			}.bind(this))
 			answer = answer || Bits.fromNumber(0, oracle.length).toString()		// review
 			return answer
@@ -54,15 +55,15 @@ function Oracle(options) {
 			let random = Math.floor(Math.random() * Math.pow(2, this.length))
 			this.secret = Bits.fromNumber(random, this.length).toString()
 			this.table = {}
-			let id = 0
+			let link = 0
 			repeat(Math.pow(2, this.length), function(index) {
 				let a = Bits.fromNumber(index, this.length).toString()
 				let b = this.secret
 				let xor = Bits.fromString(a).xor(Bits.fromString(b)).toString()
 				if (this.table[a] === undefined) {
-					id++
-					this.table[a] = id
-					this.table[xor] = id
+					link++
+					this.table[a] = link
+					this.table[xor] = link
 				}
 			}.bind(this))
 		},

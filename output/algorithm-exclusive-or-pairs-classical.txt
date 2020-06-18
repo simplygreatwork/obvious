@@ -1,40 +1,43 @@
+The host detected an oracle value of "0111".
+Does the oracle confirm this? yes
+
 The host detected an oracle value of "1000".
 Does the oracle confirm this? yes
 
-The host detected an oracle value of "0101".
-Does the oracle confirm this? yes
-
-The host detected an oracle value of "1110".
-Does the oracle confirm this? yes
-
-The host detected an oracle value of "0001".
-Does the oracle confirm this? yes
-
-The host detected an oracle value of "0011".
-Does the oracle confirm this? yes
-
-The host detected an oracle value of "0011".
-Does the oracle confirm this? yes
-
-The host detected an oracle value of "1111".
-Does the oracle confirm this? yes
-
-The host detected an oracle value of "0011".
-Does the oracle confirm this? yes
-
-The host detected an oracle value of "1100".
-Does the oracle confirm this? yes
-
-The host detected an oracle value of "1100".
-Does the oracle confirm this? yes
-
-The host detected an oracle value of "0101".
+The host detected an oracle value of "1000".
 Does the oracle confirm this? yes
 
 The host detected an oracle value of "1101".
 Does the oracle confirm this? yes
 
+The host detected an oracle value of "1001".
+Does the oracle confirm this? yes
+
+The host detected an oracle value of "0001".
+Does the oracle confirm this? yes
+
+The host detected an oracle value of "1001".
+Does the oracle confirm this? yes
+
+The host detected an oracle value of "0100".
+Does the oracle confirm this? yes
+
+The host detected an oracle value of "1010".
+Does the oracle confirm this? yes
+
 The host detected an oracle value of "0110".
+Does the oracle confirm this? yes
+
+The host detected an oracle value of "0011".
+Does the oracle confirm this? yes
+
+The host detected an oracle value of "0010".
+Does the oracle confirm this? yes
+
+The host detected an oracle value of "0011".
+Does the oracle confirm this? yes
+
+The host detected an oracle value of "0100".
 Does the oracle confirm this? yes
 
 The host detected an oracle value of "0001".
@@ -43,18 +46,15 @@ Does the oracle confirm this? yes
 The host detected an oracle value of "0010".
 Does the oracle confirm this? yes
 
-The host detected an oracle value of "0110".
+The host detected an oracle value of "1010".
 Does the oracle confirm this? yes
 
-The host detected an oracle value of "0111".
+The host detected an oracle value of "0101".
 Does the oracle confirm this? yes
 
-The host detected an oracle value of "1011".
+The host detected an oracle value of "1111".
 Does the oracle confirm this? yes
 
-The host detected an oracle value of "0010".
-Does the oracle confirm this? yes
-
-The host detected an oracle value of "0000".
+The host detected an oracle value of "1010".
 Does the oracle confirm this? yes
 

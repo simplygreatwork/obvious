@@ -2,7 +2,7 @@
 const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
-// a classical frame of reference for the Bernstein-Vazirani algorithm
+// a classical illustration for the Bernstein-Vazirani algorithm
 
 repeat(5, function() {
 	run()

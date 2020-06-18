@@ -1,7 +1,7 @@
 
 const logger = require('../src/logger')()
 
-// a classical background for the Deutsch-Jozsa algorithm
+// a classical illustration for the Deutsch-Jozsa algorithm
 
 // suppose that an oracle contains a fixed list of values either 0 or 1
 // if every element of the oracle returns 0, the oracle is constant
