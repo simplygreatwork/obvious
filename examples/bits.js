@@ -42,3 +42,18 @@ logger.log('array: ' + bits.toArray())
 bits = Bits.fromNumber(9, 4)
 logger.log('bits: ' + bits)
 logger.log('bits.invert().toString(): ' + bits.invert().toString())
+
+xor('101', '010')
+xor('010', '101')
+xor('010', '010')
+xor('101', '101')
+xor('000', '111')
+xor('111', '000')
+xor('000', '000')
+xor('111', '111')
+
+function xor(a, b) {
+	
+	let result = Bits.fromString(a).xor(Bits.fromString(b)).toString()
+	logger.log(`The exclusive OR of ${a} and ${b} is ${result}.`)
+}

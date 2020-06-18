@@ -15,3 +15,11 @@ bits: 0001
 array: false,false,false,true
 bits: 1001
 bits.invert().toString(): 0110
+The exclusive OR of 101 and 010 is 111.
+The exclusive OR of 010 and 101 is 111.
+The exclusive OR of 010 and 010 is 000.
+The exclusive OR of 101 and 101 is 000.
+The exclusive OR of 000 and 111 is 111.
+The exclusive OR of 111 and 000 is 111.
+The exclusive OR of 000 and 000 is 000.
+The exclusive OR of 111 and 111 is 000.
