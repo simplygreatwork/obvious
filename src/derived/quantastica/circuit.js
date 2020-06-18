@@ -154,16 +154,22 @@ module.exports = class Circuit {
 	measure() {
 		
 		if (this.measurement) return this.measurement 
-		this.measurement = null
+		this.measurement = this.measure_()
+		return this.measurement
+	}
+	
+	measure_() {
+		
+		let measurement = null
 		let random = Math.random()
 		let value = 0
 		this.each(function(each, index) {
 			if (random > value && random < value + each.magnitude) {
-				this.measurement = Bits.fromNumber(each.index, this.size)
+				measurement = Bits.fromNumber(each.index, this.size)
 			}
 			value = value + each.magnitude
 		}.bind(this))
-		return this.measurement
+		return measurement
 	}
 	
 	on(key, func) {

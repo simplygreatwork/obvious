@@ -22,7 +22,7 @@ function run() {
 	oracle.query(circuit)
 	main.h()
 	circuit.run()
-	let result = circuit.evaluate()
+	let result = circuit.evaluate(main)
 	logger.log(`The host detected an oracle value of "${result}".`)
 	logger.log(`Does the oracle confirm this? ${oracle.confirm(result)}`)
 	logger.log('')
@@ -40,13 +40,17 @@ function Circuit(name, size) {
 	
 	Object.assign(circuit, {
 		
-		evaluate: function() {
+		evaluate: function(main) {
 			
-			let bits = this.measure()
-			let array = bits.toArray()
-			array.shift()
-			bits = Bits.fromArray(array)
-			return bits
+			if (true) {
+				return main.measure()
+			} else {
+				let bits = this.measure()
+				let array = bits.toArray()
+				array.shift()
+				bits = Bits.fromArray(array)
+				return bits
+			}
 		}
 	})
 	

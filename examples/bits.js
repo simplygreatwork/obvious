@@ -25,8 +25,15 @@ logger.log('bits.toString("01"): ' + bits.toString('01'))
 bits = Bits.fromString('111000100001001', '01')
 logger.log('bits.toNumber(): ' + bits.toNumber())
 
-bits = Bits.fromString('0000').flip(0)
-logger.log('bits: ' + bits)
+bits = Bits.fromString('0000')
+logger.log('bits.endian: ' + bits.endian())
+bits.flip(0)
+logger.log('little endian bits: ' + bits)
+
+bits = Bits.fromString('0000')
+bits.endian('big')
+bits.flip(0)
+logger.log('big endian bits: ' + bits)
 
 bits = Bits.fromNumber(1, 4)
 logger.log('bits: ' + bits)

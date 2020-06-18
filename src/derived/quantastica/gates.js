@@ -435,12 +435,12 @@ module.exports = {
 		],
 		params: []
 	},
-	reset_: {
+	reset__: {
 		description: "Resets qubit",
 		matrix: [],
 		params: []
 	},
-	measure_: {
+	measure__: {
 		description: "Measures qubit and stores chance (0 or 1) into classical bit",
 		matrix: [],
 		params: []

@@ -1,5 +1,6 @@
 
 const gates = require('./derived/quantastica/gates')
+const Bits = require('./bits')
 
 class Unit {
 	
@@ -52,7 +53,20 @@ class Unit {
 	}
 	
 	measure() {
-		return
+		
+		let array = []
+		let bits = this.circuit_.measure_()
+		this.iterate(function(index) {
+			array.unshift(bits.bit(index))
+		})
+		return Bits.fromArray(array)
+	}
+	
+	iterate(fn) {
+		
+		for (let i = this.index; i < this.index + this.length; i++) {
+			fn(i)
+		}
 	}
 }
 

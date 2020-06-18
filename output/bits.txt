@@ -8,7 +8,9 @@ bits.toNumber(): 5
 bits.toString(" x"):  x x
 bits.toString("01"): 0101
 bits.toNumber(): 28937
-bits: 0001
+bits.endian: little
+little endian bits: 0001
+big endian bits: 1000
 bits: 0001
 array: false,false,false,true
 bits: 1001

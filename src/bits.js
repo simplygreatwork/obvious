@@ -16,10 +16,14 @@ module.exports = class Bits {
 		}
 	}
 	
-	bit(index) {
+	bit(index, value) {
 		
 		if (this.endian() == 'little') index = this.array.length - 1 - index
-		return this.array[index]
+		if (value === undefined) {
+			return this.array[index]
+		} else {
+			this.array[index] = value
+		}
 	}
 	
 	flip(index) {
