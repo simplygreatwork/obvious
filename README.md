@@ -45,7 +45,7 @@ node amplify.js
 	- https://github.com/adamisntdead/qics
 	- https://github.com/qcsimulator/qcsimulator.github.io
 
-## Special Thanks (Acknowledgements and Attribution)
+## Special thanks (acknowledgements and attribution)
 
 - Thank you to [David B Kemp](http://davidbkemp.github.io/). Occasionally, I ping David with emails about his project jsqubits. He is super helpful.
 - Thank you to Quantastica for publishing the simulator Quantum Circuit using an MIT license. I am current using a paired down version of Quantum Circuit for these quantum examples.
