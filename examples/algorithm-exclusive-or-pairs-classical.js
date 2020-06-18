@@ -46,14 +46,13 @@ function Host() {
 
 function Oracle(options) {
 	
-	this.length = options && options.length ? options.length : 4
-	let random = Math.floor(Math.random() * Math.pow(2, this.length))
-	this.secret = Bits.fromNumber(random, this.length).toString()
-	
 	Object.assign(this, {
 		
 		initialize: function() {
 			
+			this.length = options && options.length ? options.length : 4
+			let random = Math.floor(Math.random() * Math.pow(2, this.length))
+			this.secret = Bits.fromNumber(random, this.length).toString()
 			this.table = {}
 			let id = 0
 			repeat(Math.pow(2, this.length), function(index) {
