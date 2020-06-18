@@ -3,7 +3,7 @@ const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
 // a classical background for Simon's algorithm
-// todo: investgate how to handle case of secret bits all off
+// todo: investigate how to property handle case of all secret bits off (0000): e.g. no pairs exist
 
 repeat(20, function() {
 	run()
