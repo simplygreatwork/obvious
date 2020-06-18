@@ -74,7 +74,7 @@ node amplify.js
 	- If an example uses a qubit or qubit range helper object, implement as a seperate function inside the example.
 	
 - Keep helper modules as composible and as independent as possible:
-	- For example, converting bit arrays to an from integers and strings is implemented independently from circuits.
+	- For example, converting bit arrays to and from integers and strings is implemented independently from circuits.
 	- For example, the core circuit implementations are seperate from the circuit class used by examples.
 		- Allows for custom displays and custom debugging and tracing.
 		- Keeps the core circuit and gate implementations tight and focused.

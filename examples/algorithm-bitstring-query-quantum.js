@@ -2,7 +2,7 @@
 const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
-// the quantum version of the Bernstein-Vazirani algorithm
+// the quantum implementation of the Bernstein-Vazirani algorithm
 
 repeat(10, function() {
 	run()
