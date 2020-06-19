@@ -1,12 +1,12 @@
 
 const logger = require('../src/logger')()
 
-circuit('ccx false', 3)
+circuit('ccx: false', 3)
 .x(0)
 .ccx(2, [0, 1])
 .run()
 
-circuit('ccx true', 3)
+circuit('ccx: true', 3)
 .x(0)
 .x(1)
 .ccx(2, [0, 1])

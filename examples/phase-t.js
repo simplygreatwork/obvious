@@ -1,7 +1,7 @@
 
 const logger = require('../src/logger')()
 
-circuit('phase-t', 1)
+circuit('phase: t', 1)
 .x(0)
 .t(0)
 .t(0)

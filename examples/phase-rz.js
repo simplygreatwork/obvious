@@ -1,7 +1,7 @@
 
 const logger = require('../src/logger')()
 
-circuit('phase-rz', 1)
+circuit('phase: rz', 1)
 .x(0)
 .rz(0, [], { phi: 'pi/4' })
 .rz(0, [], { phi: 'pi/4' })

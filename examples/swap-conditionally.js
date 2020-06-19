@@ -1,12 +1,12 @@
 
 const logger = require('../src/logger')()
 
-circuit('cswap-before', 3)
+circuit('cswap: before', 3)
 .x(0)
 .x(2)
 .run('trace')
 
-circuit('cswap-after', 3)
+circuit('cswap: after', 3)
 .x(0)
 .x(2)
 .cswap([1, 2], 0)

@@ -1,14 +1,14 @@
 
 const logger = require('../src/logger')()
 
-Circuit('phase-rotation-with-one-qubit-on', 1)
+Circuit('phase rotation with 1 qubit on', 1)
 .x(0)
 .repeat(9, function(index) {
 	this.rz(0, [], { phi: 'pi / 18' })
 })
 .run('trace', 'changed')
 
-Circuit('phase-rotation-with-four-qubits-in-superposition', 4)
+Circuit('phase rotation with 4 qubits in superposition', 4)
 .unit('all').h().circuit()
 .spread(function(index) {
 	this.rz(index, [], { phi: 'pi / 15' })

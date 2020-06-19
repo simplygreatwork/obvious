@@ -6,7 +6,7 @@ circuit('bell', 2)
 .cx(1, 0)
 .run()
 
-circuit('bell-opposite', 2)
+circuit('bell (opposite)', 2)
 .h(0)
 .cx(1, 0)
 .x(0)

@@ -1,7 +1,7 @@
 
 const logger = require('../src/logger')()
 
-circuit('ghz', 3)
+circuit('ghz state', 3)
 .h(0)
 .cx(1, 0)
 .cx(2, 1)

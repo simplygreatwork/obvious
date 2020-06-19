@@ -24,7 +24,7 @@ function frequency(options) {
 
 function input(period, size) {
 	
-	Circuit(`input-phases-for-a-period-of-${period}-using-${size}-qubits`, size)
+	Circuit(`input phases for a period of ${period} using ${size} qubits`, size)
 	.period(period)
 	.run()
 }
@@ -32,7 +32,7 @@ function input(period, size) {
 function output(period, size) {
 	
 	let result = { index: -1, magnitude: 0}
-	Circuit(`output-for-a-period-of-${period}-using-${size}-qubits`, size)
+	Circuit(`output for a period of ${period} using ${size} qubits`, size)
 	.period(period)
 	.qft(size)
 	.run()

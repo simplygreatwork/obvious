@@ -1,13 +1,13 @@
 
 const logger = require('../src/logger')()
 
-circuit('ccx-built-in-matrix', 3)
+circuit('ccx: built in matrix', 3)
 .x(0)
 .x(1)
 .ccx(2, [0, 1])
 .run()
 
-circuit('ccx-constructed-toffoli', 3)
+circuit('ccx: constructed toffoli', 3)
 .x(0)
 .x(1)
 .toffoli(2, [0, 1])

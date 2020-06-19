@@ -1,13 +1,13 @@
 
 const logger = require('../src/logger')()
 
-circuit('the-origin-state-with-1-qubit', 1)
+circuit('the origin state with 1 qubit', 1)
 .run('dense')
 
-circuit('the-origin-state-with-3-qubits', 3)
+circuit('the origin state with 3 qubits', 3)
 .run('dense')
 
-circuit('the-origin-state-with-4-qubits', 4)
+circuit('the origin state with 4 qubits', 4)
 .run('dense')
 
 function circuit(name, size) {

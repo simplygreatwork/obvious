@@ -4,7 +4,7 @@ const Bits = require('../src/bits')
 const bits = Bits.fromNumber(3, 4)
 const wave = []
 
-circuit(`amplify-wave |${bits.toString(' x')}>`, 5)
+circuit(`create an amplification wave |${bits.toString(' x')}>`, 5)
 .h(0).h(1).h(2).h(3)
 .repeat(27, function(index) {
 	this.flip(bits).mirror()

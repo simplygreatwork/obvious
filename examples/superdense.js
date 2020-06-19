@@ -9,7 +9,7 @@ encode(3)
 
 function encode(value) {
 	
-	let circuit = Circuit('superdense-' + value, 2)
+	let circuit = Circuit('superdense: ' + value, 2)
 	let alice = circuit.alice()
 	let bob = circuit.bob()
 	circuit.entangle(alice, bob)
