@@ -3,10 +3,8 @@ const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
 // a quantum implementation of Simon's algorithm
-// a work in progress - the current implementation uses 2 qubits
-// todo: render the oracle gates dynamically for a larger number of qubits
 
-repeat(20, function() {
+repeat(5, function() {
 	run()
 })
 

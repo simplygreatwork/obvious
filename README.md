@@ -27,7 +27,7 @@
 - [the Bernstein-Vazirani algorithm: a classical illustration](/examples/algorithm-bitstring-query-classical.js)
 - [the Bernstein-Vazirani algorithm: a quantum implementation](/examples/algorithm-bitstring-query-quantum.js)
 - [Simon's algorithm: a classical illustration](/examples/algorithm-exclusive-or-pairs-classical.js)
-- [Simon's algorithm: a quantum implementation: a work in progress](/examples/algorithm-exclusive-or-pairs-quantum.js)
+- [Simon's algorithm: a quantum implementation](/examples/algorithm-exclusive-or-pairs-quantum.js)
 - [semiprime factoring: a brute force illustration](/examples/algorithm-semiprime-factoring-brute-force.js)
 - [more examples](/examples/)
 
