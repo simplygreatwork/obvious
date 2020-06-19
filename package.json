@@ -1,16 +1,18 @@
 {
-  "name": "quantify",
-  "version": "0.1.0",
-  "description": "Quantum Circuit Simulator",
-  "keywords": [
-    "quantum",
-    "simulator"
-  ],
-  "author": "Philip Weaver",
-  "license": "MIT",
-  "dependencies": {
-    "chalk": "^4.0.0",
-    "mathjs": "^6.0.3",
-    "strip-ansi": "^6.0.0"
-  }
+	"name": "obvious",
+	"version": "0.1.0",
+	"description": "Quantum Computing Simulator",
+	"keywords": [
+		"quantum",
+		"computing",
+		"circuit",
+		"simulator"
+	],
+	"author": "Philip Weaver",
+	"license": "MIT",
+	"dependencies": {
+		"chalk": "^4.0.0",
+		"mathjs": "^6.0.3",
+		"strip-ansi": "^6.0.0"
+	}
 }

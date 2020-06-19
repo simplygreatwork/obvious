@@ -51,7 +51,7 @@ function Oracle(options) {
 		initialize: function() {
 			
 			this.length = options && options.length ? options.length : 4
-			let random = Math.floor(Math.random() * Math.pow(2, this.length - 1)) + 1		// the secret cannot be zero
+			let random = Math.floor(Math.random() * (Math.pow(2, this.length) - 1)) + 1	// the secret cannot be zero
 			this.secret = Bits.fromNumber(random, this.length).toString()
 			this.table = {}
 			let link = 0
