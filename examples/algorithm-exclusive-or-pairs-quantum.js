@@ -3,8 +3,8 @@ const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
 // a quantum implementation of Simon's algorithm
-// a work in progress - just an unfinished skeleton right now targeting a 2-bit bitstring
-// thought: likely need to run the circuit once per number of qubits to get the answer
+// a work in progress - the current implementation uses 2 qubits
+// todo: render the oracle gates dynamically for a larger number of qubits
 
 repeat(1, function() {
 	run()
@@ -16,6 +16,7 @@ function run() {
 	let oracle = new Oracle({ length: 2 })
 	let result = host.test(oracle)
 	logger.log('')
+	logger.log(`The host has detected a result of ? ${result}`)
 	logger.log(`Does the oracle confirm? ${oracle.confirm(result)}`)
 	logger.log('')
 }
@@ -26,15 +27,22 @@ function Host() {
 		
 		test: function(oracle) {
 			
+			let result = null
 			let length = oracle.length
-			repeat(length, function(index) {
+			repeat(Infinity, function(index) {
 				let circuit = Circuit(`a quantum circuit to discover an oracle's secret bitstring using xor`, length * 2)
 				let unit = circuit.unit(0, length)
 				unit.h()
 				oracle.apply(circuit)
 				unit.h()
-				circuit.run('dense')
+				circuit.run()
+				let bits = unit.measure()
+				if (bits.toNumber() !== 0) {
+					result = bits.toString()
+					return 'break'
+				}
 			})
+			return result
 		}
 	})
 }
@@ -64,12 +72,19 @@ function Oracle(options) {
 		},
 		
 		apply: function(circuit) {
-			
-			return circuit
-			.cx(2, 0)
-			.cx(3, 0)
-			.cx(2, 1)
-			.cx(3, 1)
+			return this['apply_' + this.secret](circuit)
+		},
+		
+		apply_11: function(circuit) {
+			return circuit.cx(2, 0).cx(3, 0).cx(2, 1).cx(3, 1)
+		},
+		
+		apply_01: function(circuit) {
+			return circuit.cx(2, 0).cx(3, 0)
+		},
+		
+		apply_10: function(circuit) {
+			return circuit.cx(2, 1).cx(3, 1)
 		},
 		
 		confirm: function(value) {
@@ -83,6 +98,7 @@ function Oracle(options) {
 function repeat(number, fn) {
 	
 	for (let i = 0; i < number; i++) {
-		fn.apply(this, [i])
+		let result = fn.apply(this, [i])
+		if (result === 'break') break
 	}
 }
