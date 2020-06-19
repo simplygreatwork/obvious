@@ -288,3 +288,5 @@ circuit
 - add measure() to unit.js
 
 - use http://scholar.google.com/ to find the original algorithm papers
+
+- this is kinda cool: https://quantumgame.io/
