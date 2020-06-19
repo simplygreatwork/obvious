@@ -16,7 +16,7 @@ function run() {
 	let oracle = new Oracle({ length: 2 })
 	let result = host.test(oracle)
 	logger.log('')
-	logger.log(`The host has detected a result of ? ${result}`)
+	logger.log(`The host has detected a result of ${result}`)
 	logger.log(`Does the oracle confirm? ${oracle.confirm(result)}`)
 	logger.log('')
 }
