@@ -52,20 +52,20 @@ function Oracle(options) {
 	
 	this.length = options && options.length ? options.length : 4
 	let random = Math.floor(Math.random() * Math.pow(2, this.length))
-	this.bitstring = Bits.fromNumber(random, this.length).toString()
+	this.secret = Bits.fromNumber(random, this.length).toString()
 	
 	Object.assign(this, {
 		
 		query: function(circuit) {
 			
 			let scratch = circuit.unit(3)
-			Bits.fromString(this.bitstring).iterate(function(each, index) {
+			Bits.fromString(this.secret).iterate(function(each, index) {
 				if (each) scratch.cx(index)
 			})
 		},
 		
 		confirm: function(value) {
-			return this.bitstring == value ? 'yes' : 'no'
+			return this.secret == value ? 'yes' : 'no'
 		}
 	})
 }

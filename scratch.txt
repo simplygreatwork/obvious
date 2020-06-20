@@ -290,3 +290,12 @@ circuit
 - use http://scholar.google.com/ to find the original algorithm papers
 
 - this is kinda cool: https://quantumgame.io/
+
+- add constant state 1 to the Deutsch-Jozsa quantum solution
+
+- look more into implementing the Shor algorithm based on the qiskit example
+- but first look into quantum phase estimation and perhaps inverse qfts
+- create a skeleton for quantum Shor
+
+- illustrate phase kickback
+- illustrate phase estimation

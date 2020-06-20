@@ -6,62 +6,6 @@ Running circuit "a quantum circuit to discover an oracle's secret bitstring usin
   Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
 
     |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |    xxxx>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxxxxxx>  25.0000% -0.50000000+0.00000000i (180.00)
-
-
-The host has detected a result of 1111
-Does the oracle confirm? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |      x >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx  x >  25.0000% -0.50000000+0.00000000i (180.00)
-
-
-The host has detected a result of 0010
-Does the oracle confirm? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |    x   >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxxx   >  25.0000% -0.50000000+0.00000000i (180.00)
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |    x   >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxxx   >  25.0000% -0.50000000+0.00000000i (180.00)
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
     |    x   >  25.0000%  0.50000000+0.00000000i (  0.00)
     |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
     |xxxxx   >  25.0000% -0.50000000+0.00000000i (180.00)
@@ -82,6 +26,18 @@ Running circuit "a quantum circuit to discover an oracle's secret bitstring usin
     |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
     |xxxx   x>  25.0000% -0.50000000+0.00000000i (180.00)
 
+-----------------------------------------------------------------------------------
+
+Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
+
+
+  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
+
+    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
+    |       x>  25.0000%  0.50000000+0.00000000i (  0.00)
+    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
+    |xxxx   x>  25.0000% -0.50000000+0.00000000i (180.00)
+
 
 The host has detected a result of 0001
 Does the oracle confirm? yes
@@ -94,12 +50,12 @@ Running circuit "a quantum circuit to discover an oracle's secret bitstring usin
   Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
 
     |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |    xxx >  25.0000%  0.50000000+0.00000000i (  0.00)
+    |    x  x>  25.0000%  0.50000000+0.00000000i (  0.00)
     |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxxxxx >  25.0000% -0.50000000+0.00000000i (180.00)
+    |xxxxx  x>  25.0000% -0.50000000+0.00000000i (180.00)
 
 
-The host has detected a result of 1110
+The host has detected a result of 1001
 Does the oracle confirm? yes
 
 -----------------------------------------------------------------------------------
@@ -126,41 +82,9 @@ Running circuit "a quantum circuit to discover an oracle's secret bitstring usin
   Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
 
     |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |    x xx>  25.0000%  0.50000000+0.00000000i (  0.00)
+    |     xx >  25.0000%  0.50000000+0.00000000i (  0.00)
     |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxxx xx>  25.0000% -0.50000000+0.00000000i (180.00)
-
-
-The host has detected a result of 1011
-Does the oracle confirm? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |       x>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx   x>  25.0000% -0.50000000+0.00000000i (180.00)
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |       x>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx   x>  25.0000% -0.50000000+0.00000000i (180.00)
-
-
-The host has detected a result of 0001
-Does the oracle confirm? yes
+    |xxxx xx >  25.0000% -0.50000000+0.00000000i (180.00)
 
 -----------------------------------------------------------------------------------
 
@@ -176,229 +100,5 @@ Running circuit "a quantum circuit to discover an oracle's secret bitstring usin
 
 
 The host has detected a result of 0110
-Does the oracle confirm? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |     xxx>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx xxx>  25.0000% -0.50000000+0.00000000i (180.00)
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |     xxx>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx xxx>  25.0000% -0.50000000+0.00000000i (180.00)
-
-
-The host has detected a result of 0111
-Does the oracle confirm? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |       x>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx   x>  25.0000% -0.50000000+0.00000000i (180.00)
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |       x>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx   x>  25.0000% -0.50000000+0.00000000i (180.00)
-
-
-The host has detected a result of 0001
-Does the oracle confirm? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |       x>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx   x>  25.0000% -0.50000000+0.00000000i (180.00)
-
-
-The host has detected a result of 0001
-Does the oracle confirm? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |      xx>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx  xx>  25.0000% -0.50000000+0.00000000i (180.00)
-
-
-The host has detected a result of 0011
-Does the oracle confirm? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |    xxxx>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxxxxxx>  25.0000% -0.50000000+0.00000000i (180.00)
-
-
-The host has detected a result of 1111
-Does the oracle confirm? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |     xxx>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx xxx>  25.0000% -0.50000000+0.00000000i (180.00)
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |     xxx>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx xxx>  25.0000% -0.50000000+0.00000000i (180.00)
-
-
-The host has detected a result of 0111
-Does the oracle confirm? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |      xx>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx  xx>  25.0000% -0.50000000+0.00000000i (180.00)
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |      xx>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx  xx>  25.0000% -0.50000000+0.00000000i (180.00)
-
-
-The host has detected a result of 0011
-Does the oracle confirm? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |    x  x>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxxx  x>  25.0000% -0.50000000+0.00000000i (180.00)
-
-
-The host has detected a result of 1001
-Does the oracle confirm? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |     x x>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx x x>  25.0000% -0.50000000+0.00000000i (180.00)
-
-
-The host has detected a result of 0101
-Does the oracle confirm? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |    xxx >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxxxxx >  25.0000% -0.50000000+0.00000000i (180.00)
-
-
-The host has detected a result of 1110
-Does the oracle confirm? yes
-
------------------------------------------------------------------------------------
-
-Running circuit "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-
-  Finished "a quantum circuit to discover an oracle's secret bitstring using xor"
-
-    |        >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |    x  x>  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxx    >  25.0000%  0.50000000+0.00000000i (  0.00)
-    |xxxxx  x>  25.0000% -0.50000000+0.00000000i (180.00)
-
-
-The host has detected a result of 1001
 Does the oracle confirm? yes
 

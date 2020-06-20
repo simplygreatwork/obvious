@@ -74,8 +74,7 @@ function Oracle(options) {
 			Bits.fromString(this.secret).iterate(function(bit, index) {
 				if (bit) {
 					repeat(this.length, function(index_) {
-						let target = this.length + index_
-						circuit.cx(target, index)
+						circuit.cx(this.length + index_, index)
 					}.bind(this))
 				}
 			}.bind(this))

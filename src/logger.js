@@ -25,7 +25,7 @@ module.exports = function(options) {
 		
 		log: function(message) {
 			
-			message = message || ''
+			message = Array.from(arguments).join(', ')
 			process.stdout.write(util.format(message) + '\n')
 			file.write(strip(util.format(message)) + '\n')
 		}
