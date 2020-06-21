@@ -1,9 +1,8 @@
 
 const math = require('mathjs')
-const logger = require('../src/logger')()
+const logger = require('../../src/logger')()
 
-// basis: https://github.com/oreilly-qc/oreilly-qc.github.io/blob/master/samples/QCEngine/ch12_02_shor_no_qpu.js
-// a work in progress - not yet complete
+// origin: https://github.com/oreilly-qc/oreilly-qc.github.io/blob/master/samples/QCEngine/ch12_02_shor_no_qpu.js
 
 if (true) run(15)
 if (false) run(21)
@@ -123,9 +122,32 @@ function quantum_decide_size(semiprime, precision) {
 	return { number: number, precision: precision, total: number + precision}
 }
 
+function quantum_estimate_spikes(spike, range) {
+	
+	let result = []
+	if (spike < range / 2) spike = range - spike
+	let best_error = 1.0
+	let e0, e1, e2 = 0
+	let actual = spike / range
+	for (let denominator = 1.0; denominator < spike; ++denominator) {
+		var numerator = Math.round(denominator * actual)
+		var estimated = numerator / denominator
+		var error = Math.abs(estimated - actual)
+		e0 = e1
+		e1 = e2
+		e2 = error
+		if ((e1 <= best_error) && (e1 < e0) && (e1 < e2)) {
+			var period = denominator - 1
+			result.push(period)
+			best_error = e1
+		}
+	}
+	return result
+}
+
 function Circuit(name, size) {
 	
-	let circuit = require('../src/circuit.js')({
+	let circuit = require('../../src/circuit.js')({
 		name: name,
 		size: size,
 		logger: logger,
@@ -209,29 +231,6 @@ function Circuit(name, size) {
 	})
 	
 	return circuit
-}
-
-function quantum_estimate_spikes(spike, range) {
-	
-	let result = []
-	if (spike < range / 2) spike = range - spike
-	let best_error = 1.0
-	let e0, e1, e2 = 0
-	let actual = spike / range
-	for (let denominator = 1.0; denominator < spike; ++denominator) {
-		var numerator = Math.round(denominator * actual)
-		var estimated = numerator / denominator
-		var error = Math.abs(estimated - actual)
-		e0 = e1
-		e1 = e2
-		e2 = error
-		if ((e1 <= best_error) && (e1 < e0) && (e1 < e2)) {
-			var period = denominator - 1
-			result.push(period)
-			best_error = e1
-		}
-	}
-	return result
 }
 
 function repeat(number, fn) {

@@ -283,7 +283,7 @@ circuit
 
 - idea: can measure a specific qubit be measuring all - then extracting that bit
 
-- classical "frame of reference"
+- classical "frame of reference" is "illustration"
 
 - add measure() to unit.js
 
@@ -294,8 +294,10 @@ circuit
 - add constant state 1 to the Deutsch-Jozsa quantum solution
 
 - look more into implementing the Shor algorithm based on the qiskit example
-- but first look into quantum phase estimation and perhaps inverse qfts
+- but first look into quantum phase estimation and perhaps inverse QFT
 - create a skeleton for quantum Shor
 
 - illustrate phase kickback
 - illustrate phase estimation
+
+- add Host() to algorithm-bitstring-query-quantum.js

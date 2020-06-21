@@ -59,8 +59,8 @@ function Oracle(options) {
 		query: function(circuit) {
 			
 			let scratch = circuit.unit(3)
-			Bits.fromString(this.secret).iterate(function(each, index) {
-				if (each) scratch.cx(index)
+			Bits.fromString(this.secret).iterate(function(bit, index) {
+				if (bit) scratch.cx(index)
 			})
 		},
 		

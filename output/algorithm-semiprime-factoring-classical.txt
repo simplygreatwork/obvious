@@ -1,0 +1,8 @@
+
+Now factoring the semiprime number 15.
+The precision needed is 4 bits.
+The periods detected are [4].
+The candidate factors are [[3,5]].
+The decided factors are [3,5].
+3 * 5 = 15
+

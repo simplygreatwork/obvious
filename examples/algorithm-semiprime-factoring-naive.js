@@ -2,7 +2,7 @@
 const logger = require('../src/logger')()
 const math = require('mathjs')
 
-// a brute force illustration of the intent behind Shor's algorithm 
+// a naive brute force illustration of the concept behind Shor's algorithm 
 // this illustration finds the two prime numbers which are the prime factors of a semiprime product
 // prime a * prime b = the semiprime product
 // this will not scale well to very large sets of prime numbers
