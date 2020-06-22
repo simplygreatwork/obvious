@@ -22,7 +22,7 @@ function factor(number, callback) {
             if (r !== "failed" && r % 2 !== 0) {
                 log('Need a period with an even number.  Sadly, ' + r + ' is not even.');
             } else if (r !== "failed" && r % 2 === 0) {
-                var powerMod = jsqubitsmath.powerMod(randomChoice, r/2, n);
+                var powerMod = jsqubitsmath.powerMod(randomChoice, r / 2, n);
                 var candidateFactor = jsqubitsmath.gcd(powerMod - 1, n);
                 log("Candidate Factor computed from period = " + candidateFactor);
                 if(candidateFactor > 1 && n % candidateFactor === 0) {

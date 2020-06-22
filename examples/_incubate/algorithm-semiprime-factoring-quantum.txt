@@ -1,9 +1,0 @@
-
-## Tasks
-
-- precision.qft()
-- write()
-- read()
-- bits()
-- rollLeft()
-- remove bitwise operator syntax
