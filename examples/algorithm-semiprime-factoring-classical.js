@@ -52,17 +52,10 @@ function decide_precision(semiprime) {
 
 function decide_period(options) {
 	
-	let period = null
-	if (true) period = classical_decide_period(options.semiprime, options.precision, options.coprime)
-	return period
-}
-
-function classical_decide_period(semiprime, precision, coprime) {
-	
 	let result = [0]
 	let work = 1
-	repeat(Math.pow(2, precision), function(index) {
-		work = (work * coprime) % semiprime
+	repeat(Math.pow(2, options.precision), function(index) {
+		work = (work * options.coprime) % options.semiprime
 		if (work === 1) {
 			result = [index + 1]
 			return 'break'
