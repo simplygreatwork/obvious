@@ -21,13 +21,14 @@ function run(semiprime) {
 
 function factor(options) {
 	
-	options.precision = decide_precision(options.semiprime)
-	logger.log(`The precision needed is ${JSON.stringify(options.precision)} bits.`)
-	let period = decide_period(options)
+	let {semiprime, coprime} = options
+	let precision = decide_precision(semiprime)
+	logger.log(`The precision needed is ${JSON.stringify(precision)} bits.`)
+	let period = decide_period(semiprime, precision, coprime)
 	logger.log(`The periods detected are ${JSON.stringify(period)}.`)
-	let candidates = decide_candidates(period, options.semiprime, options.coprime)
+	let candidates = decide_candidates(period, semiprime, coprime)
 	logger.log(`The candidate factors are ${JSON.stringify(candidates)}.`)
-	let factors = decide_factors(candidates, options.semiprime)
+	let factors = decide_factors(candidates, semiprime)
 	logger.log(`The decided factors are ${JSON.stringify(factors)}.`)
 	return factors
 }
@@ -51,11 +52,11 @@ function decide_precision(semiprime) {
 	return result
 }
 
-function decide_period(options) {
+function decide_period(semiprime, precision, coprime) {
 	
 	let period = null
-	if (true) period = quantum_decide_period(options.semiprime, options.precision, options.coprime)
-	if (true) period = classical_decide_period(options.semiprime, options.precision, options.coprime)
+	if (true) period = quantum_decide_period(semiprime, precision, coprime)
+	if (true) period = classical_decide_period(semiprime, precision, coprime)
 	return period
 }
 
@@ -133,7 +134,7 @@ function Circuit(name, size) {
 		order: ['targets', 'controls']
 	})
 	
-	Object.assign(circuit, {
+	return Object.assign(circuit, {
 		
 		number: function(size) {
 			
@@ -179,7 +180,7 @@ function Circuit(name, size) {
 				},
 				
 				qft: function() {
-					return
+					if (false) this.circuit().qft()		// todo: a range only
 				}
 			})
 		},
@@ -207,8 +208,6 @@ function Circuit(name, size) {
 			return this
 		}
 	})
-	
-	return circuit
 }
 
 function quantum_estimate_spikes(spike, range) {
