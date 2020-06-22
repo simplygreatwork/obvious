@@ -28,7 +28,9 @@
 - [the Bernstein-Vazirani algorithm: a quantum implementation](/examples/algorithm-bitstring-query-quantum.js)
 - [Simon's algorithm: a classical illustration](/examples/algorithm-exclusive-or-pairs-classical.js)
 - [Simon's algorithm: a quantum implementation](/examples/algorithm-exclusive-or-pairs-quantum.js)
-- [semiprime factoring: a brute force illustration](/examples/algorithm-semiprime-factoring-brute-force.js)
+- [Shor's algorithm: semiprime factoring: a naive illustration](/examples/algorithm-semiprime-factoring-naive.js)
+- [Shor's algorithm: semiprime factoring: a classical illustration](/examples/algorithm-semiprime-factoring-classical.js)
+- [Shor's algorithm: semiprime factoring: a quantum implementation: incomplete](/examples/algorithm-semiprime-factoring-quantum.js)
 - [more examples](/examples/)
 
 ## Install
