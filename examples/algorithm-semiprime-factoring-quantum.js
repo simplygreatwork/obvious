@@ -155,10 +155,6 @@ function Circuit(name, size) {
 			
 			return Object.assign(unit, {
 				
-				result: function() {
-					return null
-				},
-				
 				qft: function() {
 					this.circuit().qft(this.index, this.length)
 				}
@@ -169,7 +165,7 @@ function Circuit(name, size) {
 			
 			begin = begin || 0
 			length = length || this.size
-			this.repeat(length, function(index) {
+			repeat(length, function(index) {
 				let inverse = (begin + length) - 1 - (index)
 				this.h(inverse)
 				for (let j = inverse - 1; j >= begin; j--) {
@@ -178,14 +174,6 @@ function Circuit(name, size) {
 			}.bind(this))
 			for (let i = begin, length_ = Math.floor((begin + length) / 2); i < length_; i++) {
 				this.swap(i, length_ - (i + 1))
-			}
-			return this
-		},
-		
-		repeat: function(value, fn) {
-			
-			for (let i = 0; i < value; i++) {
-				fn.apply(this, [i])
 			}
 			return this
 		}
