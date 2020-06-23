@@ -2,6 +2,7 @@
 const math = require('mathjs')
 const logger = require('../src/logger')()
 
+// a classical implementation of Shor's algorithm
 // basis: https://github.com/oreilly-qc/oreilly-qc.github.io/blob/master/samples/QCEngine/ch12_02_shor_no_qpu.js
 
 if (true) run(15)

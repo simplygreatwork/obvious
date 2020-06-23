@@ -4,6 +4,7 @@ const chalk = require('chalk')
 const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
+// a quantum implementation of Shor's algorithm
 // basis: https://github.com/oreilly-qc/oreilly-qc.github.io/blob/master/samples/QCEngine/ch12_01_shor1.js
 // a work in progress - not yet complete
 
