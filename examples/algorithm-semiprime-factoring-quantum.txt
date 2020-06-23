@@ -1,0 +1,18 @@
+
+- while converting this example
+	- hard code the expansion of a^x for now
+	 until the entire circuit works for 15 and 21
+
+- quantum results and candidates for for semiprime 15
+
+	```
+	QPU read result: 16
+	Repeat period candidates: 4,8,12,16,20,24,28,32,36,40,44
+	```
+	
+- quantum results and candidates for for semiprime 21
+	
+	```
+	QPU read result: 36
+	Repeat period candidates: 2,5,7,9,16,32
+	```

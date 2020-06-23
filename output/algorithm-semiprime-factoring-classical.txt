@@ -2,7 +2,20 @@
 Now factoring the semiprime number 15.
 The precision needed is 4 bits.
 The periods detected are [4].
-The candidate factors are [[3,5]].
 The decided factors are [3,5].
 3 * 5 = 15
+
+
+Now factoring the semiprime number 21.
+The precision needed is 4 bits.
+The periods detected are [6].
+The decided factors are [7,3].
+7 * 3 = 21
+
+
+Now factoring the semiprime number 51.
+The precision needed is 4 bits.
+The periods detected are [8].
+The decided factors are [3,17].
+3 * 17 = 51
 

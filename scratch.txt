@@ -301,3 +301,6 @@ circuit
 - illustrate phase estimation
 
 - add Host() to algorithm-bitstring-query-quantum.js
+
+- add attempts to the shor examples
+- add unit context to shor populate - then dynamic rendering

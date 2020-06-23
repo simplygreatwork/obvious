@@ -1,9 +1,9 @@
 -----------------------------------------------------------------------------------
 
-Running circuit "input-phases-for-a-period-of-2-using-4-qubits"
+Running circuit "input phases for a period of 2 using 4 qubits"
 
 
-  Finished "input-phases-for-a-period-of-2-using-4-qubits"
+  Finished "input phases for a period of 2 using 4 qubits"
 
     |    >   6.2500%  0.25000000+0.00000000i (  0.00)
     |   x>   6.2500% -0.25000000+0.00000000i (180.00)
@@ -24,10 +24,10 @@ Running circuit "input-phases-for-a-period-of-2-using-4-qubits"
 
 -----------------------------------------------------------------------------------
 
-Running circuit "output-for-a-period-of-2-using-4-qubits"
+Running circuit "output for a period of 2 using 4 qubits"
 
 
-  Finished "output-for-a-period-of-2-using-4-qubits"
+  Finished "output for a period of 2 using 4 qubits"
 
     |x   > 100.0000%  1.00000000+0.00000000i (  0.00)
 
@@ -35,10 +35,10 @@ The frequency is 8 from a period of 2 in 16.
 
 -----------------------------------------------------------------------------------
 
-Running circuit "input-phases-for-a-period-of-4-using-4-qubits"
+Running circuit "input phases for a period of 4 using 4 qubits"
 
 
-  Finished "input-phases-for-a-period-of-4-using-4-qubits"
+  Finished "input phases for a period of 4 using 4 qubits"
 
     |    >   6.2500%  0.25000000+0.00000000i (  0.00)
     |   x>   6.2500%  0.00000000+0.25000000i ( 90.00)
@@ -59,10 +59,10 @@ Running circuit "input-phases-for-a-period-of-4-using-4-qubits"
 
 -----------------------------------------------------------------------------------
 
-Running circuit "output-for-a-period-of-4-using-4-qubits"
+Running circuit "output for a period of 4 using 4 qubits"
 
 
-  Finished "output-for-a-period-of-4-using-4-qubits"
+  Finished "output for a period of 4 using 4 qubits"
 
     |xx  > 100.0000%  1.00000000+0.00000000i (  0.00)
 
@@ -70,10 +70,10 @@ The frequency is 4 from a period of 4 in 16.
 
 -----------------------------------------------------------------------------------
 
-Running circuit "input-phases-for-a-period-of-8-using-4-qubits"
+Running circuit "input phases for a period of 8 using 4 qubits"
 
 
-  Finished "input-phases-for-a-period-of-8-using-4-qubits"
+  Finished "input phases for a period of 8 using 4 qubits"
 
     |    >   6.2500%  0.25000000+0.00000000i (  0.00)
     |   x>   6.2500%  0.17677670+0.17677670i ( 45.00)
@@ -94,10 +94,10 @@ Running circuit "input-phases-for-a-period-of-8-using-4-qubits"
 
 -----------------------------------------------------------------------------------
 
-Running circuit "output-for-a-period-of-8-using-4-qubits"
+Running circuit "output for a period of 8 using 4 qubits"
 
 
-  Finished "output-for-a-period-of-8-using-4-qubits"
+  Finished "output for a period of 8 using 4 qubits"
 
     |xxx > 100.0000%  1.00000000+0.00000000i (  0.00)
 

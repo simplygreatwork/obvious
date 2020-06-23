@@ -5,8 +5,8 @@ const logger = require('../src/logger')()
 // basis: https://github.com/oreilly-qc/oreilly-qc.github.io/blob/master/samples/QCEngine/ch12_02_shor_no_qpu.js
 
 if (true) run(15)
-if (false) run(21)
-if (false) run(51)
+if (true) run(21)
+if (true) run(51)
 
 function run(semiprime) {
 	
@@ -20,13 +20,12 @@ function run(semiprime) {
 
 function factor(options) {
 	
-	options.precision = decide_precision(options.semiprime)
-	logger.log(`The precision needed is ${JSON.stringify(options.precision)} bits.`)
-	let period = decide_period(options)
-	logger.log(`The periods detected are ${JSON.stringify(period)}.`)
-	let candidates = decide_candidates(period, options.semiprime, options.coprime)
-	logger.log(`The candidate factors are ${JSON.stringify(candidates)}.`)
-	let factors = decide_factors(candidates, options.semiprime)
+	let {semiprime, coprime} = options
+	let precision = decide_precision(semiprime)
+	logger.log(`The precision needed is ${JSON.stringify(precision)} bits.`)
+	let periods = decide_periods(semiprime, coprime, precision)
+	logger.log(`The periods detected are ${JSON.stringify(periods)}.`)
+	let factors = decide_factors(semiprime, coprime, periods)
 	logger.log(`The decided factors are ${JSON.stringify(factors)}.`)
 	return factors
 }
@@ -50,12 +49,12 @@ function decide_precision(semiprime) {
 	return result
 }
 
-function decide_period(options) {
+function decide_periods(semiprime, coprime, precision) {
 	
 	let result = [0]
 	let work = 1
-	repeat(Math.pow(2, options.precision), function(index) {
-		work = (work * options.coprime) % options.semiprime
+	repeat(Math.pow(2, precision), function(index) {
+		work = (work * coprime) % semiprime
 		if (work === 1) {
 			result = [index + 1]
 			return 'break'
@@ -64,26 +63,18 @@ function decide_period(options) {
 	return result
 }
 
-function decide_candidates(periods, semiprime, coprime) {
+function decide_factors(semiprime, coprime, periods) {
 	
-	let result = []
+	let result = null
 	periods.forEach(function(period) {
+		if (result) return
 		let value = Math.pow(coprime, period / 2.0)
 		let factor_a = math.gcd(semiprime, value - 1)
 		let factor_b = math.gcd(semiprime, value + 1)
-		result.push([factor_a, factor_b])
-	})
-	return result
-}
-
-function decide_factors(candidates, semiprime) {
-	
-	let result = null
-	candidates.forEach(function(factors) {
-		if (result) return
-		if (factors[0] * factors[1] == semiprime) {
-			if (factors[0] != 1 && factors[1] != 1) {
-				result = factors
+		if (factor_a * factor_b == semiprime) {
+			if (factor_a != 1 && factor_b != 1) {
+				result = [factor_a, factor_b]
+				return 'break'
 			}
 		}
 	})

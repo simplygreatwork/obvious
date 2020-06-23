@@ -1,13 +1,13 @@
 
 const math = require('mathjs')
 const logger = require('../src/logger')()
+const Bits = require('../src/bits')
 
-// basis: https://github.com/oreilly-qc/oreilly-qc.github.io/blob/master/samples/QCEngine/ch12_02_shor_no_qpu.js
+// basis: https://github.com/oreilly-qc/oreilly-qc.github.io/blob/master/samples/QCEngine/ch12_01_shor1.js
 // a work in progress - not yet complete
 
 if (true) run(15)
 if (false) run(21)
-if (false) run(51)
 
 function run(semiprime) {
 	
@@ -24,11 +24,9 @@ function factor(options) {
 	let {semiprime, coprime} = options
 	let precision = decide_precision(semiprime)
 	logger.log(`The precision needed is ${JSON.stringify(precision)} bits.`)
-	let period = decide_period(semiprime, precision, coprime)
-	logger.log(`The periods detected are ${JSON.stringify(period)}.`)
-	let candidates = decide_candidates(period, semiprime, coprime)
-	logger.log(`The candidate factors are ${JSON.stringify(candidates)}.`)
-	let factors = decide_factors(candidates, semiprime)
+	let periods = decide_periods(semiprime, coprime, precision)
+	logger.log(`The periods detected are ${JSON.stringify(periods)}.`)
+	let factors = decide_factors(semiprime, coprime, periods)
 	logger.log(`The decided factors are ${JSON.stringify(factors)}.`)
 	return factors
 }
@@ -52,15 +50,33 @@ function decide_precision(semiprime) {
 	return result
 }
 
-function decide_period(semiprime, precision, coprime) {
+function decide_periods(semiprime, coprime, precision) {
 	
 	let period = null
-	if (true) period = quantum_decide_period(semiprime, precision, coprime)
-	if (true) period = classical_decide_period(semiprime, precision, coprime)
+	if (true) period = quantum_decide_period(semiprime, coprime, precision)
+	if (false) period = classical_decide_period(semiprime, coprime, precision)
 	return period
 }
 
-function classical_decide_period(semiprime, precision, coprime) {
+function decide_factors(semiprime, coprime, periods) {
+	
+	let result = null
+	periods.forEach(function(period) {
+		if (result) return
+		let value = Math.pow(coprime, period / 2.0)
+		let factor_a = math.gcd(semiprime, value - 1)
+		let factor_b = math.gcd(semiprime, value + 1)
+		if (factor_a * factor_b == semiprime) {
+			if (factor_a != 1 && factor_b != 1) {
+				result = [factor_a, factor_b]
+				return 'break'
+			}
+		}
+	})
+	return result
+}
+
+function classical_decide_period(semiprime, coprime, precision) {
 	
 	let result = [0]
 	let work = 1
@@ -74,33 +90,7 @@ function classical_decide_period(semiprime, precision, coprime) {
 	return result
 }
 
-function decide_candidates(periods, semiprime, coprime) {
-	
-	let result = []
-	periods.forEach(function(period) {
-		let value = Math.pow(coprime, period / 2.0)
-		let factor_a = math.gcd(semiprime, value - 1)
-		let factor_b = math.gcd(semiprime, value + 1)
-		result.push([factor_a, factor_b])
-	})
-	return result
-}
-
-function decide_factors(candidates, semiprime) {
-	
-	let result = null
-	candidates.forEach(function(factors) {
-		if (result) return
-		if (factors[0] * factors[1] == semiprime) {
-			if (factors[0] != 1 && factors[1] != 1) {
-				result = factors
-			}
-		}
-	})
-	return result
-}
-
-function quantum_decide_period(semiprime, precision, coprime) {
+function quantum_decide_period(semiprime, coprime, precision) {
 	
 	let size = quantum_decide_size(semiprime, precision)
 	let circuit = Circuit('finding the period', size.total)
@@ -111,9 +101,11 @@ function quantum_decide_period(semiprime, precision, coprime) {
 	number.populate(precision)
 	precision.qft()
 	circuit.run()
-	let result = precision.result()
-	logger.log(`The circuit result is ${result}.`)
-	return quantum_estimate_spikes(result, 1 << precision.length)
+	let result = number.measure().toNumber()
+	logger.log(`The quantum circuit result is ${result}.`)
+	let periods = quantum_estimate_spikes(result, 1 << precision.length)
+	logger.log(`The quantum periods are ${JSON.stringify(periods)}.`)
+	return periods
 }
 
 function quantum_decide_size(semiprime, precision) {
@@ -139,22 +131,19 @@ function Circuit(name, size) {
 		number: function(size) {
 			
 			let unit = this.unit(0, size)
-			unit.x(0)
+			unit.unit(0).x()
 			
 			return Object.assign(unit, {
 				
 				populate: function(precision) {
 					
-					repeat(precision.length, function(index) {
-						var shifts = 1 << index
-						var condition = precision.bits(shifts)
-						shifts = shifts % this.length
-						this.rollLeft(shifts, condition)
-					}.bind(this))
-				},
-				
-				rollLeft: function(shifts, condition) {
-					return
+					return this.circuit()
+					.cswap([2, 3], 4)
+					.cswap([1, 2], 4)
+					.cswap([0, 1], 4)
+					.cswap([1, 3], 5)
+					.cswap([0, 2], 5)
+					.cswap([0, 1], 5)
 				}
 			})
 		},
@@ -162,40 +151,33 @@ function Circuit(name, size) {
 		precision: function(index, length) {
 			
 			let unit = this.unit(index, length)
-			unit.write(0)
 			unit.h()
 			
 			return Object.assign(unit, {
 				
-				bits: function() {
-					return 0
-				},
-				
 				result: function() {
-					return this.read_() & ((1 << this.length) - 1)
-				},
-				
-				read_: function() {
-					return 0
+					return null
 				},
 				
 				qft: function() {
-					if (false) this.circuit().qft()		// todo: a range only
+					this.circuit().qft(this.index, this.length)
 				}
 			})
 		},
 		
-		qft: function() {
+		qft: function(begin, length) {
 			
-			this.repeat(this.size, function(index) {
-				let inverse = this.size - 1 - index
+			begin = begin || 0
+			length = length || this.size
+			this.repeat(length, function(index) {
+				let inverse = (begin + length) - 1 - (index)
 				this.h(inverse)
-				for (let j = inverse - 1; j >= 0; j--) {
+				for (let j = inverse - 1; j >= begin; j--) {
 					this.cu1(inverse, j, { lambda: 'pi / ' + Math.pow(2, inverse - j) })
 				}
 			}.bind(this))
-			for (let i = 0, length = Math.floor(this.size / 2); i < length; i++) {
-				this.swap(i, this.size - (i + 1))
+			for (let i = begin, length_ = Math.floor((begin + length) / 2); i < length_; i++) {
+				this.swap(i, length_ - (i + 1))
 			}
 			return this
 		},

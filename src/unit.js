@@ -24,6 +24,7 @@ class Unit {
 			this[key.toLowerCase()] = function(controls, options) {
 				let name = this
 				for (let target = unit.index; target < unit.index + unit.length; target++) {
+					console.log('unit add gate: ', name, [target], controls, options)
 					circuit.addGate(name, [target], controls, options)
 				}
 				return unit
@@ -38,7 +39,7 @@ class Unit {
 	unit(index, length) {
 		
 		if (this.length > 0) {
-			return new Unit(this.circuit, this.index + index, length)
+			return new Unit(this.circuit(), this.index + index, length)
 		} else {
 			return null
 		}
