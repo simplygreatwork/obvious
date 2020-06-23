@@ -1,5 +1,6 @@
 
 const math = require('mathjs')
+const chalk = require('chalk')
 const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
@@ -19,7 +20,7 @@ function run(semiprime) {
 		result = factor({ semiprime: semiprime, coprime: 2 })
 		if (result) logger.log(`${result[0]} * ${result[1]} = ${semiprime}`)
 		if (result) return 'break'
-		logger.log(`No non-trivial factors were found. Trying again...`)
+		logger.log(chalk.red.bold(`No non-trivial factors were found. Trying again...`))
 	}.bind(this))
 	if (! result) logger.log(`Stopping after ${attempts} attempts.`)
 	logger.log()
