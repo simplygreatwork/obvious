@@ -100,14 +100,14 @@ function quantum_decide_period(semiprime, coprime, precision) {
 	
 	let size = quantum_decide_size(semiprime, precision)
 	let circuit = Circuit('finding the period', size.total)
-	let number = circuit.number(size.number)
-	logger.log(`The work length is ${number.length} bits.`)
-	precision = circuit.precision(size.number, size.precision)
+	let work = circuit.work(size.work)
+	logger.log(`The work length is ${work.length} bits.`)
+	precision = circuit.precision(size.work, size.precision)
 	logger.log(`The precision length is ${precision.length} bits.`)
-	number.populate(precision)
+	work.populate(precision)
 	precision.qft()
 	circuit.run()
-	let result = number.measure().toNumber()
+	let result = work.measure().toNumber()
 	logger.log(`The quantum circuit result is ${result}.`)
 	let periods = quantum_estimate_spikes(result, 1 << precision.length)
 	logger.log(`The quantum periods are ${JSON.stringify(periods)}.`)
@@ -116,10 +116,10 @@ function quantum_decide_period(semiprime, coprime, precision) {
 
 function quantum_decide_size(semiprime, precision) {
 	
-	let number = 1
-	while ((1 << number) < semiprime) number++
-	if (semiprime != 15) number++
-	return { number: number, precision: precision, total: number + precision}
+	let work = 1
+	while ((1 << work) < semiprime) work++
+	if (semiprime != 15) work++
+	return { work: work, precision: precision, total: work + precision}
 }
 
 function Circuit(name, size) {
@@ -134,7 +134,7 @@ function Circuit(name, size) {
 	
 	return Object.assign(circuit, {
 		
-		number: function(size) {
+		work: function(size) {
 			
 			let unit = this.unit(0, size)
 			unit.unit(0).x()
