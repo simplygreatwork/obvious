@@ -306,3 +306,6 @@ circuit
 - add unit context to shor populate - then dynamic rendering
 
 - add silent option to circuit
+
+- convert qft to operate on an array of qubit indices
+- because it's possible that they might not all be contiguous
