@@ -104,7 +104,7 @@ function quantum_decide_period(semiprime, coprime, precision) {
 	logger.log(`The work length is ${work.length} bits.`)
 	precision = circuit.precision(size.work, size.precision)
 	logger.log(`The precision length is ${precision.length} bits.`)
-	work.populate(precision)
+	work.render(precision)
 	precision.qft()
 	circuit.run()
 	let result = work.measure().toNumber()
@@ -141,7 +141,7 @@ function Circuit(name, size) {
 			
 			return Object.assign(unit, {
 				
-				populate: function(precision) {
+				render: function(precision) {
 					
 					return this.circuit()
 					.cswap([2, 3], 4)
