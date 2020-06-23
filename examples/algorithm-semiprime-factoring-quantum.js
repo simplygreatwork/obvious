@@ -13,9 +13,15 @@ function run(semiprime) {
 	
 	logger.log()
 	logger.log(`Now factoring the semiprime number ${semiprime}.`)
-	var result = factor({ semiprime: semiprime, coprime: 2 })
-	if (result) logger.log(`${result[0]} * ${result[1]} = ${semiprime}`)
-	else logger.log(`Factoring failed because no non-trivial factors were found.`)
+	let result = null
+	const attempts = 10
+	repeat(attempts, function(index) {
+		result = factor({ semiprime: semiprime, coprime: 2 })
+		if (result) logger.log(`${result[0]} * ${result[1]} = ${semiprime}`)
+		if (result) return 'break'
+		logger.log(`No non-trivial factors were found. Trying again...`)
+	}.bind(this))
+	if (! result) logger.log(`Stopping after ${attempts} attempts.`)
 	logger.log()
 }
 

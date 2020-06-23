@@ -281,7 +281,7 @@ circuit
 
 - illustrate more clearly how root of not applied twice creates a not (x)
 
-- idea: can measure a specific qubit be measuring all - then extracting that bit
+- idea: can measure a specific qubit by measuring all - then extracting that bit
 
 - classical "frame of reference" is "illustration"
 
@@ -304,3 +304,5 @@ circuit
 
 - add attempts to the shor examples
 - add unit context to shor populate - then dynamic rendering
+
+- add silent option to circuit
