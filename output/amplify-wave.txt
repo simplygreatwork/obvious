@@ -1,9 +1,9 @@
 -----------------------------------------------------------------------------------
 
-Running circuit "amplify-wave |  xx>"
+Running circuit "create an amplification wave |  xx>"
 
 
-  Finished "amplify-wave |  xx>"
+  Finished "create an amplification wave |  xx>"
 
     |     >   0.3759% -0.06131258+0.00000000i (180.00)
     |    x>   0.3759% -0.06131258+0.00000000i (180.00)

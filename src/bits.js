@@ -60,6 +60,7 @@ module.exports = class Bits {
 		
 		let reverse = false
 		if (this.endian() == 'little') reverse = true
+		console.log('reverse')
 		if (reverse) this.array.reverse()
 		this.array.forEach(fn)
 		if (reverse) this.array.reverse()

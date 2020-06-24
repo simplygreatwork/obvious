@@ -30,7 +30,7 @@ function run(semiprime) {
 function validate(semiprime) {
 	
 	if (! (semiprime === 15 || semiprime === 21)) {
-		logger.log(chalk.red.bold(`Semiprime ${semiprime} is not supported. Currently only 15 and 21 are supported in this example.`))
+		logger.log(chalk.red.bold(`Semiprime ${semiprime} is not yet supported. Currently, only 15 and 21 are supported in this example at this time.`))
 		process.exit(0)
 	}
 }

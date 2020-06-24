@@ -1,7 +1,7 @@
 
-The host found one prime factor of 53.
-The oracle acknowledged the other prime factor of 809.
-The factor 53 times the factor 809 equals the semiprime product 42877.
-53 * 809 = 42877.
+The host found one prime factor of 29.
+The oracle acknowledged the other prime factor of 599.
+The factor 29 times the factor 599 equals the semiprime product 17371.
+29 * 599 = 17371.
 Does the oracle confirm this semiprime? yes
 

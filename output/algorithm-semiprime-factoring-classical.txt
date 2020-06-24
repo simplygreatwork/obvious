@@ -7,14 +7,14 @@ The decided factors are [3,5].
 
 
 Now factoring the semiprime number 21.
-The precision needed is 4 bits.
+The precision needed is 5 bits.
 The periods detected are [6].
 The decided factors are [7,3].
 7 * 3 = 21
 
 
 Now factoring the semiprime number 51.
-The precision needed is 4 bits.
+The precision needed is 6 bits.
 The periods detected are [8].
 The decided factors are [3,17].
 3 * 17 = 51

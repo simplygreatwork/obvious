@@ -42,7 +42,7 @@ function decide_precision(semiprime) {
 		{ semiprime: 341, precision: 8 },
 		{ semiprime: 451, precision: 9 }
 	]
-	table.forEach(function(each) {
+	table.reverse().forEach(function(each) {
 		if ((result == 0) && (semiprime >= each.semiprime)) {
 			result = each.precision
 		}
