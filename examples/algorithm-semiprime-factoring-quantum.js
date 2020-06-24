@@ -6,7 +6,7 @@ const Bits = require('../src/bits')
 
 // a quantum implementation of Shor's algorithm
 // basis: https://github.com/oreilly-qc/oreilly-qc.github.io/blob/master/samples/QCEngine/ch12_01_shor1.js
-// a work in progress - not yet complete
+// a work in progress - not yet complete - works with semiprimes 15 and 21 only
 
 if (true) run(15)
 if (true) run(21)
@@ -30,7 +30,7 @@ function run(semiprime) {
 function validate(semiprime) {
 	
 	if (! (semiprime === 15 || semiprime === 21)) {
-		logger.log(chalk.red.bold(`Semiprime ${semiprime} is not supported. Currently only 15 and 21 and supported in this example.`))
+		logger.log(chalk.red.bold(`Semiprime ${semiprime} is not supported. Currently only 15 and 21 are supported in this example.`))
 		process.exit(0)
 	}
 }
