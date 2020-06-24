@@ -9,11 +9,13 @@ const Bits = require('../src/bits')
 // a work in progress - not yet complete
 
 if (true) run(15)
-if (false) run(21)
+if (true) run(21)
+if (true) run(22)
 
 function run(semiprime) {
 	
 	let result = null
+	validate(semiprime)
 	logger.log(`Now factoring the semiprime number ${semiprime}.`)
 	const attempts = 10
 	repeat(attempts, function(index) {
@@ -23,6 +25,14 @@ function run(semiprime) {
 		logger.log(chalk.red.bold(`No non-trivial factors were found.`))
 	}.bind(this))
 	if (! result) logger.log(chalk.red.bold(`Stopping after ${attempts} attempts.`))
+}
+
+function validate(semiprime) {
+	
+	if (! (semiprime === 15 || semiprime === 21)) {
+		logger.log(chalk.red.bold(`Semiprime ${semiprime} is not supported. Currently only 15 and 21 and supported in this example.`))
+		process.exit(0)
+	}
 }
 
 function factor(options) {
@@ -48,7 +58,7 @@ function decide_precision(semiprime) {
 		{ semiprime: 341, precision: 8 },
 		{ semiprime: 451, precision: 9 }
 	]
-	table.forEach(function(each) {
+	table.reverse().forEach(function(each) {
 		if ((result == 0) && (semiprime >= each.semiprime)) {
 			result = each.precision
 		}
@@ -100,7 +110,7 @@ function quantum_decide_period(semiprime, coprime, precision) {
 	
 	let size = quantum_decide_size(semiprime, precision)
 	let circuit = Circuit('finding the period', size.total)
-	let work = circuit.work(size.work)
+	let work = circuit.work(size.work, semiprime)
 	logger.log(`The work length is ${work.length} bits.`)
 	precision = circuit.precision(size.work, size.precision)
 	logger.log(`The precision length is ${precision.length} bits.`)
@@ -134,7 +144,7 @@ function Circuit(name, size) {
 	
 	return Object.assign(circuit, {
 		
-		work: function(size) {
+		work: function(size, semiprime) {
 			
 			let unit = this.unit(0, size)
 			unit.unit(0).x()
@@ -143,13 +153,42 @@ function Circuit(name, size) {
 				
 				render: function(precision) {
 					
-					return this.circuit()
-					.cswap([2, 3], 4)
-					.cswap([1, 2], 4)
-					.cswap([0, 1], 4)
-					.cswap([1, 3], 5)
-					.cswap([0, 2], 5)
-					.cswap([0, 1], 5)
+					if (semiprime === 15) {
+						return this.circuit()
+						.cswap([2, 3], 4)
+						.cswap([1, 2], 4)
+						.cswap([0, 1], 4)
+						.cswap([1, 3], 5)
+						.cswap([0, 2], 5)
+						.cswap([0, 1], 5)
+					} else if (semiprime === 21) {
+						return this.circuit()
+						.cswap([4, 5], 6)
+						.cswap([3, 4], 6)
+						.cswap([2, 3], 6)
+						.cswap([1, 2], 6)
+						.cswap([0, 1], 6)
+						.cswap([3, 5], 7)
+						.cswap([2, 4], 7)
+						.cswap([1, 3], 7)
+						.cswap([0, 2], 7)
+						.cswap([0, 1], 7)
+						.cswap([1, 5], 8)
+						.cswap([0, 4], 8)
+						.cswap([0, 3], 8)
+						.cswap([0, 2], 8)
+						.cswap([0, 1], 8)
+						.cswap([3, 5], 9)
+						.cswap([2, 4], 9)
+						.cswap([1, 3], 9)
+						.cswap([0, 2], 9)
+						.cswap([0, 1], 9)
+						.cswap([1, 5], 10)
+						.cswap([0, 4], 10)
+						.cswap([0, 3], 10)
+						.cswap([0, 2], 10)
+						.cswap([0, 1], 10)
+					}
 				}
 			})
 		},
@@ -162,8 +201,9 @@ function Circuit(name, size) {
 			return Object.assign(unit, {
 				
 				qft: function() {
-					this.circuit().qft(this.index, this.length)
-				}
+					
+					this.circuit().qft(index, length)
+				},
 			})
 		},
 		
@@ -215,4 +255,13 @@ function repeat(number, fn) {
 		let result = fn.apply(this, [i])
 		if (result === 'break') break
 	}
+}
+
+function fill(begin, length) {
+	
+	let result = []
+	for (let i = begin; i < length; i++) {
+		result.push(i)
+	}
+	return result
 }

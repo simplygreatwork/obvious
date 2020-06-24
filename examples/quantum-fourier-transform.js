@@ -151,29 +151,31 @@ function Circuit(name, size, options) {
 			.swap(2, 3)
 		},
 		
-		qft_dynamic: function() {
+		qft_dynamic: function(begin, length) {
 			
-			this.repeat(this.size, function(index) {
-				let inverse = this.size - 1 - index
+			begin = begin || 0
+			length = length || this.size
+			repeat(length, function(index) {
+				let inverse = (begin + length) - 1 - (index)
 				this.h(inverse)
-				for (let j = inverse - 1; j >= 0; j--) {
+				for (let j = inverse - 1; j >= begin; j--) {
 					this.cu1(inverse, j, { lambda: 'pi / ' + Math.pow(2, inverse - j) })
 				}
 			}.bind(this))
-			for (let i = 0, length = Math.floor(this.size / 2); i < length; i++) {
-				this.swap(i, this.size - (i + 1))
-			}
-			return this
-		},
-		
-		repeat: function(value, fn) {
-			
-			for (let i = 0; i < value; i++) {
-				fn.apply(this, [i])
+			for (let i = begin, length_ = Math.floor((begin + length) / 2); i < length_; i++) {
+				this.swap(i, length_ - (i + 1))
 			}
 			return this
 		}
 	})
 	
 	return circuit
+}
+
+function repeat(number, fn) {
+	
+	for (let i = 0; i < number; i++) {
+		let result = fn.apply(this, [i])
+		if (result === 'break') break
+	}
 }

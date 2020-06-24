@@ -309,3 +309,15 @@ circuit
 
 - convert qft to operate on an array of qubit indices
 - because it's possible that they might not all be contiguous
+
+- in algorithm-semiprime-factoring-quantum.js > quantum_decide_size,
+	- might be able to use Bits.js
+
+- in algorithm-semiprime-factoring-quantum.js > quantum_estimate_spikes,
+	- use e array: [0, 0, 0]
+
+- in algorithm-semiprime-factoring-quantum.js > quantum_decide_size,
+	- reading value of work and not precision like in the original example
+	- but why? is the qft implementation incorrect? inverted? not inverted?
+
+- issue: shor example works with semiprime 15 even if I don't apply the QFT. What?
