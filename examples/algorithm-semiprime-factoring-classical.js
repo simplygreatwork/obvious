@@ -43,7 +43,7 @@ function decide_precision(semiprime) {
 		{ semiprime: 451, precision: 9 }
 	]
 	table.reverse().forEach(function(each) {
-		if ((result == 0) && (semiprime >= each.semiprime)) {
+		if ((result === 0) && (semiprime >= each.semiprime)) {
 			result = each.precision
 		}
 	}.bind(this))
@@ -75,7 +75,6 @@ function decide_factors(semiprime, coprime, periods) {
 		if (factor_a * factor_b == semiprime) {
 			if (factor_a != 1 && factor_b != 1) {
 				result = [factor_a, factor_b]
-				return 'break'
 			}
 		}
 	})

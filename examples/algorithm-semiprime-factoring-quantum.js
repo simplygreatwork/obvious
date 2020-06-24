@@ -59,7 +59,7 @@ function decide_precision(semiprime) {
 		{ semiprime: 451, precision: 9 }
 	]
 	table.reverse().forEach(function(each) {
-		if ((result == 0) && (semiprime >= each.semiprime)) {
+		if ((result === 0) && (semiprime >= each.semiprime)) {
 			result = each.precision
 		}
 	}.bind(this))
@@ -85,7 +85,6 @@ function decide_factors(semiprime, coprime, periods) {
 		if (factor_a * factor_b == semiprime) {
 			if (factor_a != 1 && factor_b != 1) {
 				result = [factor_a, factor_b]
-				return 'break'
 			}
 		}
 	})
@@ -116,7 +115,7 @@ function quantum_decide_period(semiprime, coprime, precision) {
 	logger.log(`The precision length is ${precision.length} bits.`)
 	work.render(precision)
 	precision.qft()
-	circuit.run()
+	circuit.run('silent')
 	let result = work.measure().toNumber()
 	logger.log(`The quantum circuit result is ${result}.`)
 	let periods = quantum_estimate_spikes(result, 1 << precision.length)
@@ -212,7 +211,7 @@ function Circuit(name, size) {
 			begin = begin || 0
 			length = length || this.size
 			repeat(length, function(index) {
-				let inverse = (begin + length) - 1 - (index)
+				let inverse = (begin + length) - 1 - index
 				this.h(inverse)
 				for (let j = inverse - 1; j >= begin; j--) {
 					this.cu1(inverse, j, { lambda: 'pi / ' + Math.pow(2, inverse - j) })

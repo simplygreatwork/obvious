@@ -75,6 +75,7 @@ class Circuit {
 	listen() {
 		
 		this.circuit.on('circuit-will-run', function(circuit) {
+			if (this.options.silent) return
 			this.logger.log('-----------------------------------------------------------------------------------')
 			this.logger.log(chalk.green.bold(`\nRunning circuit "${this.name}"\n`))
 			if (this.options.trace) {
@@ -85,12 +86,14 @@ class Circuit {
 			}
 		}.bind(this))
 		this.circuit.on('circuit-did-run', function(circuit) {
+			if (this.options.silent) return
 			this.logger.log(chalk.blue.bold(`\n  Finished "${this.name}"`))
 			this.logger.log()
 			this.print()
 			this.logger.log()
 		}.bind(this))
 		this.circuit.on('gate-will-run', function(gate, index, length) {
+			if (this.options.silent) return
 			if (this.options.trace) {
 				let string = `  Applying gate "${gate.name.toUpperCase()}" with targets ${gate.targets}`
 				if (gate.controls.length > 0) string = string + ` with controls ${gate.controls}`
@@ -101,6 +104,7 @@ class Circuit {
 			}
 		}.bind(this))
 		this.circuit.on('gate-did-run', function(gate, index, length) {
+			if (this.options.silent) return
 			if (this.options.trace) {
 				this.print(this.options.changed)
 			}
