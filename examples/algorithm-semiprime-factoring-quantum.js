@@ -234,14 +234,14 @@ function quantum_estimate_spikes(spike, range) {
 	let e0, e1, e2 = 0
 	let actual = spike / range
 	for (let denominator = 1.0; denominator < spike; ++denominator) {
-		var numerator = Math.round(denominator * actual)
-		var estimated = numerator / denominator
-		var error = Math.abs(estimated - actual)
+		let numerator = Math.round(denominator * actual)
+		let estimated = numerator / denominator
+		let error = Math.abs(estimated - actual)
 		e0 = e1
 		e1 = e2
 		e2 = error
 		if ((e1 <= best_error) && (e1 < e0) && (e1 < e2)) {
-			var period = denominator - 1
+			let period = denominator - 1
 			result.push(period)
 			best_error = e1
 		}
