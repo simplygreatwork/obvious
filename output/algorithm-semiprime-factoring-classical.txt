@@ -13,9 +13,184 @@ The decided factors are [7,3].
 7 * 3 = 21
 
 
+Now factoring the semiprime number 35.
+The precision needed is 6 bits.
+The periods detected are [12].
+The decided factors are [7,5].
+7 * 5 = 35
+
+
+Now factoring the semiprime number 39.
+The precision needed is 6 bits.
+The periods detected are [12].
+The decided factors are [3,13].
+3 * 13 = 39
+
+
 Now factoring the semiprime number 51.
 The precision needed is 6 bits.
 The periods detected are [8].
 The decided factors are [3,17].
 3 * 17 = 51
+
+
+Now factoring the semiprime number 55.
+The precision needed is 6 bits.
+The periods detected are [20].
+The decided factors are [11,5].
+11 * 5 = 55
+
+
+Now factoring the semiprime number 69.
+The precision needed is 6 bits.
+The periods detected are [22].
+The decided factors are [23,3].
+23 * 3 = 69
+
+
+Now factoring the semiprime number 77.
+The precision needed is 6 bits.
+The periods detected are [30].
+The decided factors are [7,11].
+7 * 11 = 77
+
+
+Now factoring the semiprime number 85.
+The precision needed is 6 bits.
+The periods detected are [8].
+The decided factors are [5,17].
+5 * 17 = 85
+
+
+Now factoring the semiprime number 87.
+The precision needed is 6 bits.
+The periods detected are [28].
+The decided factors are [3,29].
+3 * 29 = 87
+
+
+Now factoring the semiprime number 91.
+The precision needed is 6 bits.
+The periods detected are [12].
+The decided factors are [7,13].
+7 * 13 = 91
+
+
+Now factoring the semiprime number 93.
+The precision needed is 6 bits.
+The periods detected are [10].
+The decided factors are [31,3].
+31 * 3 = 93
+
+
+Now factoring the semiprime number 95.
+The precision needed is 6 bits.
+The periods detected are [36].
+The decided factors are [19,5].
+19 * 5 = 95
+
+
+Now factoring the semiprime number 111.
+The precision needed is 6 bits.
+The periods detected are [36].
+The decided factors are [3,37].
+3 * 37 = 111
+
+
+Now factoring the semiprime number 115.
+The precision needed is 6 bits.
+The periods detected are [44].
+The decided factors are [23,5].
+23 * 5 = 115
+
+
+Now factoring the semiprime number 117.
+The precision needed is 6 bits.
+The periods detected are [12].
+The decided factors are [9,13].
+9 * 13 = 117
+
+
+Now factoring the semiprime number 119.
+The precision needed is 6 bits.
+The periods detected are [24].
+The decided factors are [7,17].
+7 * 17 = 119
+
+
+Now factoring the semiprime number 123.
+The precision needed is 7 bits.
+The periods detected are [20].
+The decided factors are [3,41].
+3 * 41 = 123
+
+
+Now factoring the semiprime number 133.
+The precision needed is 7 bits.
+The periods detected are [18].
+The decided factors are [7,19].
+7 * 19 = 133
+
+
+Now factoring the semiprime number 155.
+The precision needed is 7 bits.
+The periods detected are [20].
+The decided factors are [31,5].
+31 * 5 = 155
+
+
+Now factoring the semiprime number 187.
+The precision needed is 7 bits.
+The periods detected are [40].
+The decided factors are [11,17].
+11 * 17 = 187
+
+
+Now factoring the semiprime number 203.
+The precision needed is 7 bits.
+The periods detected are [84].
+The decided factors are [7,29].
+7 * 29 = 203
+
+
+Now factoring the semiprime number 221.
+The precision needed is 7 bits.
+The periods detected are [24].
+The decided factors are [13,17].
+13 * 17 = 221
+
+
+Now factoring the semiprime number 247.
+The precision needed is 7 bits.
+The periods detected are [36].
+The decided factors are [19,13].
+19 * 13 = 247
+
+
+Now factoring the semiprime number 259.
+The precision needed is 7 bits.
+The periods detected are [36].
+The decided factors are [7,37].
+7 * 37 = 259
+
+
+Now factoring the semiprime number 287.
+The precision needed is 7 bits.
+The periods detected are [60].
+The decided factors are [7,41].
+7 * 41 = 287
+
+
+Now factoring the semiprime number 341.
+The precision needed is 8 bits.
+The periods detected are [10].
+The decided factors are [31,11].
+31 * 11 = 341
+
+
+Now factoring the semiprime number 451.
+The precision needed is 9 bits.
+The periods detected are [20].
+The decided factors are [11,41].
+11 * 41 = 451
 

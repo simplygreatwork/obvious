@@ -5,9 +5,10 @@ const logger = require('../src/logger')()
 // a classical implementation of Shor's algorithm
 // basis: https://github.com/oreilly-qc/oreilly-qc.github.io/blob/master/samples/QCEngine/ch12_02_shor_no_qpu.js
 
-if (true) run(15)
-if (true) run(21)
-if (true) run(51)
+let array = [15, 21, 35, 39, 51, 55, 69, 77, 85, 87, 91, 93, 95, 111, 115, 117, 119, 123, 133, 155, 187, 203, 221, 247, 259, 287, 341, 451]
+array.forEach(function(each) {
+	run(each)
+})
 
 function run(semiprime) {
 	

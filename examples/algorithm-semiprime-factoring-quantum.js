@@ -6,7 +6,7 @@ const Bits = require('../src/bits')
 
 // a quantum implementation of Shor's algorithm
 // basis: https://github.com/oreilly-qc/oreilly-qc.github.io/blob/master/samples/QCEngine/ch12_01_shor1.js
-// a work in progress - not yet complete - works with semiprimes 15 and 21 only
+// a work in progress - not yet complete - use the semiprimes 15 and 21 only
 
 if (true) run(15)
 if (true) run(21)
@@ -17,7 +17,7 @@ function run(semiprime) {
 	let result = null
 	validate(semiprime)
 	logger.log(`Now factoring the semiprime number ${semiprime}.`)
-	const attempts = 10
+	const attempts = 50
 	repeat(attempts, function(index) {
 		result = factor({ semiprime: semiprime, coprime: 2 })
 		if (result) logger.log(`${result[0]} * ${result[1]} = ${semiprime}`)
@@ -118,6 +118,8 @@ function quantum_decide_period(semiprime, coprime, precision) {
 	circuit.run('silent')
 	let result = work.measure().toNumber()
 	logger.log(`The quantum circuit result is ${result}.`)
+   result = result & ((1 << precision.length) - 1)
+	logger.log(`The quantum read result is ${result}.`)
 	let periods = quantum_estimate_spikes(result, 1 << precision.length)
 	logger.log(`The quantum periods are ${JSON.stringify(periods)}.`)
 	return periods
