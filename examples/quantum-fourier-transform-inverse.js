@@ -2,8 +2,6 @@
 const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
-// incomplete
-
 periods ({ frequency: 2, size: 4 })
 periods ({ frequency: 4, size: 4 })
 periods ({ frequency: 8, size: 4 })
