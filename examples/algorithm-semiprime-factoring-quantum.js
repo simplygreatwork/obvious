@@ -220,7 +220,7 @@ function Circuit(name, size) {
 				}
 			}.bind(this))
 			for (let i = begin, length_ = Math.floor((begin + length) / 2); i < length_; i++) {
-				this.swap(i, length_ - (i + 1))
+				this.swap(i, length - (i + 1))
 			}
 			return this
 		}

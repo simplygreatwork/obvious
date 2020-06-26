@@ -151,22 +151,7 @@ function Circuit(name, size, options) {
 			.swap(2, 3)
 		},
 		
-		qft_dynamic: function() {
-			
-			repeat(this.size, function(index) {
-				let inverse = this.size - 1 - index
-				this.h(inverse)
-				for (let j = inverse - 1; j >= 0; j--) {
-					this.cu1(inverse, j, { lambda: 'pi / ' + Math.pow(2, inverse - j) })
-				}
-			}.bind(this))
-			for (let i = 0, length = Math.floor(this.size / 2); i < length; i++) {
-				this.swap(i, this.size - (i + 1))
-			}
-			return this
-		},
-		
-		qft_dynamic_defective: function(begin, length) {
+		qft_dynamic: function(begin, length) {
 			
 			begin = begin || 0
 			length = length || this.size
@@ -178,7 +163,7 @@ function Circuit(name, size, options) {
 				}
 			}.bind(this))
 			for (let i = begin, length_ = Math.floor((begin + length) / 2); i < length_; i++) {
-				this.swap(i, length_ - (i + 1))
+				this.swap(i, length - (i + 1))
 			}
 			return this
 		}
