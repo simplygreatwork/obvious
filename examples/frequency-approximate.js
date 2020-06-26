@@ -6,7 +6,7 @@ const logger = require('../src/logger')()
 // for periods with these remainders, I need more study to determine whether to round down
 // this example is not yet verified for correctness; e.g. frequency = squared - state.index
 
-frequency ({ period: 3, size: 4 )}
+frequency ({ period: 3, size: 4 })
 frequency ({ period: 5, size: 4 })
 frequency ({ period: 6, size: 4 })
 frequency ({ period: 7, size: 4 })

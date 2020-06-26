@@ -1,9 +1,9 @@
 -----------------------------------------------------------------------------------
 
-Running circuit "input-phases-for-a-period-of-3-using-4-qubits"
+Running circuit "input phases for a period of 3 using 4 qubits"
 
 
-  Finished "input-phases-for-a-period-of-3-using-4-qubits"
+  Finished "input phases for a period of 3 using 4 qubits"
 
     |    >   6.2500%  0.25000000+0.00000000i (  0.00)
     |   x>   6.2500% -0.12500000+0.21650635i (120.00)
@@ -24,10 +24,10 @@ Running circuit "input-phases-for-a-period-of-3-using-4-qubits"
 
 -----------------------------------------------------------------------------------
 
-Running circuit "output-for-a-period-of-3-using-4-qubits"
+Running circuit "output for a period of 3 using 4 qubits"
 
 
-  Finished "output-for-a-period-of-3-using-4-qubits"
+  Finished "output for a period of 3 using 4 qubits"
 
     |    >   0.3906%  0.06250000+0.00000000i (  0.00)
     |   x>   0.3267%  0.05606175-0.01115138i (-11.25)
@@ -50,10 +50,10 @@ The frequency is approximately 5 from a period of 3 in 16.
 
 -----------------------------------------------------------------------------------
 
-Running circuit "input-phases-for-a-period-of-5-using-4-qubits"
+Running circuit "input phases for a period of 5 using 4 qubits"
 
 
-  Finished "input-phases-for-a-period-of-5-using-4-qubits"
+  Finished "input phases for a period of 5 using 4 qubits"
 
     |    >   6.2500%  0.25000000+0.00000000i (  0.00)
     |   x>   6.2500%  0.07725425+0.23776413i ( 72.00)
@@ -74,10 +74,10 @@ Running circuit "input-phases-for-a-period-of-5-using-4-qubits"
 
 -----------------------------------------------------------------------------------
 
-Running circuit "output-for-a-period-of-5-using-4-qubits"
+Running circuit "output for a period of 5 using 4 qubits"
 
 
-  Finished "output-for-a-period-of-5-using-4-qubits"
+  Finished "output for a period of 5 using 4 qubits"
 
     |    >   0.3906%  0.06250000+0.00000000i (  0.00)
     |   x>   0.2503%  0.04906658-0.00975995i (-11.25)
@@ -100,10 +100,10 @@ The frequency is approximately 3 from a period of 5 in 16.
 
 -----------------------------------------------------------------------------------
 
-Running circuit "input-phases-for-a-period-of-6-using-4-qubits"
+Running circuit "input phases for a period of 6 using 4 qubits"
 
 
-  Finished "input-phases-for-a-period-of-6-using-4-qubits"
+  Finished "input phases for a period of 6 using 4 qubits"
 
     |    >   6.2500%  0.25000000+0.00000000i (  0.00)
     |   x>   6.2500%  0.12500000+0.21650635i ( 60.00)
@@ -124,10 +124,10 @@ Running circuit "input-phases-for-a-period-of-6-using-4-qubits"
 
 -----------------------------------------------------------------------------------
 
-Running circuit "output-for-a-period-of-6-using-4-qubits"
+Running circuit "output for a period of 6 using 4 qubits"
 
 
-  Finished "output-for-a-period-of-6-using-4-qubits"
+  Finished "output for a period of 6 using 4 qubits"
 
     |    >   1.1719%  0.00000000+0.10825318i ( 90.00)
     |   x>   0.6739%  0.01601523+0.08051399i ( 78.75)
@@ -150,10 +150,10 @@ The frequency is approximately 3 from a period of 6 in 16.
 
 -----------------------------------------------------------------------------------
 
-Running circuit "input-phases-for-a-period-of-7-using-4-qubits"
+Running circuit "input phases for a period of 7 using 4 qubits"
 
 
-  Finished "input-phases-for-a-period-of-7-using-4-qubits"
+  Finished "input phases for a period of 7 using 4 qubits"
 
     |    >   6.2500%  0.25000000+0.00000000i (  0.00)
     |   x>   6.2500%  0.15587245+0.19545787i ( 51.43)
@@ -174,10 +174,10 @@ Running circuit "input-phases-for-a-period-of-7-using-4-qubits"
 
 -----------------------------------------------------------------------------------
 
-Running circuit "output-for-a-period-of-7-using-4-qubits"
+Running circuit "output for a period of 7 using 4 qubits"
 
 
-  Finished "output-for-a-period-of-7-using-4-qubits"
+  Finished "output for a period of 7 using 4 qubits"
 
     |    >   1.2684%  0.10146811+0.04886447i ( 25.71)
     |   x>   0.6604%  0.07868666+0.02029744i ( 14.46)
@@ -200,10 +200,10 @@ The frequency is approximately 2 from a period of 7 in 16.
 
 -----------------------------------------------------------------------------------
 
-Running circuit "input-phases-for-a-period-of-10-using-5-qubits"
+Running circuit "input phases for a period of 10 using 5 qubits"
 
 
-  Finished "input-phases-for-a-period-of-10-using-5-qubits"
+  Finished "input phases for a period of 10 using 5 qubits"
 
     |     >   3.1250%  0.17677670+0.00000000i (  0.00)
     |    x>   3.1250%  0.14301535+0.10390673i ( 36.00)
@@ -240,10 +240,10 @@ Running circuit "input-phases-for-a-period-of-10-using-5-qubits"
 
 -----------------------------------------------------------------------------------
 
-Running circuit "output-for-a-period-of-10-using-5-qubits"
+Running circuit "output for a period of 10 using 5 qubits"
 
 
-  Finished "output-for-a-period-of-10-using-5-qubits"
+  Finished "output for a period of 10 using 5 qubits"
 
     |     >   0.3533%  0.05653178+0.01836829i ( 18.00)
     |    x>   0.2101%  0.04476998+0.00982284i ( 12.37)
@@ -282,10 +282,10 @@ The frequency is approximately 3 from a period of 10 in 32.
 
 -----------------------------------------------------------------------------------
 
-Running circuit "input-phases-for-a-period-of-10-using-6-qubits"
+Running circuit "input phases for a period of 10 using 6 qubits"
 
 
-  Finished "input-phases-for-a-period-of-10-using-6-qubits"
+  Finished "input phases for a period of 10 using 6 qubits"
 
     |      >   1.5625%  0.12500000+0.00000000i (  0.00)
     |     x>   1.5625%  0.10112712+0.07347316i ( 36.00)
@@ -354,10 +354,10 @@ Running circuit "input-phases-for-a-period-of-10-using-6-qubits"
 
 -----------------------------------------------------------------------------------
 
-Running circuit "output-for-a-period-of-10-using-6-qubits"
+Running circuit "output for a period of 10 using 6 qubits"
 
 
-  Finished "output-for-a-period-of-10-using-6-qubits"
+  Finished "output for a period of 10 using 6 qubits"
 
     |      >   0.2313%  0.02826589+0.03890466i ( 54.00)
     |     x>   0.1749%  0.02621372+0.03258873i ( 51.19)

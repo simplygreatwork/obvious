@@ -29,9 +29,9 @@ Running circuit "output for a period of 2 using 4 qubits"
 
   Finished "output for a period of 2 using 4 qubits"
 
-    |   x> 100.0000%  1.00000000+0.00000000i (  0.00)
+    |x   > 100.0000%  1.00000000+0.00000000i (  0.00)
 
-The frequency is 15 from a period of 2 in 16.
+The frequency is 8 from a period of 2 in 16.
 
 -----------------------------------------------------------------------------------
 
@@ -64,9 +64,9 @@ Running circuit "output for a period of 4 using 4 qubits"
 
   Finished "output for a period of 4 using 4 qubits"
 
-    |  xx> 100.0000%  1.00000000+0.00000000i (  0.00)
+    |xx  > 100.0000%  1.00000000+0.00000000i (  0.00)
 
-The frequency is 13 from a period of 4 in 16.
+The frequency is 4 from a period of 4 in 16.
 
 -----------------------------------------------------------------------------------
 
@@ -99,9 +99,9 @@ Running circuit "output for a period of 8 using 4 qubits"
 
   Finished "output for a period of 8 using 4 qubits"
 
-    | xxx> 100.0000%  1.00000000+0.00000000i (  0.00)
+    |xxx > 100.0000%  1.00000000+0.00000000i (  0.00)
 
-The frequency is 9 from a period of 8 in 16.
+The frequency is 2 from a period of 8 in 16.
 
 -----------------------------------------------------------------------------------
 
@@ -150,9 +150,9 @@ Running circuit "output for a period of 2 using 5 qubits"
 
   Finished "output for a period of 2 using 5 qubits"
 
-    |    x> 100.0000%  1.00000000+0.00000000i (  0.00)
+    |x    > 100.0000%  1.00000000+0.00000000i (  0.00)
 
-The frequency is 31 from a period of 2 in 32.
+The frequency is 16 from a period of 2 in 32.
 
 -----------------------------------------------------------------------------------
 
@@ -201,9 +201,9 @@ Running circuit "output for a period of 4 using 5 qubits"
 
   Finished "output for a period of 4 using 5 qubits"
 
-    |   xx> 100.0000%  1.00000000+0.00000000i (  0.00)
+    |xx   > 100.0000%  1.00000000+0.00000000i (  0.00)
 
-The frequency is 29 from a period of 4 in 32.
+The frequency is 8 from a period of 4 in 32.
 
 -----------------------------------------------------------------------------------
 
@@ -252,9 +252,9 @@ Running circuit "output for a period of 8 using 5 qubits"
 
   Finished "output for a period of 8 using 5 qubits"
 
-    |  xxx> 100.0000%  1.00000000+0.00000000i (  0.00)
+    |xxx  > 100.0000%  1.00000000+0.00000000i (  0.00)
 
-The frequency is 25 from a period of 8 in 32.
+The frequency is 4 from a period of 8 in 32.
 
 -----------------------------------------------------------------------------------
 
@@ -335,9 +335,9 @@ Running circuit "output for a period of 2 using 6 qubits"
 
   Finished "output for a period of 2 using 6 qubits"
 
-    |     x> 100.0000%  1.00000000+0.00000000i (  0.00)
+    |x     > 100.0000%  1.00000000+0.00000000i (  0.00)
 
-The frequency is 63 from a period of 2 in 64.
+The frequency is 32 from a period of 2 in 64.
 
 -----------------------------------------------------------------------------------
 
@@ -418,9 +418,9 @@ Running circuit "output for a period of 4 using 6 qubits"
 
   Finished "output for a period of 4 using 6 qubits"
 
-    |    xx> 900.0000%  3.00000000+0.00000000i ( -0.00)
+    |xx    > 100.0000%  1.00000000+0.00000000i (  0.00)
 
-The frequency is 61 from a period of 4 in 64.
+The frequency is 16 from a period of 4 in 64.
 
 -----------------------------------------------------------------------------------
 
@@ -501,9 +501,9 @@ Running circuit "output for a period of 8 using 6 qubits"
 
   Finished "output for a period of 8 using 6 qubits"
 
-    |   xxx> 900.0000%  3.00000000+0.00000000i ( -0.00)
+    |xxx   > 100.0000%  1.00000000+0.00000000i (  0.00)
 
-The frequency is 57 from a period of 8 in 64.
+The frequency is 8 from a period of 8 in 64.
 
 -----------------------------------------------------------------------------------
 
@@ -776,7 +776,7 @@ Running circuit "output for a period of 4 using 8 qubits"
 
   Finished "output for a period of 4 using 8 qubits"
 
-    |      xx> 100.0000%  1.00000000+0.00000000i ( -0.00)
+    |xx      > 100.0000%  1.00000000+0.00000000i ( -0.00)
 
-The frequency is 253 from a period of 4 in 256.
+The frequency is 64 from a period of 4 in 256.
 
