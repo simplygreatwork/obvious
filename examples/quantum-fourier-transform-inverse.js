@@ -47,13 +47,12 @@ function Circuit(name, size, options) {
 			bits.iterate(function(bit, index) {
 				if (bit) this.x(index) 
 			}.bind(this))
-			// this.x(2)
 			return this
 		},
 		
 		qft_inverse: function(size) {
 			
-			if (false) {
+			if (true) {
 				return this.qft_dynamic()
 			} else {
 				return this['qft_inverse_' + this.size]()
@@ -77,8 +76,20 @@ function Circuit(name, size, options) {
 			.h(3)
 		},
 		
-		qft_inverse_dynamic: function(begin, length) {
-			return
+		qft_dynamic: function(begin, length) {
+			
+			begin = begin || 0
+			length = length || this.size
+			for (let i = begin, length_ = Math.floor((begin + length) / 2); i < length_; i++) {
+				this.swap(i, length - (i + 1))
+			}
+			repeat(length, function(index) {
+				this.h(index)
+				for (let j = index + 1; j < length; j++) {
+					this.cu1(j, index, { lambda: 'pi / ' + Math.pow(2, j - index) })
+				}
+			}.bind(this))
+			return this
 		}
 	})
 	
