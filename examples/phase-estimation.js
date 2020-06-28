@@ -62,23 +62,6 @@ function Circuit(name, size) {
 			.cx(target, control)
 		},
 		
-		qft: function(begin, length) {
-			
-			begin = begin || 0
-			length = length || this.size
-			repeat(length, function(index) {
-				let inverse = (begin + length) - 1 - (index)
-				this.h(inverse)
-				for (let j = inverse - 1; j >= begin; j--) {
-					this.cu1(inverse, j, { lambda: 'pi / ' + Math.pow(2, inverse - j) })
-				}
-			}.bind(this))
-			for (let i = begin, length_ = Math.floor((begin + length) / 2); i < length_; i++) {
-				this.swap(i, length - (i + 1))
-			}
-			return this
-		},
-		
 		qft_inverse: function(begin, length) {
 			
 			return this
