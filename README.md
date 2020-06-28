@@ -1,15 +1,21 @@
 
-## A small, hackable, optimized framework for learning quantum computing with examples.
+## A small, hackable, optimized simulation framework for learning quantum computing with examples.
 
 ## Features
 
-- A small, hackable, optimized framework for learning quantum computing with examples.
+- A small, hackable, optimized simulation framework for learning quantum computing with examples.
 - Trace gate operations to display state changes as gates are applied.
 - Prints amplitude, probability, and phase.
 - Reasonably performant for 10 - 20 qubits using the quantastica engine.
 - The primary focus is to create a breadth of easy to follow quantum computing examples.
 - Compare and contrast desired outcomes and non-desired outcomes.
 - Wherever possible, display input state alone first and then output state.
+
+## Caution
+
+- This project is a work in progress.
+- None of this material has been peer reviewed. That peer could be you!
+- One potential effort is to convert these examples into unit tests.
 
 ## Examples
 
@@ -21,6 +27,8 @@
 - [create a bell state](/examples/bell-state.js)
 - [create a GHZ state](/examples/ghz-state.js)
 - [rotate phase](/examples/phase-rotation.js)
+- [illustrate phase kickback](/examples/phase-kickback.js)
+- [estimate phase](/examples/phase-estimation.js)
 - [implement a two condition not operator](/examples/not-conditionally-toffoli-constructed.js)
 - [the Deutsch-Jozsa algorithm: a classical illustration](/examples/algorithm-constant-or-balanced-classical.js)
 - [the Deutsch-Jozsa algorithm: a quantum implementation](/examples/algorithm-constant-or-balanced-quantum.js)
