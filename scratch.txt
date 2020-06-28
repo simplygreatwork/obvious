@@ -324,3 +324,7 @@ circuit
 
 - illustrate phase kickback
 	- actually illustrate the exact change at the exact step
+
+- think that results table is displaying global phase
+- as an example change phase of one qubit by 90 and other by -45
+- and see if end up at 45 (interference?)

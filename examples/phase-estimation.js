@@ -13,7 +13,8 @@ estimate(11)
 
 function estimate(value) {
 	
-	Circuit('estimating phase', 5)
+	let size = 4
+	Circuit(`estimating phase for ${value} / ${Math.pow(2, size)}`, size + 1)
 	.unit(0, 4).h().circuit()
 	.render(value)
 	.qft_inverse()

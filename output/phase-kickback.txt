@@ -48,10 +48,43 @@ Running circuit "rotate the phase on qubit 0 by 67.5 degrees - meanwhile qubits 
 
 -----------------------------------------------------------------------------------
 
-Running circuit "rotate the phase on qubit 0 with phase kickback from the two control qubits in superposition"
+Running circuit "rotate the phase on qubit 0 with phase kickback from the two control qubits in superposition (trace on)"
 
+  Initial state
 
-  Finished "rotate the phase on qubit 0 with phase kickback from the two control qubits in superposition"
+    |   > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 0
+
+    |  x> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "H" with targets 1
+
+    |  x>  50.0000%  0.70710678+0.00000000i (  0.00)
+    | xx>  50.0000%  0.70710678+0.00000000i (  0.00)
+
+  Applying gate "H" with targets 2
+
+    |  x>  25.0000%  0.50000000+0.00000000i (  0.00)
+    | xx>  25.0000%  0.50000000+0.00000000i (  0.00)
+    |x x>  25.0000%  0.50000000+0.00000000i (  0.00)
+    |xxx>  25.0000%  0.50000000+0.00000000i (  0.00)
+
+  Applying gate "CRZ" with targets 0 with controls 1
+
+    |  x>  25.0000%  0.50000000+0.00000000i (  0.00)
+    | xx>  25.0000%  0.46193977+0.19134172i ( 22.50)
+    |x x>  25.0000%  0.50000000+0.00000000i (  0.00)
+    |xxx>  25.0000%  0.46193977+0.19134172i ( 22.50)
+
+  Applying gate "CRZ" with targets 0 with controls 2
+
+    |  x>  25.0000%  0.50000000+0.00000000i (  0.00)
+    | xx>  25.0000%  0.46193977+0.19134172i ( 22.50)
+    |x x>  25.0000%  0.35355339+0.35355339i ( 45.00)
+    |xxx>  25.0000%  0.19134172+0.46193977i ( 67.50)
+
+  Finished "rotate the phase on qubit 0 with phase kickback from the two control qubits in superposition (trace on)"
 
     |  x>  25.0000%  0.50000000+0.00000000i (  0.00)
     | xx>  25.0000%  0.46193977+0.19134172i ( 22.50)

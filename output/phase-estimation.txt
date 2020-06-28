@@ -1,72 +1,72 @@
 -----------------------------------------------------------------------------------
 
-Running circuit "estimating phase"
+Running circuit "estimating phase for 1 / 16"
 
 
-  Finished "estimating phase"
+  Finished "estimating phase for 1 / 16"
 
     |    x> 100.0000%  1.00000000+0.00000000i (  0.00)
 
 -----------------------------------------------------------------------------------
 
-Running circuit "estimating phase"
+Running circuit "estimating phase for 2 / 16"
 
 
-  Finished "estimating phase"
+  Finished "estimating phase for 2 / 16"
 
     |   x > 100.0000%  1.00000000+0.00000000i (  0.00)
 
 -----------------------------------------------------------------------------------
 
-Running circuit "estimating phase"
+Running circuit "estimating phase for 3 / 16"
 
 
-  Finished "estimating phase"
+  Finished "estimating phase for 3 / 16"
 
     |   xx> 100.0000%  1.00000000+0.00000000i (  0.00)
 
 -----------------------------------------------------------------------------------
 
-Running circuit "estimating phase"
+Running circuit "estimating phase for 4 / 16"
 
 
-  Finished "estimating phase"
+  Finished "estimating phase for 4 / 16"
 
     |  x  > 100.0000%  1.00000000+0.00000000i (  0.00)
 
 -----------------------------------------------------------------------------------
 
-Running circuit "estimating phase"
+Running circuit "estimating phase for 5 / 16"
 
 
-  Finished "estimating phase"
+  Finished "estimating phase for 5 / 16"
 
     |  x x> 100.0000%  1.00000000+0.00000000i (  0.00)
 
 -----------------------------------------------------------------------------------
 
-Running circuit "estimating phase"
+Running circuit "estimating phase for 6 / 16"
 
 
-  Finished "estimating phase"
+  Finished "estimating phase for 6 / 16"
 
     |  xx > 100.0000%  1.00000000+0.00000000i (  0.00)
 
 -----------------------------------------------------------------------------------
 
-Running circuit "estimating phase"
+Running circuit "estimating phase for 7 / 16"
 
 
-  Finished "estimating phase"
+  Finished "estimating phase for 7 / 16"
 
     |  xxx> 100.0000%  1.00000000+0.00000000i (  0.00)
 
 -----------------------------------------------------------------------------------
 
-Running circuit "estimating phase"
+Running circuit "estimating phase for 11 / 16"
 
 
-  Finished "estimating phase"
+  Finished "estimating phase for 11 / 16"
 
     | x xx> 100.0000%  1.00000000+0.00000000i (  0.00)
 
