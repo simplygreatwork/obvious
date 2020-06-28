@@ -328,3 +328,6 @@ circuit
 - think that results table is displaying global phase
 - as an example change phase of one qubit by 90 and other by -45
 - and see if end up at 45 (interference?)
+
+- something is wrong with the bit.js example
+- bits.toString("01"): 0011
