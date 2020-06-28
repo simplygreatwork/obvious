@@ -23,7 +23,7 @@ function circuit(name, size, options) {
 		order: ['targets', 'controls']
 	})
 	
-	Object.assign(circuit, {
+	return Object.assign(circuit, {
 		
 		toffoli: function(target, controls) {
 			
@@ -38,6 +38,4 @@ function circuit(name, size, options) {
 			.cx(controls[1], controls[0])
 		}
 	})
-	
-	return circuit
 }

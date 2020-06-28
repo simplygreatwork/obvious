@@ -38,14 +38,12 @@ function Circuit(name, size) {
 		order: ['targets', 'controls']
 	})
 	
-	Object.assign(circuit, {
+	return Object.assign(circuit, {
 		
 		evaluate: function(main) {
 			return main.measure()
 		}
 	})
-	
-	return circuit
 }
 
 function Oracle(options) {

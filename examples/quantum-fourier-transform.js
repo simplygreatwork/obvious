@@ -53,7 +53,7 @@ function Circuit(name, size, options) {
 		order: ['targets', 'controls']
 	})
 	
-	Object.assign(circuit, {
+	return Object.assign(circuit, {
 		
 		period: function(period) {
 			
@@ -168,8 +168,6 @@ function Circuit(name, size, options) {
 			return this
 		}
 	})
-	
-	return circuit
 }
 
 function repeat(number, fn) {

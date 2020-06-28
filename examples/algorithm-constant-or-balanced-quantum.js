@@ -34,7 +34,7 @@ function Circuit(name, size) {
 		order: ['targets', 'controls']
 	})
 	
-	Object.assign(circuit, {
+	return Object.assign(circuit, {
 		
 		kind: function() {
 			
@@ -43,8 +43,6 @@ function Circuit(name, size) {
 			return bits.toNumber() === 0 ? 'constant' : 'balanced'
 		}
 	})
-	
-	return circuit
 }
 
 function Oracle(options) {

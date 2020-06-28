@@ -9,7 +9,7 @@ encode(3)
 
 function encode(value) {
 	
-	let circuit = Circuit('superdense: ' + value, 2)
+	let circuit = Circuit(`superdense value: ${value}`, 2)
 	let alice = circuit.alice()
 	let bob = circuit.bob()
 	circuit.entangle(alice, bob)
@@ -34,19 +34,18 @@ function Circuit(name, size, options) {
 		order: ['targets', 'controls']
 	})
 	
-	Object.assign(circuit, {
+	return Object.assign(circuit, {
 		
 		alice: function() {
 			
 			let alice = this.unit(0)
-			Object.assign(alice, {
+			return Object.assign(alice, {
 				encode: function(value) {
 					let array = Bits.fromNumber(value, 2).toArray()
 					if (array.pop()) alice.z()
 					if (array.pop()) alice.x()
 				}
 			})
-			return alice
 		},
 		
 		bob: function() {
@@ -71,6 +70,4 @@ function Circuit(name, size, options) {
 			return this
 		}
 	})
-	
-	return circuit
 }

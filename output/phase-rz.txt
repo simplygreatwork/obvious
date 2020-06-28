@@ -1,6 +1,6 @@
 -----------------------------------------------------------------------------------
 
-Running circuit "phase-rz"
+Running circuit "phase: rz"
 
   Initial state
 
@@ -43,7 +43,7 @@ Running circuit "phase-rz"
 
     |x> 100.0000%  1.00000000+0.00000000i (  0.00)  <<< 100.0000%  0.70710678-0.70710678i (-45.00)
 
-  Finished "phase-rz"
+  Finished "phase: rz"
 
     |x> 100.0000%  1.00000000+0.00000000i (  0.00)
 

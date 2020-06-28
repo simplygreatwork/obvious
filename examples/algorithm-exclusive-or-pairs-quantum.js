@@ -47,15 +47,13 @@ function Host() {
 
 function Circuit(name, size) {
 	
-	let circuit = require('../src/circuit.js')({
+	return require('../src/circuit.js')({
 		name: name,
 		size: size,
 		logger: logger,
 		engine: 'optimized',
 		order: ['targets', 'controls']
 	})
-	
-	return circuit
 }
 
 function Oracle(options) {

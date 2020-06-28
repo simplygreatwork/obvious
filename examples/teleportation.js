@@ -31,7 +31,7 @@ function circuit(name, size, options) {
 		order: ['targets', 'controls']
 	})
 	
-	Object.assign(circuit, {
+	return Object.assign(circuit, {
 		
 		state: function(state, target) {
 			return this['state_' + state].apply(this, [target])
@@ -63,6 +63,4 @@ function circuit(name, size, options) {
 			return this.h(from).h(0)
 		}
 	})
-	
-	return circuit
 }

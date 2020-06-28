@@ -26,7 +26,7 @@ function Circuit(name, size) {
 		order: ['targets', 'controls']
 	})
 	
-	Object.assign(circuit, {
+	return Object.assign(circuit, {
 		
 		spread: function(fn) {
 			
@@ -38,6 +38,4 @@ function Circuit(name, size) {
 			return this
 		}
 	})
-	
-	return circuit	
 }

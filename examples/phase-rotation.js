@@ -26,7 +26,7 @@ function circuit(name, size) {
 		order: ['targets', 'controls']
 	})
 	
-	Object.assign(circuit, {
+	return Object.assign(circuit, {
 		
 		repeat: function(value, fn) {
 			
@@ -46,6 +46,4 @@ function circuit(name, size) {
 			return this
 		}
 	})
-	
-	return circuit	
 }

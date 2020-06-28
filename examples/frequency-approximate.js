@@ -50,7 +50,7 @@ function Circuit(name, size, options) {
 		order: ['targets', 'controls']
 	})
 	
-	Object.assign(circuit, {
+	return Object.assign(circuit, {
 		
 		period: function(period) {
 			
@@ -143,6 +143,4 @@ function Circuit(name, size, options) {
 			.swap(2, 3)
 		}
 	})
-	
-	return circuit
 }

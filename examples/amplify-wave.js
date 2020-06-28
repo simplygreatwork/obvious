@@ -25,7 +25,7 @@ function circuit(name, size, options) {
 		order: ['targets', 'controls']
 	})
 	
-	Object.assign(circuit, {
+	return Object.assign(circuit, {
 		
 		repeat: function(value, fn) {
 			
@@ -73,8 +73,6 @@ function circuit(name, size, options) {
 			.h(0).h(1).h(2).h(3)
 		}
 	})
-	
-	return circuit
 }
 
 function main(index) {

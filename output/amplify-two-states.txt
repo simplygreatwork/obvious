@@ -1,9 +1,9 @@
 -----------------------------------------------------------------------------------
 
-Running circuit "amplify-two-states-input"
+Running circuit "the input for amplifying two states"
 
 
-  Finished "amplify-two-states-input"
+  Finished "the input for amplifying two states"
 
     |     >   6.2500%  0.25000000+0.00000000i (  0.00)
     |    x>   6.2500%  0.25000000+0.00000000i (  0.00)
@@ -24,10 +24,10 @@ Running circuit "amplify-two-states-input"
 
 -----------------------------------------------------------------------------------
 
-Running circuit "amplify-two-states-one-time"
+Running circuit "amplify two states one time"
 
 
-  Finished "amplify-two-states-one-time"
+  Finished "amplify two states one time"
 
     |     >   1.5625% -0.12500000+0.00000000i (180.00)
     |    x>   1.5625% -0.12500000+0.00000000i (180.00)
@@ -48,10 +48,10 @@ Running circuit "amplify-two-states-one-time"
 
 -----------------------------------------------------------------------------------
 
-Running circuit "amplify-two-states-two-times"
+Running circuit "amplify two states two times"
 
 
-  Finished "amplify-two-states-two-times"
+  Finished "amplify two states two times"
 
     |     >   0.3906% -0.06250000+0.00000000i (180.00)
     |    x>   0.3906% -0.06250000+0.00000000i (180.00)

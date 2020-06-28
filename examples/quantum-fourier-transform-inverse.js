@@ -37,7 +37,7 @@ function Circuit(name, size, options) {
 		order: ['targets', 'controls']
 	})
 	
-	Object.assign(circuit, {
+	return Object.assign(circuit, {
 		
 		frequency: function(frequency) {
 			
@@ -90,8 +90,6 @@ function Circuit(name, size, options) {
 			return this
 		}
 	})
-	
-	return circuit
 }
 
 function repeat(number, fn) {
