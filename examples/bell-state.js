@@ -1,12 +1,12 @@
 
 const logger = require('../src/logger')()
 
-circuit('bell', 2)
+circuit('Bell state', 2)
 .h(0)
 .cx(1, 0)
 .run()
 
-circuit('bell (opposite)', 2)
+circuit('Bell state (opposite)', 2)
 .h(0)
 .cx(1, 0)
 .x(0)

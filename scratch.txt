@@ -321,3 +321,6 @@ circuit
 	- but why? is the qft implementation incorrect? inverted? not inverted?
 
 - issue: shor example works with semiprime 15 even if I don't apply the QFT. What?
+
+- illustrate phase kickback
+	- actually illustrate the exact change at the exact step

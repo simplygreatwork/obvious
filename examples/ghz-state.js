@@ -1,7 +1,7 @@
 
 const logger = require('../src/logger')()
 
-circuit('ghz state', 3)
+circuit('Greenberger–Horne–Zeilinger state', 3)
 .h(0)
 .cx(1, 0)
 .cx(2, 1)
@@ -17,5 +17,3 @@ function circuit(name, size) {
 		order: ['targets', 'controls']
 	})
 }
-
-// Greenberger–Horne–Zeilinger state

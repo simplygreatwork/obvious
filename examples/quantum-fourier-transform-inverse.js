@@ -51,7 +51,7 @@ function Circuit(name, size, options) {
 		qft_inverse: function(size) {
 			
 			if (true) {
-				return this.qft_dynamic()
+				return this.qft_inverse_dynamic()
 			} else {
 				return this['qft_inverse_' + this.size]()
 			}
@@ -74,7 +74,7 @@ function Circuit(name, size, options) {
 			.h(3)
 		},
 		
-		qft_dynamic: function(begin, length) {
+		qft_inverse_dynamic: function(begin, length) {
 			
 			begin = begin || 0
 			length = length || this.size
@@ -82,7 +82,7 @@ function Circuit(name, size, options) {
 				this.swap(i, length - (i + 1))
 			}
 			repeat(length, function(index) {
-				this.h(index)
+				this.h(begin + index)
 				for (let j = index + 1; j < length; j++) {
 					this.cu1(j, index, { lambda: 'pi / ' + Math.pow(2, j - index) })
 				}
