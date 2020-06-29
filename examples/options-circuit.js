@@ -1,7 +1,7 @@
 
 const logger = require('../src/logger')()
 
-// illustrations of circuit configuration options - none are actually yet implemented
+// illustrations of circuit configuration options - none are actually implemented yet
 
 let circuit = require('../src/circuit.js')
 

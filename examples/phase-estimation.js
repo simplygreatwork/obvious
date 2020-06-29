@@ -3,20 +3,35 @@ const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
 estimate(1)
-estimate(2)
-estimate(3)
-estimate(4)
-estimate(5)
-estimate(6)
-estimate(7)
-estimate(11)
+// estimate(2)
+// estimate(3)
+// estimate(4)
+// estimate(5)
+// estimate(6)
+// estimate(7)
+// estimate(8)
 
 function estimate(value) {
 	
+	input(value)
+	output(value)
+}
+
+function input(value) {
+	
 	let size = 4
-	Circuit(`estimating phase for ${value} / ${Math.pow(2, size)}`, size + 1)
+	Circuit(`input for phase estimation of ${value} / ${Math.pow(2, size)}`, size + 1)
 	.unit(0, 4).h().circuit()
-	.render(value)
+	.encode(value)
+	.run()
+}
+
+function output(value) {
+	
+	let size = 4
+	Circuit(`output for phase estimation of ${value} / ${Math.pow(2, size)}`, size + 1)
+	.unit(0, 4).h().circuit()
+	.encode(value)
 	.qft_inverse()
 	.run()
 }
@@ -33,7 +48,7 @@ function Circuit(name, size) {
 	
 	return Object.assign(circuit, {
 		
-		render: function(phase) {
+		encode: function(phase) {
 			
 			let lambda = `${phase} * pi / 8`
 			return this
