@@ -2,7 +2,7 @@
 const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
-estimate(5)
+estimate(1)
 
 function estimate(value) {
 	
@@ -22,7 +22,7 @@ function input(value) {
 function output(value) {
 	
 	let size = 3
-	Circuit(`input for phase estimation of ${value} / ${Math.pow(2, size)}`, size + 1)
+	Circuit(`output for phase estimation of ${value} / ${Math.pow(2, size)}`, size + 1)
 	.unit(0, 3).h().circuit()
 	.encode(value)
 	.qft_inverse()
@@ -44,30 +44,32 @@ function Circuit(name, size) {
 		encode: function(value) {
 			
 			return this
-			.transform(0, 1, value)
-			.transform(1, 2, value)
-			.transform(2, 4, value)
+			.cu(3, 2, value)
+			.cu(3, 1, value)
+			.cu(3, 1, value)
+			.cu(3, 0, value)
+			.cu(3, 0, value)
+			.cu(3, 0, value)
+			.cu(3, 0, value)
 		},
 		
-		transform: function(control, count, value) {
+		cu: function(target, control, value) {
 			
 			return this
-			.crz(3, control, { phi : `${value} * -pi / 8 * ${count}`})
-			.cx(3, control)
-			.crz(3, control, { phi : `${value} * -pi / 4 * ${count}`})
-			.cx(3, control)
-			.crz(3, control, { phi : `${value} * -pi / 8 * ${count}`})
+			.u1(target, [], { lambda: `-${value} * pi / 4` })
+			.cx(target, control)
+			.u1(target, [], { lambda: `${value} * pi / 4` })
+			.cx(target, control)
 		},
 		
 		qft_inverse: function(begin, length) {
 			
 			return this
-			.swap(0, 2)
 			.h(0)
-			.crz(0, 1, { phi: 'pi / 2' })
-			.crz(0, 2, { phi: 'pi / 4' })
+			.cu1(1, 0, { lambda: '-1 * pi / 2' })
 			.h(1)
-			.crz(1, 2, { phi: 'pi / 2' })
+			.cu1(2, 0, { lambda: '-1 * pi / 4' })
+			.cu1(2, 1, { lambda: '-1 * pi / 2' })
 			.h(2)
 		}
 	})

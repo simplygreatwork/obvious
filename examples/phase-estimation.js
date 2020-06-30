@@ -3,13 +3,6 @@ const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
 estimate(1)
-// estimate(2)
-// estimate(3)
-// estimate(4)
-// estimate(5)
-// estimate(6)
-// estimate(7)
-// estimate(8)
 
 function estimate(value) {
 	
@@ -19,18 +12,18 @@ function estimate(value) {
 
 function input(value) {
 	
-	let size = 4
+	let size = 3
 	Circuit(`input for phase estimation of ${value} / ${Math.pow(2, size)}`, size + 1)
-	.unit(0, 4).h().circuit()
+	.unit(0, 3).h().circuit()
 	.encode(value)
 	.run()
 }
 
 function output(value) {
 	
-	let size = 4
-	Circuit(`output for phase estimation of ${value} / ${Math.pow(2, size)}`, size + 1)
-	.unit(0, 4).h().circuit()
+	let size = 3
+	Circuit(`input for phase estimation of ${value} / ${Math.pow(2, size)}`, size + 1)
+	.unit(0, 3).h().circuit()
 	.encode(value)
 	.qft_inverse()
 	.run()
@@ -48,49 +41,33 @@ function Circuit(name, size) {
 	
 	return Object.assign(circuit, {
 		
-		encode: function(phase) {
+		encode: function(value) {
 			
-			let lambda = `${phase} * pi / 8`
+			let reps = 1
+			let unit = this.unit(0, this.size - 1)
+			repeat(unit.length, function(index) {
+				let target = unit.length
+				let control = index
+				this.crz(target, control, { phi : `${value} * -pi / 8 * ${reps}`})
+				this.cx(target, control)
+				this.crz(target, control, { phi : `${value} * -pi / 4 * ${reps}`})
+				this.cx(target, control)
+				this.crz(target, control, { phi : `${value} * -pi / 8 * ${reps}`})
+				reps = reps * 2
+			}.bind(this))
 			return this
-			.cu(4, 3, lambda)
-			.cu(4, 2, lambda)
-			.cu(4, 2, lambda)
-			.cu(4, 1, lambda)
-			.cu(4, 1, lambda)
-			.cu(4, 1, lambda)
-			.cu(4, 1, lambda)
-			.cu(4, 0, lambda)
-			.cu(4, 0, lambda)
-			.cu(4, 0, lambda)
-			.cu(4, 0, lambda)
-			.cu(4, 0, lambda)
-			.cu(4, 0, lambda)
-			.cu(4, 0, lambda)
-			.cu(4, 0, lambda)
-		},
-		
-		cu: function(target, control, lambda) {
-			
-			return this
-			.u1(target, [], { lambda: `-${lambda}` })
-			.cx(target, control)
-			.u1(target, [], { lambda: `${lambda}` })
-			.cx(target, control)
 		},
 		
 		qft_inverse: function(begin, length) {
 			
 			return this
+			.swap(0, 2)
 			.h(0)
-			.cu1(1, 0, { lambda: '-1 * pi / 2' })
+			.crz(0, 1, { phi: 'pi / 2' })
+			.crz(0, 2, { phi: 'pi / 4' })
 			.h(1)
-			.cu1(2, 0, { lambda: '-1 * pi / 4' })
-			.cu1(2, 1, { lambda: '-1 * pi / 2' })
+			.crz(1, 2, { phi: 'pi / 2' })
 			.h(2)
-			.cu1(3, 0, { lambda: '-1 * pi / 8' })
-			.cu1(3, 1, { lambda: '-1 * pi / 4' })
-			.cu1(3, 2, { lambda: '-1 * pi / 2' })
-			.h(3)
 		}
 	})
 }
