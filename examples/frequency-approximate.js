@@ -4,6 +4,7 @@ const logger = require('../src/logger')()
 // the frequency results here tend to be approximate
 // the periods do not fit neatly into the resulting state vector; e.g. 16 / 3 = 5.3333 instead of 16 / 4 = 4
 // for periods with these remainders, I need more study to determine whether to round down
+// todo: actually, need to integrate repeated measurements
 // this example is not yet verified for correctness; e.g. frequency = squared - state.index
 
 frequency ({ period: 3, size: 4 })

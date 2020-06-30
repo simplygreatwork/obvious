@@ -14,7 +14,7 @@
 ## Caution
 
 - This project is a work in progress.
-- None of this material has been peer reviewed. That peer could be you!
+- None of this material has been peer reviewed. It could be you!
 - One potential effort is to convert these examples into unit tests.
 
 ## Examples
@@ -60,8 +60,9 @@ node amplify.js
 
 ## Special thanks (acknowledgements and attribution)
 
+- Thank you to O'Reilly and Eric R. Johnston, Mercedes Gimeno-Segovia, and Nic Harrigan for publishing the book ["Programming Quantum Computers"](https://www.oreilly.com/library/view/programming-quantum-computers/9781492039679/). Many of the examples here are reworked from the material in that book.
 - Thank you to [David B. Kemp](http://davidbkemp.github.io/). Occasionally, I ping David with emails about his project jsqubits. He is super helpful.
-- Thank you to Quantastica for publishing the simulator Quantum Circuit using an MIT license. I am currently using a pared down version of Quantum Circuit for these quantum examples.
+- Thank you to Quantastica for publishing the simulator [Quantum Circuit](https://github.com/quantastica/quantum-circuit) using an MIT license. I am currently using a pared down version of Quantum Circuit for these quantum examples.
 
 ## Goals
 
