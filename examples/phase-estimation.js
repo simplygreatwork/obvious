@@ -30,7 +30,7 @@ function output(degree, size) {
 	.run()
 	let result = unit.measure().toNumber()
 	degree = 360 * (result / Math.pow(2, size))
-	logger.log(`The estimated phase is ${result} / ${Math.pow(2, size)} of 360 degrees which is ${degree} degrees.`)
+	logger.log(`The estimated phase is ${result}/${Math.pow(2, size)} of 360 degrees which is ${degree} degrees.`)
 }
 
 function Circuit(name, size) {
@@ -48,12 +48,12 @@ function Circuit(name, size) {
 		encode: function(degree) {
 			
 			let reps = 1
-			let unit = this.unit(0, this.size - 1)
-			let value = (Math.pow(2, unit.length) * degree) / 360
-			repeat(unit.length, function(index) {
-				let target = unit.length
+			let length = this.size - 1
+			let value = (Math.pow(2, length) * degree) / 360
+			repeat(length, function(index) {
+				let target = length
 				let control = index
-				let increment = Math.pow(2, unit.length)
+				let increment = Math.pow(2, length)
 				this.crz(target, control, { phi : `${value} * -pi / ${increment} * ${reps}`})
 				this.cx(target, control)
 				this.crz(target, control, { phi : `${value} * -pi / ${increment / 2} * ${reps}`})
