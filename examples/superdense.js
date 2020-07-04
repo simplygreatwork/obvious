@@ -16,12 +16,10 @@ function encode(value) {
 	alice.encode(value)
 	circuit
 	.detangle(alice, bob)
-	.measure(alice, bob)
 	.run()
-	.each(function(each) {
-		logger.log(`The value encoded to Alice is ${value}.`)
-		logger.log(`The value decoded from Alice and Bob together is ${each.index}.\n`)
-	})
+	let result = circuit.measure().toNumber()
+	logger.log(`The value encoded to Alice is ${value}.`)
+	logger.log(`The value decoded from Alice and Bob together is ${result}.\n`)
 }
 
 function Circuit(name, size, options) {
@@ -63,10 +61,6 @@ function Circuit(name, size, options) {
 			
 			bob.cx(0)
 			alice.h()
-			return this
-		},
-		
-		measure: function(alice, bob) {
 			return this
 		}
 	})
