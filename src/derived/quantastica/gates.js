@@ -92,8 +92,8 @@ module.exports = {
 	rz: {
 		description: "Rotation around the Z-axis by given angle",
 		matrix: [
-			[1,0],
-			[0,"exp(i * phi)"]
+			["cos(phi / 2) - i * sin(phi / 2)", 0],
+			[0, "cos(phi / 2) + i * sin(phi / 2)"]
 		],
 		params: ["phi"]
 	},
@@ -317,9 +317,9 @@ module.exports = {
 		description: "Controlled rotation around the Z-axis by given angle (CPHASE)",
 		matrix: [
 			[1,0,0,0],
-			[0,1,0,0],
-			[0,0,1,0],
-			[0,0,0,"exp(i * phi)"]
+			[0,"cos(phi / 2) - i * sin(phi / 2)",0,0],
+			[0, 0, 1, 0],
+			[0, 0, 0, "cos(phi / 2) + i * sin(phi / 2)"]
 		],
 		params: ["phi"]
 	},
