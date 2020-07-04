@@ -10,7 +10,7 @@ repeat(100, function() {
 	tally[result] = tally[result] || 0
 	tally[result]++ 
 })
-console.log(`The repeatedly measured random probability of heads or tails is ${JSON.stringify(tally)}`)
+logger.log(`The repeatedly measured random probability of heads or tails is ${JSON.stringify(tally)}`)
 
 function run() {
 	

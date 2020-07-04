@@ -190,7 +190,7 @@ circuit
 
 - refactor adder.js as add(3, 12)
 
-- ensure that the alogorithms are adaptable to dynamic qubits
+- ensure that the algorithms are adaptable to dynamic qubits
 
 - refactor amplify.js as amplify(Bits.fromNumber(3, 4))
 
@@ -256,7 +256,7 @@ circuit
 - want these examples to tell stories, actually show, don't tell
 
 - once two qubits are entangled, what are some effects we can demo?
-- if we rotate z on 0, will 1 also rotate on z? how can we verify this?
+- if we rotate z on qubit 0, will qubit 1 also rotate on z? how can we verify this?
 - how to compare and contrast entagled state vs non-entangled state?
 
 - need to measure for adder.js and deutsch-jozsa oracle
@@ -331,3 +331,9 @@ circuit
 
 - something is wrong with the bit.js example
 - bits.toString("01"): 0011
+
+- find a way to denote units of a circuit when printing: example" adder.js
+
+- demonstate uncomputing relating to the use of scratch qubits
+
+- find a way to illustrate an operation with trace on - "trace" "operations"

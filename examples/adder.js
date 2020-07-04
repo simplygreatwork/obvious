@@ -47,7 +47,7 @@ function circuit(name, size) {
 		set_value: function(variable, value) {
 			
 			Bits.fromNumber(value, this.size).toArray().reverse().forEach(function(bit, index) {
-				if (bit) circuit.x(variable(index))
+				if (bit) this.x(variable(index))
 			}.bind(this))
 			return this
 		},
