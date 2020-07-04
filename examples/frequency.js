@@ -2,8 +2,6 @@
 const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
-// This example is not yet verified for correctness; e.g. frequency = squared - state.index
-
 frequency ({ period: 2, size: 4 })
 frequency ({ period: 4, size: 4 })
 frequency ({ period: 8, size: 4 })

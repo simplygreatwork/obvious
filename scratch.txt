@@ -336,8 +336,9 @@ circuit
 
 - demonstate uncomputing relating to the use of scratch qubits
 
-- find a way to illustrate an operation with trace on - "trace" "operations"
+- find a way to illustrate an operation (majority) with trace on - "trace" "operations"
 
 - is it possible to animate probability mutation with one or two qubits and incremental rotation along multiple axis'
 - actually: how can you reverse engineer gates from a desired outcome?
 
+- when tracing, try to highlight the bit which changed or whether phase changed

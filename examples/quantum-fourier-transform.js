@@ -2,8 +2,6 @@
 const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
-// This example is not yet verified for correctness
-// e.g. frequency = squared - state.index
 // this is a workspace to create a QFT algorithm for n-qubits: a circuit with a dynamic number of qubits
 
 frequency ({ period: 2, size: 4 })
