@@ -3,7 +3,7 @@ const logger = require('../src/logger')()
 
 // seeking an example to clearly demonstrate interference
 // this is probably not that example, not quite yet
-// however, in this example global phase does even out to zero
+// however, in this example phase does even out to zero
 // after two different qubits are rotated in opposite directions
 
 circuit('interference', 2)

@@ -5,5 +5,5 @@ Running circuit "interference"
 
   Finished "interference"
 
-    |  > 100.0000%  1.00000000+0.00000000i (  0.00)
+    |  > 100.0000%  0.99144486+0.13052619i (  7.50)
 
