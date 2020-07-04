@@ -1,5 +1,6 @@
 
 const logger = require('../src/logger')()
+const Bits = require('../src/bits')
 
 // This example is not yet verified for correctness
 // e.g. frequency = squared - state.index
@@ -31,16 +32,13 @@ function input(period, size) {
 
 function output(period, size) {
 	
-	let result = { index: -1, magnitude: 0}
-	Circuit(`output for a period of ${period} using ${size} qubits`, size)
+	let circuit = Circuit(`output for a period of ${period} using ${size} qubits`, size)
 	.period(period)
 	.qft(size)
 	.run()
-	.each(function(state) {
-		if (state.magnitude > result.magnitude) result = state
-	})
 	let squared = Math.pow(2, size)
-	logger.log(`The frequency is ${squared - result.index} from a period of ${period} in ${squared}.\n`)
+	let frequency = circuit.measure().invert().toNumber() + 1
+	logger.log(`The frequency is ${frequency} from a period of ${period} in ${squared}.\n`)
 }
 
 function Circuit(name, size, options) {

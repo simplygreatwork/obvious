@@ -1,5 +1,6 @@
 
 const logger = require('../src/logger')()
+const Bits = require('../src/bits')
 
 // the frequency results here tend to be approximate
 // the periods do not fit neatly into the resulting state vector; e.g. 16 / 3 = 5.3333 instead of 16 / 4 = 4
@@ -29,16 +30,13 @@ function input(period, size) {
 
 function output(period, size) {
 	
-	let result = { index: -1, magnitude: 0}
-	Circuit(`output for a period of ${period} using ${size} qubits`, size)
+	let circuit = Circuit(`output for a period of ${period} using ${size} qubits`, size)
 	.period(period)
 	.qft(size)
 	.run()
-	.each(function(state) {
-		if (state.magnitude > result.magnitude) result = state
-	})
 	let squared = Math.pow(2, size)
-	logger.log(`The frequency is approximately ${squared - result.index} from a period of ${period} in ${squared}.\n`)
+	let frequency = circuit.measure().invert().toNumber() + 1
+	logger.log(`The frequency is approximately ${frequency} from a period of ${period} in ${squared}.\n`)
 }
 
 function Circuit(name, size, options) {
