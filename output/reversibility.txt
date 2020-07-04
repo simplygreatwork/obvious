@@ -1,0 +1,69 @@
+-----------------------------------------------------------------------------------
+
+Running circuit "applying and reversing a haddamard gate"
+
+  Initial state
+
+    | > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "H" with targets 0
+
+    | >  50.0000%  0.70710678+0.00000000i (  0.00)
+    |x>  50.0000%  0.70710678+0.00000000i (  0.00)
+
+  Applying gate "H" with targets 0
+
+    | > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Finished "applying and reversing a haddamard gate"
+
+    | > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "applying and reversing a pauli-x (not) gate"
+
+  Initial state
+
+    | > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 0
+
+    |x> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 0
+
+    | > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Finished "applying and reversing a pauli-x (not) gate"
+
+    | > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "applying and reversing a phase change"
+
+  Initial state
+
+    | > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 0
+
+    |x> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "U1" with targets 0
+
+    |x> 100.0000%  0.70710678+0.70710678i ( 45.00)
+
+  Applying gate "U1" with targets 0
+
+    |x> 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Applying gate "X" with targets 0
+
+    | > 100.0000%  1.00000000+0.00000000i (  0.00)
+
+  Finished "applying and reversing a phase change"
+
+    | > 100.0000%  1.00000000+0.00000000i (  0.00)
+
