@@ -70,14 +70,14 @@ Running circuit "rotate the phase on qubit 0 with phase kickback from the two co
     |x x>  25.0000%  0.50000000+0.00000000i (  0.00)
     |xxx>  25.0000%  0.50000000+0.00000000i (  0.00)
 
-  Applying gate "CRZ" with targets 0 with controls 1
+  Applying gate "CU1" with targets 0 with controls 1
 
     |  x>  25.0000%  0.50000000+0.00000000i (  0.00)
     | xx>  25.0000%  0.46193977+0.19134172i ( 22.50)
     |x x>  25.0000%  0.50000000+0.00000000i (  0.00)
     |xxx>  25.0000%  0.46193977+0.19134172i ( 22.50)
 
-  Applying gate "CRZ" with targets 0 with controls 2
+  Applying gate "CU1" with targets 0 with controls 2
 
     |  x>  25.0000%  0.50000000+0.00000000i (  0.00)
     | xx>  25.0000%  0.46193977+0.19134172i ( 22.50)

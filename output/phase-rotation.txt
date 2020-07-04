@@ -1,6 +1,6 @@
 -----------------------------------------------------------------------------------
 
-Running circuit "phase-rotation-with-one-qubit-on"
+Running circuit "phase rotation with 1 qubit on"
 
   Initial state
 
@@ -11,52 +11,52 @@ Running circuit "phase-rotation-with-one-qubit-on"
     | >   0.0000%  0.00000000+0.00000000i (  0.00)  <<< 100.0000%  1.00000000+0.00000000i (  0.00)
     |x> 100.0000%  1.00000000+0.00000000i (  0.00)  <<<   0.0000%  0.00000000+0.00000000i (  0.00)
 
-  Applying gate "RZ" with targets 0 has changes:
+  Applying gate "U1" with targets 0 has changes:
 
     |x> 100.0000%  0.98480775+0.17364818i ( 10.00)  <<< 100.0000%  1.00000000+0.00000000i (  0.00)
 
-  Applying gate "RZ" with targets 0 has changes:
+  Applying gate "U1" with targets 0 has changes:
 
     |x> 100.0000%  0.93969262+0.34202014i ( 20.00)  <<< 100.0000%  0.98480775+0.17364818i ( 10.00)
 
-  Applying gate "RZ" with targets 0 has changes:
+  Applying gate "U1" with targets 0 has changes:
 
     |x> 100.0000%  0.86602540+0.50000000i ( 30.00)  <<< 100.0000%  0.93969262+0.34202014i ( 20.00)
 
-  Applying gate "RZ" with targets 0 has changes:
+  Applying gate "U1" with targets 0 has changes:
 
     |x> 100.0000%  0.76604444+0.64278761i ( 40.00)  <<< 100.0000%  0.86602540+0.50000000i ( 30.00)
 
-  Applying gate "RZ" with targets 0 has changes:
+  Applying gate "U1" with targets 0 has changes:
 
     |x> 100.0000%  0.64278761+0.76604444i ( 50.00)  <<< 100.0000%  0.76604444+0.64278761i ( 40.00)
 
-  Applying gate "RZ" with targets 0 has changes:
+  Applying gate "U1" with targets 0 has changes:
 
     |x> 100.0000%  0.50000000+0.86602540i ( 60.00)  <<< 100.0000%  0.64278761+0.76604444i ( 50.00)
 
-  Applying gate "RZ" with targets 0 has changes:
+  Applying gate "U1" with targets 0 has changes:
 
     |x> 100.0000%  0.34202014+0.93969262i ( 70.00)  <<< 100.0000%  0.50000000+0.86602540i ( 60.00)
 
-  Applying gate "RZ" with targets 0 has changes:
+  Applying gate "U1" with targets 0 has changes:
 
     |x> 100.0000%  0.17364818+0.98480775i ( 80.00)  <<< 100.0000%  0.34202014+0.93969262i ( 70.00)
 
-  Applying gate "RZ" with targets 0 has changes:
+  Applying gate "U1" with targets 0 has changes:
 
     |x> 100.0000%  0.00000000+1.00000000i ( 90.00)  <<< 100.0000%  0.17364818+0.98480775i ( 80.00)
 
-  Finished "phase-rotation-with-one-qubit-on"
+  Finished "phase rotation with 1 qubit on"
 
     |x> 100.0000%  0.00000000+1.00000000i ( 90.00)
 
 -----------------------------------------------------------------------------------
 
-Running circuit "phase-rotation-with-four-qubits-in-superposition"
+Running circuit "phase rotation with 4 qubits in superposition"
 
 
-  Finished "phase-rotation-with-four-qubits-in-superposition"
+  Finished "phase rotation with 4 qubits in superposition"
 
     |    >   6.2500%  0.25000000+0.00000000i (  0.00)
     |   x>   6.2500%  0.24453690+0.05197792i ( 12.00)

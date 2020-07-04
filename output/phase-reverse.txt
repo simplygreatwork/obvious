@@ -6,7 +6,7 @@ Running circuit "attempting to change phase has no effect if the qubit is not on
 
     | > 100.0000%  1.00000000+0.00000000i (  0.00)
 
-  Applying gate "RZ" with targets 0
+  Applying gate "U1" with targets 0
 
     | > 100.0000%  1.00000000+0.00000000i (  0.00)
 
@@ -27,11 +27,11 @@ Running circuit "change phase and then reverse using Z axis rotation"
     | >   0.0000%  0.00000000+0.00000000i (  0.00)  <<< 100.0000%  1.00000000+0.00000000i (  0.00)
     |x> 100.0000%  1.00000000+0.00000000i (  0.00)  <<<   0.0000%  0.00000000+0.00000000i (  0.00)
 
-  Applying gate "RZ" with targets 0 has changes:
+  Applying gate "U1" with targets 0 has changes:
 
     |x> 100.0000%  0.70710678+0.70710678i ( 45.00)  <<< 100.0000%  1.00000000+0.00000000i (  0.00)
 
-  Applying gate "RZ" with targets 0 has changes:
+  Applying gate "U1" with targets 0 has changes:
 
     |x> 100.0000%  1.00000000+0.00000000i (  0.00)  <<< 100.0000%  0.70710678+0.70710678i ( 45.00)
 

@@ -51,7 +51,7 @@ function Circuit(name, size, options) {
 			return this
 			.unit('all').h().circuit()
 			.spread(function(index) {
-				this.rz(index, [], { phi: 'pi / ' + period / 2 })
+				this.u1(index, [], { lambda: 'pi / ' + period / 2 })
 			})
 		},
 		

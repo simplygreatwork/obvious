@@ -54,11 +54,11 @@ function Circuit(name, size) {
 				let target = length
 				let control = index
 				let increment = Math.pow(2, length)
-				this.crz(target, control, { phi : `${value} * -pi / ${increment} * ${reps}`})
+				this.cu1(target, control, { lambda : `${value} * -pi / ${increment} * ${reps}`})
 				this.cx(target, control)
-				this.crz(target, control, { phi : `${value} * -pi / ${increment / 2} * ${reps}`})
+				this.cu1(target, control, { lambda : `${value} * -pi / ${increment / 2} * ${reps}`})
 				this.cx(target, control)
-				this.crz(target, control, { phi : `${value} * -pi / ${increment} * ${reps}`})
+				this.cu1(target, control, { lambda : `${value} * -pi / ${increment} * ${reps}`})
 				reps = reps * 2
 			}.bind(this))
 			return this

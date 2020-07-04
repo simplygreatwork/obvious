@@ -1,22 +1,22 @@
 
 const logger = require('../src/logger')()
 
-circuit('phase rotation with 1 qubit on', 1)
-.x(0)
-.repeat(9, function(index) {
-	this.u1(0, [], { lambda: 'pi / 18' })
-})
-.run('trace', 'changed')
-
-circuit('phase rotation with 4 qubits in superposition', 4)
+Circuit('spread a phase rotation of pi / 8 over four qubits', 4)
 .unit('all').h().circuit()
 .spread(function(index) {
-	this.u1(index, [], { lambda: 'pi / 15' })
+	this.u1(index, [], { lambda: 'pi / 8' })
+})
+.run()
+
+Circuit('spread a phase rotation of pi / 8 over five qubits', 5)
+.unit('all').h().circuit()
+.spread(function(index) {
+	this.u1(index, [], { lambda: 'pi / 8' })
 })
 .run()
 
 
-function circuit(name, size) {
+function Circuit(name, size) {
 	
 	let circuit = require('../src/circuit.js')({
 		name: name,
@@ -27,14 +27,6 @@ function circuit(name, size) {
 	})
 	
 	return Object.assign(circuit, {
-		
-		repeat: function(value, fn) {
-			
-			for (let i = 0; i < value; i++) {
-				fn.apply(this, [i])
-			}
-			return this
-		},
 		
 		spread: function(fn) {
 			

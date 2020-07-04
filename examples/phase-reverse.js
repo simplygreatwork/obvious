@@ -2,13 +2,13 @@
 const logger = require('../src/logger')()
 
 circuit('attempting to change phase has no effect if the qubit is not on', 1)
-.rz(0, [], { phi: 'pi / 4' })
+.u1(0, [], { lambda: 'pi / 4' })
 .run('trace')
 
 circuit('change phase and then reverse using Z axis rotation', 1)
 .x(0)
-.rz(0, [], { phi: 'pi / 4' })
-.rz(0, [], { phi: '- pi / 4' })
+.u1(0, [], { lambda: 'pi / 4' })
+.u1(0, [], { lambda: '- pi / 4' })
 .run('trace', 'changed')
 
 circuit('change phase using an s-gate and then reverse using an s-dagger gate', 1)
