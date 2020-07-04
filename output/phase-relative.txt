@@ -1,0 +1,30 @@
+-----------------------------------------------------------------------------------
+
+Running circuit "a quarter turn (90 degree) relative phase change in super position with ui gate"
+
+
+  Finished "a quarter turn (90 degree) relative phase change in super position with ui gate"
+
+    | >  50.0000%  0.70710678+0.00000000i (  0.00)
+    |x>  50.0000%  0.00000000+0.70710678i ( 90.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a quarter turn (90 degree) relative phase change in super position with an rz gate"
+
+
+  Finished "a quarter turn (90 degree) relative phase change in super position with an rz gate"
+
+    | >  50.0000%  0.50000000-0.50000000i (-45.00)
+    |x>  50.0000%  0.50000000+0.50000000i ( 45.00)
+
+-----------------------------------------------------------------------------------
+
+Running circuit "a quarter turn (90 degree) relative phase change in super position with an s gate"
+
+
+  Finished "a quarter turn (90 degree) relative phase change in super position with an s gate"
+
+    | >  50.0000%  0.70710678+0.00000000i (  0.00)
+    |x>  50.0000%  0.00000000+0.70710678i ( 90.00)
+
