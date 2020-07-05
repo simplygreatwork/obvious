@@ -34,14 +34,14 @@ function output(options) {
 	let circuit = Circuit(`adding a + b into a`, 8)
 	.initialize()
 	.addition()
-	let shots = 100, tally = { a: {}, b: {} }
+	let shots = 100, tally = {}
 	repeat(shots, function() {
 		circuit.run()
 		let a = circuit.unit(0, 4).measure().toNumber()
-		tally.a[a] = tally.a[a] || 0
-		tally.a[a]++
+		tally[a] = tally[a] || 0
+		tally[a]++
 	})
-	logger.log(`The outputs in superposition are any of ${JSON.stringify(Object.keys(tally.a))}\n`)
+	logger.log(`The outputs in superposition are any of ${JSON.stringify(Object.keys(tally))}\n`)
 }
 
 function Circuit(name, size) {
