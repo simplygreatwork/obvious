@@ -27,7 +27,7 @@ module.exports = class Circuit {
 		fn(library)
 	}
 	
-	addGate(name, targets, controls, options) {
+	add_gate(name, targets, controls, options) {
 		
 		if (! library[name]) {
 			console.error('Unknown gate "' + name + '".');

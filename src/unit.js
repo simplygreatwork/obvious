@@ -24,7 +24,7 @@ class Unit {
 			this[key.toLowerCase()] = function(controls, options) {
 				let name = this
 				for (let target = unit.index; target < unit.index + unit.length; target++) {
-					circuit.addGate(name, [target], controls, options)
+					circuit.add_gate(name, [target], controls, options)
 				}
 				return unit
 			}.bind(key)

@@ -23,9 +23,9 @@ class Circuit {
 		return this
 	}
 	
-	addGate(name, targets, controls, options) {
+	add_gate(name, targets, controls, options) {
 		
-		this.circuit.addGate(name, targets, controls, options)
+		this.circuit.add_gate(name, targets, controls, options)
 		return this
 	}
 	

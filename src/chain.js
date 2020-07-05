@@ -14,7 +14,7 @@ module.exports = class Chain {
 			let circuit = this.circuit
 			circuit[key.toLowerCase()] = function(targets, controls, options) {
 				let name = this
-				circuit.addGate(name, targets, controls, options)
+				circuit.add_gate(name, targets, controls, options)
 				return circuit
 			}.bind(key)
 		}.bind(this))
