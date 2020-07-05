@@ -30,7 +30,7 @@ function output() {
 	.increment()
 	let shots = 100, tally = {}
 	repeat(shots, function() {
-		let result = circuit.run().measure().toNumber().toString()
+		let result = circuit.run().measure().toNumber()
 		tally[result] = tally[result] || 0
 		tally[result]++ 
 	})
