@@ -85,18 +85,6 @@ function Circuit(name, size) {
 			.ccx(scratch(0), [b(1), a(1)])
 			.ccx(a(2), [b(1), a(1)])
 			.cx(a(1), b(1))
-		},
-		
-		cnot: function(target, control) {
-			
-			return this
-			.cx(target, control)
-		},
-		
-		ccnot: function(target, controls) {
-			
-			return this
-			.ccx(target, controls)
 		}
 	})
 }
