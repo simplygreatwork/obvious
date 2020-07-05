@@ -27,7 +27,7 @@ circuit({
 }).run()
 
 circuit({
-	name: 'circuit states with little endian state vector bits - lowest bit on rights side (default)',
+	name: 'circuit states with little endian state vector bits - lowest bit on right side (default)',
 	size: 3,
 	logger: logger,
 	endian: 'little',
