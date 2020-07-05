@@ -26,7 +26,7 @@ function increment() {
 	
 	function output() {
 		
-		let circuit = Circuit(`the output in superposition after incrementing`, 5)
+		let circuit = Circuit(`the outputs in superposition after incrementing`, 5)
 		.initialize()
 		.increment()
 		let shots = 100, tally = {}
@@ -59,7 +59,7 @@ function decrement() {
 	
 	function output() {
 		
-		let circuit = Circuit(`the output in superposition after decrementing`, 5)
+		let circuit = Circuit(`the outputs in superposition after decrementing`, 5)
 		.initialize()
 		.decrement()
 		let shots = 100, tally = {}
@@ -102,26 +102,11 @@ function Circuit(name, size) {
 		
 		sequence: function() {
 			
-			return Object.assign(new Sequence(), {
-				
-				toffoli: function(target, controls) {
-					
-					return this
-					.h(target)
-					.cx(target, controls[1]).tdg(target).cx(target, controls[0]).t(target)
-					.cx(target, controls[1]).tdg(target).cx(target, controls[0]).t(target)
-					.h(target)
-					.t(controls[1])
-					.cx(controls[1], controls[0])
-					.t(controls[0]).tdg(controls[1])
-					.cx(controls[1], controls[0])
-				}
-			})
-			
-			.toffoli(4, [0, 1])
-			.toffoli(3, [4, 2])
-			.toffoli(4, [0, 1])
-			.toffoli(3, [0, 1])
+			return new Sequence()
+			.ccx(4, [0, 1])
+			.ccx(3, [4, 2])
+			.ccx(4, [0, 1])
+			.ccx(3, [0, 1])
 			.cx(1, [0])
 			.x(0)
 		}
