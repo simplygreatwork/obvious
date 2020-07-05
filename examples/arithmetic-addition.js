@@ -10,29 +10,34 @@ add({ a: 3, b: 12})
 function add(options) {
 	
 	let values = {}
+	input(options, values)
+	output(options, values)
+}
+
+function input(options, values) {
 	
-	circuit(`illustrating the inputs: a and b`, 10)
+	let circuit = Circuit(`illustrating the inputs: a and b`, 10)
 	.set_value(a, options.a)
 	.set_value(b, options.b)
 	.run('trace')
-	.each(function(each) {
-		values.a = Bits.fromArray(Bits.fromNumber(each.index, this.size).toArray().splice(5, 4)).toNumber()
-		values.b = Bits.fromArray(Bits.fromNumber(each.index, this.size).toArray().splice(1, 4)).toNumber()
-		logger.log(`\n${values.a} + ${values.b} = ?\n`)
-	})
+	values.a = circuit.unit(1, 4).measure().toNumber()
+	values.b = circuit.unit(5, 4).measure().toNumber()
+	logger.log(`\n${values.a} + ${values.b} = ?\n`)
+}
+
+function output(options, values) {
 	
-	circuit('adding a + b into b', 10)
+	let circuit = Circuit('adding a + b into b', 10)
 	.set_value(a, options.a)
 	.set_value(b, options.b)
 	.add(a, b, cin, cout)
 	.run('trace')
-	.each(function(each) {
-		values.result = Bits.fromArray(Bits.fromNumber(each.index, this.size).toArray().splice(1, 4)).toNumber()
-		logger.log(`\n${values.a} + ${values.b} = ${values.result}\n`)
-	})
+	values.result = circuit.unit(5, 4).measure().toNumber()
+	logger.log(`\n${values.a} + ${values.b} = ${values.result}\n`)
 }
 
-function circuit(name, size) {
+
+function Circuit(name, size) {
 	
 	let circuit = require('../src/circuit.js')({
 		name: name,
