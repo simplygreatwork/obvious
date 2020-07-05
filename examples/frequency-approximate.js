@@ -2,11 +2,6 @@
 const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
-// the frequency results here tend to be approximate
-// the periods do not fit neatly into the resulting state vector; e.g. 16 / 3 = 5.3333 instead of 16 / 4 = 4
-// for periods with these remainders, I need more study to determine whether to round down
-// todo: actually, need to integrate repeated measurements
-
 frequency ({ period: 3, size: 4 })
 frequency ({ period: 5, size: 4 })
 frequency ({ period: 6, size: 4 })

@@ -14,6 +14,7 @@ frequency ({ period: 2, size: 6 })
 frequency ({ period: 4, size: 6 })
 frequency ({ period: 8, size: 6 })
 frequency ({ period: 5, size: 8 })
+frequency ({ period: 10, size: 6 })
 
 function frequency(options) {
 	

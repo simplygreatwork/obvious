@@ -342,3 +342,5 @@ circuit
 - actually: how can you reverse engineer gates from a desired outcome?
 
 - when tracing, try to highlight the bit which changed or whether phase changed
+
+- when averaging multiple shots, throw out bad candidates
