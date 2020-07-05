@@ -1033,7 +1033,7 @@ Running circuit "output for a period of 5 using 8 qubits"
     |xxxxxxx >   0.0016%  0.00404285+0.00009925i (  1.41)
     |xxxxxxxx>   0.0016%  0.00397337+0.00004876i (  0.70)
 
-The frequency is approximately 50.97 from a period of 5 in 256. (256 / 5 = 51.2)
+The frequency is approximately 51.211 from a period of 5 in 256. (256 / 5 = 51.2)
 
 -----------------------------------------------------------------------------------
 
@@ -1179,5 +1179,5 @@ Running circuit "output for a period of 10 using 6 qubits"
     |xxxxx >   0.4808%  0.03506243+0.05982225i ( 59.62)
     |xxxxxx>   0.3218%  0.03104916+0.04747070i ( 56.81)
 
-The frequency is approximately 7.053 from a period of 10 in 64. (64 / 10 = 6.4)
+The frequency is approximately 7.057 from a period of 10 in 64. (64 / 10 = 6.4)
 
