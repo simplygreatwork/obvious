@@ -24,15 +24,13 @@ function output(period, size) {
 	let circuit = Circuit(`output for a period of ${period} using ${size} qubits`, size)
 	.period(period)
 	.qft(size)
-	const shots = 1000
-	let tally = 0
+	let shots = 1000, tally = 0
 	repeat(shots, function() {
 		circuit.run()
 		tally = tally + circuit.measure().invert().toNumber() + 1
 	})
-	let squared = Math.pow(2, size)
-	let frequency = (tally / shots)
-	logger.log(`The frequency is approximately ${frequency} from a period of ${period} in ${squared}. (${squared} / ${period} = ${squared / period})\n`)
+	let power = Math.pow(2, size)
+	logger.log(`The frequency is approximately ${tally / shots} from a period of ${period} in ${power}. (${power} / ${period} = ${power / period})\n`)
 }
 
 function Circuit(name, size, options) {
