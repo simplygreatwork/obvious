@@ -32,10 +32,15 @@ function output(period, size) {
 	let circuit = Circuit(`output for a period of ${period} using ${size} qubits`, size)
 	.period(period)
 	.qft(size)
-	.run()
+	const shots = 1000
+	let tally = 0
+	repeat(shots, function() {
+		circuit.run()
+		tally = tally + circuit.measure().invert().toNumber() + 1
+	})
 	let squared = Math.pow(2, size)
-	let frequency = circuit.measure().invert().toNumber() + 1
-	logger.log(`The frequency is approximately ${frequency} from a period of ${period} in ${squared}.\n`)
+	let frequency = (tally / shots)
+	logger.log(`The frequency is approximately ${frequency} from a period of ${period} in ${squared}. (${squared} / ${period} = ${squared / period})\n`)
 }
 
 function Circuit(name, size, options) {
@@ -141,4 +146,11 @@ function Circuit(name, size, options) {
 			.swap(2, 3)
 		}
 	})
+}
+
+function repeat(number, fn) {
+	
+	for (let i = 0; i < number; i++) {
+		fn.apply(this, [i])
+	}
 }

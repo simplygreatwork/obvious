@@ -46,6 +46,10 @@ module.exports = class Circuit {
 	
 	run(options) {
 		
+		if (this.measurement) {
+			this.measurement = null
+			return
+		}
 		options = options || {}
 		this.emit('circuit-will-run', this)
 		this.capture()

@@ -31,7 +31,7 @@ Running circuit "output for a period of 2 using 4 qubits"
 
     |x   > 100.0000%  1.00000000+0.00000000i (  0.00)
 
-The frequency is 8 from a period of 2 in 16.
+The frequency is approximately 8 from a period of 2 in 16. (16 / 2 = 8)
 
 -----------------------------------------------------------------------------------
 
@@ -66,7 +66,7 @@ Running circuit "output for a period of 4 using 4 qubits"
 
     |xx  > 100.0000%  1.00000000+0.00000000i (  0.00)
 
-The frequency is 4 from a period of 4 in 16.
+The frequency is approximately 4 from a period of 4 in 16. (16 / 4 = 4)
 
 -----------------------------------------------------------------------------------
 
@@ -101,5 +101,5 @@ Running circuit "output for a period of 8 using 4 qubits"
 
     |xxx > 100.0000%  1.00000000+0.00000000i (  0.00)
 
-The frequency is 2 from a period of 8 in 16.
+The frequency is approximately 2 from a period of 8 in 16. (16 / 8 = 2)
 
