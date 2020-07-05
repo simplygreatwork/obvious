@@ -334,7 +334,7 @@ circuit
 
 - find a way to denote units of a circuit when printing: example" adder.js
 
-- demonstate uncomputing relating to the use of scratch qubits
+- demonstrate uncomputing relating to the use of scratch qubits
 
 - find a way to illustrate an operation (majority) with trace on - "trace" "operations"
 
@@ -343,4 +343,6 @@ circuit
 
 - when tracing, try to highlight the bit which changed or whether phase changed
 
-- when averaging multiple shots, throw out bad candidates
+- when averaging multiple shots, throw out rogue candidates (partial median?)
+
+- create a contruct, perhaps Sequence to make it easier to apply reversability

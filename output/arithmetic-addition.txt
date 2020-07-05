@@ -29,9 +29,6 @@ Running circuit "illustrating the inputs: a and b"
 
 3 + 12 = ?
 
-
-3 + 12 = ?
-
 -----------------------------------------------------------------------------------
 
 Running circuit "adding a + b into b"

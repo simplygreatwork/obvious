@@ -1,7 +1,0 @@
-
-The host found one prime factor of 601.
-The oracle acknowledged the other prime factor of 947.
-The factor 601 times the factor 947 equals the semiprime product 569147.
-601 * 947 = 569147.
-Does the oracle confirm this semiprime? yes
-

@@ -13,9 +13,9 @@ Running circuit "illustrating the inputs: a and b"
 The inputs in superposition are any of: 
 
     5 + 3 = ?
-    1 + 3 = ?
-    5 + 1 = ?
     1 + 1 = ?
+    5 + 1 = ?
+    1 + 3 = ?
 -----------------------------------------------------------------------------------
 
 Running circuit "adding a + b into a"
