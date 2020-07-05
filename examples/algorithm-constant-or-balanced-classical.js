@@ -54,19 +54,38 @@ function Oracle(options) {
 	
 	let length = options && options.length ? options.length : 4
 	let oracles = [{
-		query: function(value) { return 0 },
-		confirm: function(kind) { return kind == 'constant' ? 'yes' : 'no' }
+		query: function(value) {
+			return 0
+		},
+		confirm: function(kind) { 
+			return kind == 'constant' ? 'yes' : 'no'
+		}
 	}, {
-		query: function(value) {	return 1 },
-		confirm: function(kind) { return kind == 'constant' ? 'yes' : 'no' }
+		query: function(value) {
+			return 1
+		},
+		confirm: function(kind) {
+			return kind == 'constant' ? 'yes' : 'no'
+		}
 	}, {
-		query: function(value) { return value % 2 },
-		confirm: function(kind) { return kind == 'balanced' ? 'yes' : 'no' }
+		query: function(value) {
+			return value % 2
+		},
+		confirm: function(kind) {
+			return kind == 'balanced' ? 'yes' : 'no'
+		}
 	}, {
-		query: function(value) { return [0, 0, 1][value % 3]},			// potential issue: a single bit would always be constant or balanced
-		confirm: function(kind) { return kind == 'non-balanced' ? 'yes' : 'no' }
+		query: function(value) {				// potential issue: a single bit would always be constant or balanced
+			return [0, 0, 1][value % 3]
+		},
+		confirm: function(kind) {
+			return kind == 'non-balanced' ? 'yes' : 'no'
+		}
 	}]
-	Object.assign(this, { size: Math.pow(2, length) })
+	
+	Object.assign(this, {
+		size: Math.pow(2, length)
+	})
 	Object.assign(this, oracles[Math.floor(Math.random() * 4)])
 }
 

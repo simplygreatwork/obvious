@@ -3,31 +3,7 @@ A non-balanced oracle was detected. [6,2]
 Does the oracle confirm this? yes
 
 
-A non-balanced oracle was detected. [6,2]
-Does the oracle confirm this? yes
-
-
-A constant oracle was detected. [8,0]
-Does the oracle confirm this? yes
-
-
-A constant oracle was detected. [8,0]
-Does the oracle confirm this? yes
-
-
 A balanced oracle was detected. [4,4]
-Does the oracle confirm this? yes
-
-
-A non-balanced oracle was detected. [6,2]
-Does the oracle confirm this? yes
-
-
-A balanced oracle was detected. [4,4]
-Does the oracle confirm this? yes
-
-
-A non-balanced oracle was detected. [6,2]
 Does the oracle confirm this? yes
 
 
@@ -35,6 +11,30 @@ A constant oracle was detected. [0,8]
 Does the oracle confirm this? yes
 
 
-A constant oracle was detected. [8,0]
+A non-balanced oracle was detected. [6,2]
+Does the oracle confirm this? yes
+
+
+A balanced oracle was detected. [4,4]
+Does the oracle confirm this? yes
+
+
+A constant oracle was detected. [0,8]
+Does the oracle confirm this? yes
+
+
+A non-balanced oracle was detected. [6,2]
+Does the oracle confirm this? yes
+
+
+A balanced oracle was detected. [4,4]
+Does the oracle confirm this? yes
+
+
+A non-balanced oracle was detected. [6,2]
+Does the oracle confirm this? yes
+
+
+A balanced oracle was detected. [4,4]
 Does the oracle confirm this? yes
 
