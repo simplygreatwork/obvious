@@ -6,7 +6,7 @@ Running circuit "the inputs in superposition before incrementing"
   Finished "the inputs in superposition before incrementing"
 
     |   x >  50.0000%  0.70710678+0.00000000i (  0.00)
-    |  xx >  50.0000%  0.50000000+0.50000000i ( 45.00)
+    |  xx >  50.0000%  0.70710678+0.00000000i (  0.00)
 
 
 The inputs are ["2","6"]
@@ -19,7 +19,7 @@ Running circuit "the output in superposition after incrementing"
   Finished "the output in superposition after incrementing"
 
     |   xx>  50.0000%  0.70710678+0.00000000i (  0.00)
-    |  xxx>  50.0000%  0.50000000+0.50000000i ( 45.00)
+    |  xxx>  50.0000%  0.70710678+0.00000000i (  0.00)
 
 
 The incremented outputs are ["3","7"]

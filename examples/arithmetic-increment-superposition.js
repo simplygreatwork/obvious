@@ -47,7 +47,7 @@ function Circuit(name, size) {
 		order: ['targets', 'controls']
 	})
 	
-	Object.assign(circuit, {
+	return Object.assign(circuit, {
 		
 		initialize: function() {
 			
@@ -92,8 +92,6 @@ function Circuit(name, size) {
 			.cx(controls[1], controls[0])
 		}
 	})
-	
-	return circuit
 }
 
 function repeat(number, fn) {

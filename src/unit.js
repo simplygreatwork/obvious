@@ -55,7 +55,8 @@ class Unit {
 	measure() {
 		
 		let array = []
-		let bits = this.circuit_.measure_()
+		this.circuit().measure()
+		let bits = this.circuit().measure_()
 		this.iterate(function(index) {
 			array.unshift(bits.bit(index))
 		})

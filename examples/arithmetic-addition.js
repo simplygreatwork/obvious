@@ -47,7 +47,7 @@ function Circuit(name, size) {
 		order: ['targets', 'controls']
 	})
 	
-	Object.assign(circuit, {
+	return Object.assign(circuit, {
 		
 		set_value: function(variable, value) {
 			
@@ -91,7 +91,6 @@ function Circuit(name, size) {
 			.cx(b, a)
 		}
 	})
-	return circuit
 }
 
 function cin() {
