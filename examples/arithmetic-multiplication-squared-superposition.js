@@ -74,8 +74,6 @@ function Circuit(name, size) {
 			.ccx(scratch(1), [a(1), a(2)])
 			.ccx(a(3), [scratch(0), scratch(1)])
 			.ccx(scratch(1), [a(1), a(2)])
-			.ccx(scratch(0), [b(0), a(0)])
-			.ccx(scratch(0), [b(0), a(0)])
 			.ccx(a(2), [scratch(0), a(1)])
 			.ccx(scratch(0), [b(0), a(0)])
 			.ccx(a(1), [b(0), a(0)])
@@ -85,20 +83,56 @@ function Circuit(name, size) {
 			.ccx(scratch(1), [a(1), a(2)])
 			.ccx(a(3), [scratch(0), scratch(1)])
 			.ccx(scratch(1), [a(1), a(2)])
-			.ccx(scratch(0), [b(0), b(1)])
-			.ccx(scratch(0), [b(0), b(1)])
 			.ccx(a(2), [scratch(0), a(1)])
 			.ccx(scratch(0), [b(0), b(1)])
 			.ccx(a(1), [b(0), b(1)])
+			
 			.ccx(scratch(0), [b(0), b(1)])
 			.ccx(scratch(1), [a(1), a(2)])
 			.ccx(a(3), [scratch(0), scratch(1)])
 			.ccx(scratch(1), [a(1), a(2)])
-			.ccx(scratch(0), [b(0), b(1)])
-			.ccx(scratch(0), [b(0), b(1)])
 			.ccx(a(2), [scratch(0), a(1)])
 			.ccx(scratch(0), [b(0), b(1)])
 			.ccx(a(1), [b(0), b(1)])
+			
+			.ccx(a(3), [b(1), a(2)])
+			.cx(a(2), b(1))
+		},
+		
+		squared_full: function() {
+			
+			return this
+			.ccx(scratch(0), [b(0), a(0)])
+			.ccx(scratch(1), [a(1), a(2)])
+			.ccx(a(3), [scratch(0), scratch(1)])
+			.ccx(scratch(1), [a(1), a(2)])
+			.ccx(scratch(0), [b(0), a(0)])		// verify why needed
+			.ccx(scratch(0), [b(0), a(0)])		// verify why needed
+			.ccx(a(2), [scratch(0), a(1)])
+			.ccx(scratch(0), [b(0), a(0)])
+			.ccx(a(1), [b(0), a(0)])
+			.cx(a(0), b(0))
+			
+			.ccx(scratch(0), [b(0), b(1)])
+			.ccx(scratch(1), [a(1), a(2)])
+			.ccx(a(3), [scratch(0), scratch(1)])
+			.ccx(scratch(1), [a(1), a(2)])
+			.ccx(scratch(0), [b(0), b(1)])		// verify why needed
+			.ccx(scratch(0), [b(0), b(1)])		// verify why needed
+			.ccx(a(2), [scratch(0), a(1)])
+			.ccx(scratch(0), [b(0), b(1)])
+			.ccx(a(1), [b(0), b(1)])
+			
+			.ccx(scratch(0), [b(0), b(1)])
+			.ccx(scratch(1), [a(1), a(2)])
+			.ccx(a(3), [scratch(0), scratch(1)])
+			.ccx(scratch(1), [a(1), a(2)])
+			.ccx(scratch(0), [b(0), b(1)])		// verify why needed
+			.ccx(scratch(0), [b(0), b(1)])		// verify why needed
+			.ccx(a(2), [scratch(0), a(1)])
+			.ccx(scratch(0), [b(0), b(1)])
+			.ccx(a(1), [b(0), b(1)])
+			
 			.ccx(a(3), [b(1), a(2)])
 			.cx(a(2), b(1))
 		}
