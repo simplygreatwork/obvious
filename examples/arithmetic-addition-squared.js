@@ -6,8 +6,8 @@ add()
 
 function add(options) {
 	
-	input()
-	output()
+	input()	
+	output()	
 }
 
 function input(options) {
@@ -67,7 +67,7 @@ function Circuit(name, size) {
 			.u1(b(1), [], { lambda: 'pi / 2'})
 		},
 		
-		addition: function() {
+		square: function() {
 			
 			return this
 			.ccx(scratch(0), [b(0), a(0)])

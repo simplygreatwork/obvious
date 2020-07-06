@@ -2,9 +2,9 @@
 const logger = require('../src/logger')()
 const Bits = require('../src/bits')
 
-add()
+multiply()
 
-function add(options) {
+function multiply(options) {
 	
 	input()
 	output()
@@ -19,7 +19,7 @@ function input(options) {
 		circuit.run()
 		let a = circuit.unit(0, 4).measure().toNumber()
 		let b = circuit.unit(4, 2).measure().toNumber()
-		let key = a + ' + ' + b
+		let key = a + ' + ' + b + ' * ' + b
 		tally[key] = tally[key] || 0
 		tally[key]++
 	})
@@ -31,9 +31,9 @@ function input(options) {
 
 function output(options) {
 	
-	let circuit = Circuit(`adding a + b into a`, 8)
+	let circuit = Circuit(`adding b * b + a into a`, 8)
 	.initialize()
-	.addition()
+	.squared()
 	let shots = 100, tally = {}
 	repeat(shots, function() {
 		circuit.run()
@@ -67,7 +67,7 @@ function Circuit(name, size) {
 			.u1(b(1), [], { lambda: 'pi / 2'})
 		},
 		
-		addition: function() {
+		squared: function() {
 			
 			return this
 			.ccx(scratch(0), [b(0), a(0)])
@@ -80,11 +80,27 @@ function Circuit(name, size) {
 			.ccx(scratch(0), [b(0), a(0)])
 			.ccx(a(1), [b(0), a(0)])
 			.cx(a(0), b(0))
-			.ccx(scratch(0), [b(1), a(1)])
-			.ccx(a(3), [scratch(0), a(2)])
-			.ccx(scratch(0), [b(1), a(1)])
-			.ccx(a(2), [b(1), a(1)])
-			.cx(a(1), b(1))
+			
+			.ccx(scratch(0), [b(0), b(1)])
+			.ccx(scratch(1), [a(1), a(2)])
+			.ccx(a(3), [scratch(0), scratch(1)])
+			.ccx(scratch(1), [a(1), a(2)])
+			.ccx(scratch(0), [b(0), b(1)])
+			.ccx(scratch(0), [b(0), b(1)])
+			.ccx(a(2), [scratch(0), a(1)])
+			.ccx(scratch(0), [b(0), b(1)])
+			.ccx(a(1), [b(0), b(1)])
+			.ccx(scratch(0), [b(0), b(1)])
+			.ccx(scratch(1), [a(1), a(2)])
+			.ccx(a(3), [scratch(0), scratch(1)])
+			.ccx(scratch(1), [a(1), a(2)])
+			.ccx(scratch(0), [b(0), b(1)])
+			.ccx(scratch(0), [b(0), b(1)])
+			.ccx(a(2), [scratch(0), a(1)])
+			.ccx(scratch(0), [b(0), b(1)])
+			.ccx(a(1), [b(0), b(1)])
+			.ccx(a(3), [b(1), a(2)])
+			.cx(a(2), b(1))
 		}
 	})
 }

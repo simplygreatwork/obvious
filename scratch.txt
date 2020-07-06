@@ -346,3 +346,12 @@ circuit
 - when averaging multiple shots, throw out rogue candidates (partial median?)
 
 - create a contruct, perhaps Sequence to make it easier to apply reversability
+
+- illustrate circuits which are not reversible
+	- is measuring indeed the sole irreversible operation?
+
+- illustrate classical Karatsuba multiplication
+	- https://www.quantamagazine.org/mathematicians-discover-the-perfect-way-to-multiply-20190411/
+	- https://medium.com/@sashwat.anagolum/arithmetic-on-quantum-computers-multiplication-4482cdc2d83b
+
+- need to warn if calling ccx without enough controls
