@@ -69,6 +69,15 @@ function Circuit(name, size) {
 		
 		squared: function() {
 			
+			if (true) {
+				return this.squared_simplified()
+			} else {
+				return this.squared_full()
+			}
+		},
+		
+		squared_simplified: function() {
+			
 			return this
 			.ccx(scratch(0), [b(0), a(0)])
 			.ccx(scratch(1), [a(1), a(2)])
@@ -106,8 +115,8 @@ function Circuit(name, size) {
 			.ccx(scratch(1), [a(1), a(2)])
 			.ccx(a(3), [scratch(0), scratch(1)])
 			.ccx(scratch(1), [a(1), a(2)])
-			.ccx(scratch(0), [b(0), a(0)])		// verify why needed
-			.ccx(scratch(0), [b(0), a(0)])		// verify why needed
+			.ccx(scratch(0), [b(0), a(0)])		// verify whether necessary
+			.ccx(scratch(0), [b(0), a(0)])		// verify whether necessary
 			.ccx(a(2), [scratch(0), a(1)])
 			.ccx(scratch(0), [b(0), a(0)])
 			.ccx(a(1), [b(0), a(0)])
@@ -117,8 +126,8 @@ function Circuit(name, size) {
 			.ccx(scratch(1), [a(1), a(2)])
 			.ccx(a(3), [scratch(0), scratch(1)])
 			.ccx(scratch(1), [a(1), a(2)])
-			.ccx(scratch(0), [b(0), b(1)])		// verify why needed
-			.ccx(scratch(0), [b(0), b(1)])		// verify why needed
+			.ccx(scratch(0), [b(0), b(1)])		// verify whether necessary
+			.ccx(scratch(0), [b(0), b(1)])		// verify whether necessary
 			.ccx(a(2), [scratch(0), a(1)])
 			.ccx(scratch(0), [b(0), b(1)])
 			.ccx(a(1), [b(0), b(1)])
@@ -127,8 +136,8 @@ function Circuit(name, size) {
 			.ccx(scratch(1), [a(1), a(2)])
 			.ccx(a(3), [scratch(0), scratch(1)])
 			.ccx(scratch(1), [a(1), a(2)])
-			.ccx(scratch(0), [b(0), b(1)])		// verify why needed
-			.ccx(scratch(0), [b(0), b(1)])		// verify why needed
+			.ccx(scratch(0), [b(0), b(1)])		// verify whether necessary
+			.ccx(scratch(0), [b(0), b(1)])		// verify whether necessary
 			.ccx(a(2), [scratch(0), a(1)])
 			.ccx(scratch(0), [b(0), b(1)])
 			.ccx(a(1), [b(0), b(1)])
