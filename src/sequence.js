@@ -40,6 +40,10 @@ class Sequence {
 		return circuit
 	}
 	
+	uncompute() {
+		return this.reverse()
+	}
+	
 	reverse() {
 		return new Sequence(this.clone(this.gates).reverse())
 	}
